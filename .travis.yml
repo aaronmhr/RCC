@@ -1,0 +1,4 @@
+os: osx
+osx_image: xcode11.2
+language: swift
+script: xcodebuild clean build test -project RCC.xcodeproj -scheme "RCC" -sdk iphonesimulator -destination "platform=iOS Simulator,OS=13.2,name=iPhone XS" CODE_SIGNING_REQUIRED=NO
