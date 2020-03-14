@@ -32,9 +32,18 @@
 - [] On selection the screen is dismissed and you are conducted to the initial screen where the configured _pair_ is shown
 
 ## Structure
+| Module       | Layer                 | Contains                                   | Dependencies                                     |
+|--------------|-----------------------|--------------------------------------------|--------------------------------------------------|
+| Converter    | Domain                | Entities, Use Cases, Repository interfaces | Foundation                                       |
+| Data         | Data                  | Repositories, Networking, Database         | Foundation, CoreData, Converter                  |
+| Presentation | Presentation          | ViewModels, Mappers                        | Foundation, Converter                            |
+| RCC          | Composition Root, App | UI, Assemblers                             | Foundation, UIKit, Converter, Data, Presentation |
 
-## Other`
+### Converter
+> The feature itself 
 
+## Other
+- Swift 5
 - iOS 12.0+
 
 ## Meta
