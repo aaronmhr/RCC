@@ -1,5 +1,5 @@
 //
-//  RemoteExchangePairsTests.swift
+//  RemoteExchangeRatesDataSourceTests.swift
 //  DataTests
 //
 //  Created by Aaron Huánuco on 15/03/2020.
@@ -10,7 +10,7 @@ import XCTest
 import Converter
 @testable import Data
 
-class RemoteExchangePairsTests: XCTestCase {
+class RemoteExchangeRatesDataSourceTests: XCTestCase {
 
     func test_init_doesNotRequestDataFromUrl() {
         let (_, client) = makeSUT()
@@ -39,7 +39,7 @@ class RemoteExchangePairsTests: XCTestCase {
     }
 }
 
-extension RemoteExchangePairsTests {
+extension RemoteExchangeRatesDataSourceTests {
     private func makeSUT() -> (RemoteExchangeRatesDataSource, HTTPClientSpy) {
         let client = HTTPClientSpy()
         let sut = RemoteExchangeRatesDataSource(remoteClient: client)
