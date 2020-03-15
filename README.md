@@ -8,7 +8,7 @@
 
 ## Requirements
 
-<img src="Assets/sketch.png" width="40%">
+<img src="Assets/sketch.png" width="100%">
 
 ### Initial screen
 - [] On first launch should show empty screen
@@ -41,7 +41,7 @@
 
 ### Converter
 > The feature itself, provides the currencies as well as the business rules that govenr the app.
-
+0. Provides the available currencies for which an __Exchange Pair__ can be created ✅
 1. Provides the configured __Exchange Pairs__, e.g.: `GBP-USD`, `EUR-AUD` with the conversions between both currencies.
 2. Establishes an update rythm of the data.
 3. Provides the rules for the construction of new __Exchange Pairs__.
