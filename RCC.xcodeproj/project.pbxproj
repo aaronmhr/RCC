@@ -31,6 +31,8 @@
 		18E483BC241E8FDD00062135 /* Presentation.h in Headers */ = {isa = PBXBuildFile; fileRef = 18E483AC241E8FDD00062135 /* Presentation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		18E483BF241E8FDD00062135 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E483AA241E8FDD00062135 /* Presentation.framework */; };
 		18E483C0241E8FDD00062135 /* Presentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18E483AA241E8FDD00062135 /* Presentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		18E483CF241E946500062135 /* DefaultCurrencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E483CE241E946500062135 /* DefaultCurrencyRepository.swift */; };
+		18E483D2241E94A300062135 /* CurrencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E483D1241E94A300062135 /* CurrencyRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +106,20 @@
 			remoteGlobalIDString = 18E483A9241E8FDD00062135;
 			remoteInfo = Presentation;
 		};
+		18E483D3241E954F00062135 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18B8C693241D40EC0057858C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18B8C6C8241D93200057858C;
+			remoteInfo = Converter;
+		};
+		18E483D5241E955500062135 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18B8C693241D40EC0057858C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18B8C6C8241D93200057858C;
+			remoteInfo = Converter;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -154,6 +170,8 @@
 		18E483B2241E8FDD00062135 /* PresentationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PresentationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E483B9241E8FDD00062135 /* PresentationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationTests.swift; sourceTree = "<group>"; };
 		18E483BB241E8FDD00062135 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18E483CE241E946500062135 /* DefaultCurrencyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCurrencyRepository.swift; sourceTree = "<group>"; };
+		18E483D1241E94A300062135 /* CurrencyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -326,6 +344,7 @@
 		18B8C6CA241D93200057858C /* Converter */ = {
 			isa = PBXGroup;
 			children = (
+				18E483D0241E949600062135 /* Repositories */,
 				18B8C6CB241D93200057858C /* Converter.h */,
 				18B8C6CC241D93200057858C /* Info.plist */,
 				187D10DD241E5F450076A9F3 /* UseCases */,
@@ -399,6 +418,7 @@
 		18E483C9241E90F300062135 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				18E483CC241E941E00062135 /* CurrencyRepository */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -417,6 +437,22 @@
 				187D10D9241E51400076A9F3 /* CurrencyTests.swift */,
 			);
 			path = Currency;
+			sourceTree = "<group>";
+		};
+		18E483CC241E941E00062135 /* CurrencyRepository */ = {
+			isa = PBXGroup;
+			children = (
+				18E483CE241E946500062135 /* DefaultCurrencyRepository.swift */,
+			);
+			path = CurrencyRepository;
+			sourceTree = "<group>";
+		};
+		18E483D0241E949600062135 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				18E483D1241E94A300062135 /* CurrencyRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -537,6 +573,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				18E483D4241E954F00062135 /* PBXTargetDependency */,
 			);
 			name = Data;
 			productName = Data;
@@ -574,6 +611,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				18E483D6241E955500062135 /* PBXTargetDependency */,
 			);
 			name = Presentation;
 			productName = Presentation;
@@ -625,6 +663,7 @@
 					};
 					18E48387241E8FD300062135 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 					18E4838F241E8FD300062135 = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -751,6 +790,7 @@
 				18B8C6EF241D98E10057858C /* Currency.swift in Sources */,
 				187D10E3241E5F7C0076A9F3 /* CurrencyProvider.swift in Sources */,
 				187D10E9241E67670076A9F3 /* ExchangePairProvider.swift in Sources */,
+				18E483D2241E94A300062135 /* CurrencyRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -766,6 +806,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18E483CF241E946500062135 /* DefaultCurrencyRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -844,6 +885,16 @@
 			isa = PBXTargetDependency;
 			target = 18E483A9241E8FDD00062135 /* Presentation */;
 			targetProxy = 18E483BD241E8FDD00062135 /* PBXContainerItemProxy */;
+		};
+		18E483D4241E954F00062135 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18B8C6C8241D93200057858C /* Converter */;
+			targetProxy = 18E483D3241E954F00062135 /* PBXContainerItemProxy */;
+		};
+		18E483D6241E955500062135 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18B8C6C8241D93200057858C /* Converter */;
+			targetProxy = 18E483D5241E955500062135 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -978,6 +1029,7 @@
 		18B8C6BB241D40EE0057858C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TXH9ALPT83;
@@ -996,6 +1048,7 @@
 		18B8C6BC241D40EE0057858C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TXH9ALPT83;
@@ -1156,6 +1209,7 @@
 		18E4839F241E8FD300062135 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1174,6 +1228,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = aaronmhr.Data;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1184,6 +1239,7 @@
 		18E483A0241E8FD300062135 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
