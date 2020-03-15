@@ -349,6 +349,9 @@
 		18E48389241E8FD300062135 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				18E483C9241E90F300062135 /* Repositories */,
+				18E483C8241E90E800062135 /* Database */,
+				18E483C7241E90DD00062135 /* Networking */,
 				18E4838A241E8FD300062135 /* Data.h */,
 				18E4838B241E8FD300062135 /* Info.plist */,
 			);
@@ -380,6 +383,27 @@
 				18E483BB241E8FDD00062135 /* Info.plist */,
 			);
 			path = PresentationTests;
+			sourceTree = "<group>";
+		};
+		18E483C7241E90DD00062135 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		18E483C8241E90E800062135 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		18E483C9241E90F300062135 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
