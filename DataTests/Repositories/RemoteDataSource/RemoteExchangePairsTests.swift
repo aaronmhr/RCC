@@ -40,9 +40,13 @@ class RemoteExchangePairsTests: XCTestCase {
 }
 
 extension RemoteExchangePairsTests {
-    private func makeSUT() -> (RemoteExchangePairs, HTTPClientSpy) {
+    private func makeSUT() -> (RemoteExchangeRatesDataSource, HTTPClientSpy) {
         let client = HTTPClientSpy()
-        let sut = RemoteExchangePairs(remoteClient: client)
+        let sut = RemoteExchangeRatesDataSource(remoteClient: client)
         return (sut, client)
+    }
+    
+    private func expect(_ sut: RemoteExchangeRatesDataSource, toCompleteWith expectedResult: RemoteExchangeRatesDataSource.Result, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
+        
     }
 }

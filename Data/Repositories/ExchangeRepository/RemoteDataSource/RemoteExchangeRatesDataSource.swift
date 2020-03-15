@@ -1,5 +1,5 @@
 //
-//  RemoteExchangePairs.swift
+//  RemoteExchangeRatesDataSource.swift
 //  Data
 //
 //  Created by Aaron Huánuco on 15/03/2020.
@@ -14,7 +14,7 @@ public protocol ExchangeRatesDataSource {
     func getRates(for pairs: [Pair], completion: @escaping (Result) -> Void)
 }
 
-public final class RemoteExchangePairs: ExchangeRatesDataSource {
+public final class RemoteExchangeRatesDataSource: ExchangeRatesDataSource {
     typealias Rates = [String: Double]
     
     private let remoteClient: HTTPClient
@@ -32,7 +32,7 @@ public final class RemoteExchangePairs: ExchangeRatesDataSource {
         remoteClient.get(from: url) { result in
             switch result {
             case .success(let data, let response):
-                guard let rates = RemoteExchangePairs.map(data, response: response) else {
+                guard let rates = RemoteExchangeRatesDataSource.map(data, response: response) else {
                     completion(.failure(.invalidData))
                     return
                 }

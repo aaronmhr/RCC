@@ -41,7 +41,7 @@
 		18E483EA241E9D9A00062135 /* RatesAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E483E9241E9D9A00062135 /* RatesAPITests.swift */; };
 		18E483ED241EA28200062135 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E483EC241EA28200062135 /* HTTPClient.swift */; };
 		18E483EF241EA37400062135 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E483EE241EA37400062135 /* URLSessionHTTPClient.swift */; };
-		18E483F2241ECF8400062135 /* RemoteExchangePairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E483F1241ECF8400062135 /* RemoteExchangePairs.swift */; };
+		18E483F2241ECF8400062135 /* RemoteExchangeRatesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E483F1241ECF8400062135 /* RemoteExchangeRatesDataSource.swift */; };
 		18E483F5241ECFF200062135 /* RemoteExchangePairsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E483F4241ECFF200062135 /* RemoteExchangePairsTests.swift */; };
 		18E483FB241EE2B200062135 /* Currency+Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E483FA241EE2B200062135 /* Currency+Pair.swift */; };
 		18E483FD241EE2FE00062135 /* Currency+Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E483FA241EE2B200062135 /* Currency+Pair.swift */; };
@@ -193,7 +193,7 @@
 		18E483E9241E9D9A00062135 /* RatesAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesAPITests.swift; sourceTree = "<group>"; };
 		18E483EC241EA28200062135 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		18E483EE241EA37400062135 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
-		18E483F1241ECF8400062135 /* RemoteExchangePairs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteExchangePairs.swift; sourceTree = "<group>"; };
+		18E483F1241ECF8400062135 /* RemoteExchangeRatesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteExchangeRatesDataSource.swift; sourceTree = "<group>"; };
 		18E483F4241ECFF200062135 /* RemoteExchangePairsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteExchangePairsTests.swift; sourceTree = "<group>"; };
 		18E483FA241EE2B200062135 /* Currency+Pair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Currency+Pair.swift"; sourceTree = "<group>"; };
 		18E483FF241EE34B00062135 /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
@@ -550,7 +550,7 @@
 		18E483F0241ECF7100062135 /* RemoteDataSource */ = {
 			isa = PBXGroup;
 			children = (
-				18E483F1241ECF8400062135 /* RemoteExchangePairs.swift */,
+				18E483F1241ECF8400062135 /* RemoteExchangeRatesDataSource.swift */,
 			);
 			path = RemoteDataSource;
 			sourceTree = "<group>";
@@ -935,7 +935,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18E483F2241ECF8400062135 /* RemoteExchangePairs.swift in Sources */,
+				18E483F2241ECF8400062135 /* RemoteExchangeRatesDataSource.swift in Sources */,
 				18E483DD241E988400062135 /* DefaultExchangeRepository.swift in Sources */,
 				18E483EF241EA37400062135 /* URLSessionHTTPClient.swift in Sources */,
 				18E483CF241E946500062135 /* DefaultCurrencyRepository.swift in Sources */,
