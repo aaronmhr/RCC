@@ -7,11 +7,11 @@
 //
 
 public struct ExchangePair {
-    public let first: Currency
-    public let second: Currency
+    public let pair: Pair
+    public let rate: Double
     
-    public init(with first: Currency, and second: Currency) {
-        self.first = first
-        self.second = second
+    public init(pair: Pair, rate: Double) {
+        self.pair = pair
+        self.rate = rate
     }
 }

@@ -34,6 +34,11 @@
 		18E483CF241E946500062135 /* DefaultCurrencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E483CE241E946500062135 /* DefaultCurrencyRepository.swift */; };
 		18E483D2241E94A300062135 /* CurrencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E483D1241E94A300062135 /* CurrencyRepository.swift */; };
 		18E483DA241E967C00062135 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E483D9241E967C00062135 /* TestViewController.swift */; };
+		18E483DD241E988400062135 /* DefaultExchangeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E483DC241E988400062135 /* DefaultExchangeRepository.swift */; };
+		18E483DF241E98B000062135 /* ExchangeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E483DE241E98B000062135 /* ExchangeRepository.swift */; };
+		18E483E2241E994200062135 /* Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E483E1241E994200062135 /* Pair.swift */; };
+		18E483E5241E9D4800062135 /* RatesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E483E4241E9D4800062135 /* RatesAPI.swift */; };
+		18E483EA241E9D9A00062135 /* RatesAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E483E9241E9D9A00062135 /* RatesAPITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -174,6 +179,11 @@
 		18E483CE241E946500062135 /* DefaultCurrencyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCurrencyRepository.swift; sourceTree = "<group>"; };
 		18E483D1241E94A300062135 /* CurrencyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRepository.swift; sourceTree = "<group>"; };
 		18E483D9241E967C00062135 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		18E483DC241E988400062135 /* DefaultExchangeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultExchangeRepository.swift; sourceTree = "<group>"; };
+		18E483DE241E98B000062135 /* ExchangeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRepository.swift; sourceTree = "<group>"; };
+		18E483E1241E994200062135 /* Pair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pair.swift; sourceTree = "<group>"; };
+		18E483E4241E9D4800062135 /* RatesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesAPI.swift; sourceTree = "<group>"; };
+		18E483E9241E9D9A00062135 /* RatesAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesAPITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +255,7 @@
 		187D10DB241E5F310076A9F3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				18E483E0241E993900062135 /* Pair */,
 				187D10E4241E65100076A9F3 /* ExchangePair */,
 				187D10DC241E5F3A0076A9F3 /* Currency */,
 			);
@@ -380,6 +391,9 @@
 		18E48396241E8FD300062135 /* DataTests */ = {
 			isa = PBXGroup;
 			children = (
+				18E483E8241E9D8500062135 /* Networking */,
+				18E483E7241E9D7B00062135 /* Database */,
+				18E483E6241E9D7100062135 /* Repositories */,
 				18E48397241E8FD300062135 /* DataTests.swift */,
 				18E48399241E8FD300062135 /* Info.plist */,
 			);
@@ -407,6 +421,7 @@
 		18E483C7241E90DD00062135 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				18E483E3241E9D3D00062135 /* API */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -421,6 +436,7 @@
 		18E483C9241E90F300062135 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				18E483DB241E986A00062135 /* ExchangeRepository */,
 				18E483CC241E941E00062135 /* CurrencyRepository */,
 			);
 			path = Repositories;
@@ -454,8 +470,55 @@
 			isa = PBXGroup;
 			children = (
 				18E483D1241E94A300062135 /* CurrencyRepository.swift */,
+				18E483DE241E98B000062135 /* ExchangeRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		18E483DB241E986A00062135 /* ExchangeRepository */ = {
+			isa = PBXGroup;
+			children = (
+				18E483DC241E988400062135 /* DefaultExchangeRepository.swift */,
+			);
+			path = ExchangeRepository;
+			sourceTree = "<group>";
+		};
+		18E483E0241E993900062135 /* Pair */ = {
+			isa = PBXGroup;
+			children = (
+				18E483E1241E994200062135 /* Pair.swift */,
+			);
+			path = Pair;
+			sourceTree = "<group>";
+		};
+		18E483E3241E9D3D00062135 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				18E483E4241E9D4800062135 /* RatesAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		18E483E6241E9D7100062135 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		18E483E7241E9D7B00062135 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		18E483E8241E9D8500062135 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				18E483E9241E9D9A00062135 /* RatesAPITests.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -790,10 +853,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18E483DF241E98B000062135 /* ExchangeRepository.swift in Sources */,
 				187D10E6241E651F0076A9F3 /* ExchangePair.swift in Sources */,
 				18B8C6EF241D98E10057858C /* Currency.swift in Sources */,
 				187D10E3241E5F7C0076A9F3 /* CurrencyProvider.swift in Sources */,
 				187D10E9241E67670076A9F3 /* ExchangePairProvider.swift in Sources */,
+				18E483E2241E994200062135 /* Pair.swift in Sources */,
 				18E483D2241E94A300062135 /* CurrencyRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -810,7 +875,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18E483DD241E988400062135 /* DefaultExchangeRepository.swift in Sources */,
 				18E483CF241E946500062135 /* DefaultCurrencyRepository.swift in Sources */,
+				18E483E5241E9D4800062135 /* RatesAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -818,6 +885,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18E483EA241E9D9A00062135 /* RatesAPITests.swift in Sources */,
 				18E48398241E8FD300062135 /* DataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
