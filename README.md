@@ -8,7 +8,7 @@
 
 ## Requirements
 
-<img src="Assets/sketch.png" width="40%">
+<img src="Assets/sketch.png" width="100%">
 
 ### Initial screen
 - [] On first launch should show empty screen
