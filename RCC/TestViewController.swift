@@ -9,9 +9,19 @@
 import UIKit
 
 final class TestViewController: UIViewController {
+    private var viewModel: TestViewModel?
 
+    convenience init(viewModel: TestViewModel) {
+        self.init()
+        self.viewModel = viewModel
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBlue
     }
+}
+
+final class TestViewModel {
+    
 }
