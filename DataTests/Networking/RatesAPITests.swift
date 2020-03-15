@@ -17,4 +17,11 @@ class RatesAPITests: XCTestCase {
         
         XCTAssertEqual(sut.url, url)
     }
+    
+    func testBuildsURLForMoreThanOnePair() {
+        let sut = RatesAPI.pairs(["USDGBP", "USDEUR", "EURGBP"])
+        let url = URL(string: "https://europe-west1-revolut-230009.cloudfunctions.net/revolut-ios?pairs=USDGBP&pairs=USDEUR&pairs=EURGBP")!
+        
+        XCTAssertEqual(sut.url, url)
+    }
 }
