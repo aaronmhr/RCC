@@ -17,7 +17,6 @@
 		18B8C6B6241D40EE0057858C /* RCCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8C6B5241D40EE0057858C /* RCCTests.swift */; };
 		18B8C6C1241D4EB10057858C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 18B8C6C0241D4EB10057858C /* README.md */; };
 		18B8C6D2241D93200057858C /* Converter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B8C6C9241D93200057858C /* Converter.framework */; };
-		18B8C6D9241D93200057858C /* ConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8C6D8241D93200057858C /* ConverterTests.swift */; };
 		18B8C6DB241D93200057858C /* Converter.h in Headers */ = {isa = PBXBuildFile; fileRef = 18B8C6CB241D93200057858C /* Converter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		18B8C6DE241D93200057858C /* Converter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B8C6C9241D93200057858C /* Converter.framework */; };
 		18B8C6DF241D93200057858C /* Converter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18B8C6C9241D93200057858C /* Converter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -141,7 +140,6 @@
 		18B8C6CB241D93200057858C /* Converter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Converter.h; sourceTree = "<group>"; };
 		18B8C6CC241D93200057858C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18B8C6D1241D93200057858C /* ConverterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConverterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		18B8C6D8241D93200057858C /* ConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterTests.swift; sourceTree = "<group>"; };
 		18B8C6DA241D93200057858C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18B8C6EE241D98E10057858C /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		18E48388241E8FD300062135 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -227,7 +225,7 @@
 		187D10DB241E5F310076A9F3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				187D10E4241E65100076A9F3 /* ExhangePair */,
+				187D10E4241E65100076A9F3 /* ExchangePair */,
 				187D10DC241E5F3A0076A9F3 /* Currency */,
 			);
 			path = Models;
@@ -258,12 +256,12 @@
 			path = CurrencyProvider;
 			sourceTree = "<group>";
 		};
-		187D10E4241E65100076A9F3 /* ExhangePair */ = {
+		187D10E4241E65100076A9F3 /* ExchangePair */ = {
 			isa = PBXGroup;
 			children = (
 				187D10E5241E651F0076A9F3 /* ExchangePair.swift */,
 			);
-			path = ExhangePair;
+			path = ExchangePair;
 			sourceTree = "<group>";
 		};
 		187D10E7241E672D0076A9F3 /* ExchangePairProvider */ = {
@@ -339,8 +337,7 @@
 		18B8C6D7241D93200057858C /* ConverterTests */ = {
 			isa = PBXGroup;
 			children = (
-				18B8C6D8241D93200057858C /* ConverterTests.swift */,
-				187D10D9241E51400076A9F3 /* CurrencyTests.swift */,
+				18E483CA241E93A000062135 /* Models */,
 				18B8C6DA241D93200057858C /* Info.plist */,
 			);
 			path = ConverterTests;
@@ -404,6 +401,22 @@
 			children = (
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		18E483CA241E93A000062135 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				18E483CB241E93A500062135 /* Currency */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		18E483CB241E93A500062135 /* Currency */ = {
+			isa = PBXGroup;
+			children = (
+				187D10D9241E51400076A9F3 /* CurrencyTests.swift */,
+			);
+			path = Currency;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -746,7 +759,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				187D10DA241E51400076A9F3 /* CurrencyTests.swift in Sources */,
-				18B8C6D9241D93200057858C /* ConverterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
