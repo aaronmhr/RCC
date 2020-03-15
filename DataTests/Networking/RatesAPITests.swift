@@ -10,7 +10,6 @@ import XCTest
 @testable import Data
 
 class RatesAPITests: XCTestCase {
-    
     func testRatesAPITestBuildTheRightURLForOnePair() {
         let sut = RatesAPI.pairs(["USDGBP"])
         let url = URL(string: "https://europe-west1-revolut-230009.cloudfunctions.net/revolut-ios?pairs=USDGBP")!

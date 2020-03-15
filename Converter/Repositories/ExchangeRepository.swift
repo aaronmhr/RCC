@@ -7,5 +7,13 @@
 //
 
 public protocol ExchangeRepository {
-    func getExchangeRates(for pairs: Pair) -> [ExchangePair]
+    typealias Result = Swift.Result<[ExchangePair], RepositoryError>
+    
+    func getExchangeRates(for pairs: [Pair], completion: @escaping (Result) -> Void)
+}
+
+public enum RepositoryError: Error {
+    case invalidURL
+    case invalidData
+    case connectivity
 }
