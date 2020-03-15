@@ -37,6 +37,38 @@ class RemoteExchangeRatesDataSourceTests: XCTestCase {
         
         XCTAssertEqual(client.requestedURL?.query, "pairs=EURGBP&pairs=EURUSD&pairs=USDEUR")
     }
+    
+    func test_getRates_deliversErrorOnClientError() {
+        let (sut, client) = makeSUT()
+        
+        expect(sut, toCompleteWith: .failure(.connectivity), for: [Pair.euro_dollar], when: {
+            let clientError = NSError(domain: "Test", code: 0)
+            client.complete(with: clientError)
+        })
+    }
+    
+    func test_getRates_deliversErrorOnNon200HTTPResponse() {
+        let (sut, client) = makeSUT()
+        
+        let samples = [199, 201, 300, 400, 500]
+        
+        samples.enumerated().forEach { tuple in
+            let (index, code) = tuple
+            expect(sut, toCompleteWith: .failure(.invalidData), for: [], when: {
+                let json = try! JSONSerialization.data(withJSONObject: ["EURUSD": 1.0])
+                client.complete(withStatusCode: code, data: json, at: index)
+            })
+        }
+    }
+    
+    func test_getRates_deliversErrorOn200HTTPResponseWithInvalidJSON() {
+        let (sut, client) = makeSUT()
+        
+        expect(sut, toCompleteWith: .failure(.invalidData), for: [], when: {
+            let invalidJSON = Data("invalid json".utf8)
+            client.complete(withStatusCode: 200, data: invalidJSON)
+        })
+    }
 }
 
 extension RemoteExchangeRatesDataSourceTests {
@@ -46,7 +78,36 @@ extension RemoteExchangeRatesDataSourceTests {
         return (sut, client)
     }
     
-    private func expect(_ sut: RemoteExchangeRatesDataSource, toCompleteWith expectedResult: RemoteExchangeRatesDataSource.Result, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
+    private func expect(_ sut: RemoteExchangeRatesDataSource,
+                        toCompleteWith expectedResult: RemoteExchangeRatesDataSource.Result,
+                        for pairs: [Pair],
+                        when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
+        let exp = expectation(description: "Wait for getRates completion")
         
+        sut.getRates(for: pairs) { receivedResult in
+            switch (receivedResult, expectedResult) {
+            case let (.success(receivedPairs), .success(expectedPairs)):
+                assertDumpsEqual(receivedPairs, expectedPairs)
+            case let (.failure(receivedError), .failure(expectedError)):
+                XCTAssertEqual(receivedError, expectedError, file: file, line: line)
+            default:
+                XCTFail("Expected result \(expectedResult) got \(receivedResult) instead", file: file, line: line)
+            }
+            exp.fulfill()
+        }
+        action()
+        wait(for: [exp], timeout: 1.0)
+    }
+}
+
+
+func assertDumpsEqual<T>(_ lhs: @autoclosure () -> T, _ rhs: @autoclosure () -> T, file: StaticString = #file, line: UInt = #line) {
+    XCTAssertEqual(String(dumping: lhs()), String(dumping: rhs()), "Expected dumps to be equal.", file: file, line: line)
+}
+
+extension String {
+    init<T>(dumping x: T) {
+        self.init()
+        dump(x, to: &self)
     }
 }
