@@ -33,6 +33,7 @@
 		18E483C0241E8FDD00062135 /* Presentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18E483AA241E8FDD00062135 /* Presentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		18E483CF241E946500062135 /* DefaultCurrencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E483CE241E946500062135 /* DefaultCurrencyRepository.swift */; };
 		18E483D2241E94A300062135 /* CurrencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E483D1241E94A300062135 /* CurrencyRepository.swift */; };
+		18E483DA241E967C00062135 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E483D9241E967C00062135 /* TestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +173,7 @@
 		18E483BB241E8FDD00062135 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18E483CE241E946500062135 /* DefaultCurrencyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCurrencyRepository.swift; sourceTree = "<group>"; };
 		18E483D1241E94A300062135 /* CurrencyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRepository.swift; sourceTree = "<group>"; };
+		18E483D9241E967C00062135 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,6 +327,7 @@
 			children = (
 				18B8C6C0241D4EB10057858C /* README.md */,
 				18B8C69E241D40EC0057858C /* AppDelegate.swift */,
+				18E483D9241E967C00062135 /* TestViewController.swift */,
 				18B8C6A7241D40EE0057858C /* Assets.xcassets */,
 				18B8C6A9241D40EE0057858C /* LaunchScreen.storyboard */,
 				18B8C6AC241D40EE0057858C /* Info.plist */,
@@ -344,9 +347,9 @@
 		18B8C6CA241D93200057858C /* Converter */ = {
 			isa = PBXGroup;
 			children = (
-				18E483D0241E949600062135 /* Repositories */,
 				18B8C6CB241D93200057858C /* Converter.h */,
 				18B8C6CC241D93200057858C /* Info.plist */,
+				18E483D0241E949600062135 /* Repositories */,
 				187D10DD241E5F450076A9F3 /* UseCases */,
 				187D10DB241E5F310076A9F3 /* Models */,
 			);
@@ -771,6 +774,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18B8C69F241D40EC0057858C /* AppDelegate.swift in Sources */,
+				18E483DA241E967C00062135 /* TestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
