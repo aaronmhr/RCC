@@ -11,22 +11,38 @@ import Converter
 @testable import Data
 
 class RemoteExchangePairsTests: XCTestCase {
+
+    func test_init_doesNotRequestDataFromUrl() {
+        let (_, client) = makeSUT()
+        
+        XCTAssertNil(client.requestedURL)
+    }
     
-    func testOne() {
-        let client = URLSessionHTTPClient()
-        let exp = expectation(description: "asd")
-        let sut = RemoteExchangePairs(remoteClient: client)
-        sut.getRates(for: [Testing.poundDollar, Testing.poundEuro, Testing.dollarEuro]) { result in
-            dump(result)
-            exp.fulfill()
-        }
-        wait(for: [exp], timeout: 10)
+    func test_getRates_requestsDataForThePair() {
+        let pair = Pair.euro_pound
+        let (sut, client) = makeSUT()
+        
+        sut.getRates(for: [pair]) { _ in }
+        
+        XCTAssertEqual(client.requestedURL?.query, "pairs=EURGBP")
+    }
+    
+    func test_getRates_requestsDataForAllSentPairs() {
+        let pair1 = Pair.euro_pound
+        let pair2 = Pair.euro_dollar
+        let pair3 = Pair.dollar_euro
+        let (sut, client) = makeSUT()
+        
+        sut.getRates(for: [pair1, pair2, pair3]) { _ in }
+        
+        XCTAssertEqual(client.requestedURL?.query, "pairs=EURGBP&pairs=EURUSD&pairs=USDEUR")
     }
 }
 
-enum Testing {
-    static let pairs = ["GBP", "USD", "EUR"].compactMap { Currency.Builder.build(from: $0) }
-    static let poundDollar = Pair(with: pairs[0], and: pairs[1])
-    static let poundEuro = Pair(with: pairs[0], and: pairs[2])
-    static let dollarEuro = Pair(with: pairs[1], and: pairs[2])
+extension RemoteExchangePairsTests {
+    private func makeSUT() -> (RemoteExchangePairs, HTTPClientSpy) {
+        let client = HTTPClientSpy()
+        let sut = RemoteExchangePairs(remoteClient: client)
+        return (sut, client)
+    }
 }

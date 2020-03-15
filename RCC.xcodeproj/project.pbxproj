@@ -43,6 +43,9 @@
 		18E483EF241EA37400062135 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E483EE241EA37400062135 /* URLSessionHTTPClient.swift */; };
 		18E483F2241ECF8400062135 /* RemoteExchangePairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E483F1241ECF8400062135 /* RemoteExchangePairs.swift */; };
 		18E483F5241ECFF200062135 /* RemoteExchangePairsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E483F4241ECFF200062135 /* RemoteExchangePairsTests.swift */; };
+		18E483FB241EE2B200062135 /* Currency+Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E483FA241EE2B200062135 /* Currency+Pair.swift */; };
+		18E483FD241EE2FE00062135 /* Currency+Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E483FA241EE2B200062135 /* Currency+Pair.swift */; };
+		18E48400241EE34B00062135 /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E483FF241EE34B00062135 /* HTTPClientSpy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -192,6 +195,8 @@
 		18E483EE241EA37400062135 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		18E483F1241ECF8400062135 /* RemoteExchangePairs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteExchangePairs.swift; sourceTree = "<group>"; };
 		18E483F4241ECFF200062135 /* RemoteExchangePairsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteExchangePairsTests.swift; sourceTree = "<group>"; };
+		18E483FA241EE2B200062135 /* Currency+Pair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Currency+Pair.swift"; sourceTree = "<group>"; };
+		18E483FF241EE34B00062135 /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -378,6 +383,7 @@
 		18B8C6D7241D93200057858C /* ConverterTests */ = {
 			isa = PBXGroup;
 			children = (
+				18E483F9241EE29B00062135 /* Extensions */,
 				18E483CA241E93A000062135 /* Models */,
 				18B8C6DA241D93200057858C /* Info.plist */,
 			);
@@ -552,9 +558,26 @@
 		18E483F3241ECFDB00062135 /* RemoteDataSource */ = {
 			isa = PBXGroup;
 			children = (
+				18E483FE241EE33400062135 /* HTTPClientSpy */,
 				18E483F4241ECFF200062135 /* RemoteExchangePairsTests.swift */,
 			);
 			path = RemoteDataSource;
+			sourceTree = "<group>";
+		};
+		18E483F9241EE29B00062135 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				18E483FA241EE2B200062135 /* Currency+Pair.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		18E483FE241EE33400062135 /* HTTPClientSpy */ = {
+			isa = PBXGroup;
+			children = (
+				18E483FF241EE34B00062135 /* HTTPClientSpy.swift */,
+			);
+			path = HTTPClientSpy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -903,6 +926,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18E483FB241EE2B200062135 /* Currency+Pair.swift in Sources */,
 				187D10DA241E51400076A9F3 /* CurrencyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -924,9 +948,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18E483FD241EE2FE00062135 /* Currency+Pair.swift in Sources */,
 				18E483EA241E9D9A00062135 /* RatesAPITests.swift in Sources */,
 				18E48398241E8FD300062135 /* DataTests.swift in Sources */,
 				18E483F5241ECFF200062135 /* RemoteExchangePairsTests.swift in Sources */,
+				18E48400241EE34B00062135 /* HTTPClientSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
