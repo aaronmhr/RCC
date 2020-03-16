@@ -6,7 +6,7 @@
 //  Copyright © 2020 Aaron Huánuco. All rights reserved.
 //
 
-public struct ExchangePair {
+public struct ExchangePair: Equatable {
     public let pair: Pair
     public let rate: Double
     

@@ -6,40 +6,94 @@
 //  Copyright © 2020 Aaron Huánuco. All rights reserved.
 //
 
-import XCTest
 import Converter
+import Quick
+import Nimble
 @testable import Data
 
-final class DefaultExchangeRepositoryTests: XCTestCase {
-    func testGetExchangePairs_onConnectivityErrorFromRemoteDatasource_returnsRemoteRepositoryError() {
+final class DefaultExchangeRepositoryTests: QuickSpec {
+    override func spec() {
+        var sut: DefaultExchangeRepository!
+        var dataSource: TestingUserDataSource!
+        
+        beforeEach {
+            dataSource = TestingUserDataSource()
+            sut = DefaultExchangeRepository(dataSource: dataSource)
+        }
+        
+        describe("requesting exchange rates") {
+            
+            describe("if successful") {
+                
+                it("should recive an ExchangePair list") {
+                    let expectedExchangePair = ExchangePair(pair: Pair.euro_dollar, rate: 1.0)
+                    dataSource.stubResult = .success([expectedExchangePair])
+                    
+                    waitUntil(timeout: 5.0) { done in
+                        sut.getExchangePairs(for: []) { result in
+                            expect(result.value).to(equal([ExchangePair(pair: Pair.euro_dollar, rate: 1.0)]))
+                            done()
+                        }
+                    }
+                }
+            }
+            
+            describe("on failure") {
+                it("should not receive a success value") {
+                    dataSource.stubResult = .failure(.connectivity)
+                    
+                    waitUntil(timeout: 1.0) { done in
+                        sut.getExchangePairs(for: []) { result in
+                            expect(result.value).to(beNil())
+                            done()
+                        }
+                    }
+                }
+                
+                it("should receive a repository error from a connectivity issue") {
+                    dataSource.stubResult = .failure(.connectivity)
+                    
+                    waitUntil(timeout: 1.0) { done in
+                        sut.getExchangePairs(for: []) { result in
+                            expect(result.error).to(equal(.remote))
+                            done()
+                        }
+                    }
+                }
 
-    }
-}
-
-private extension DefaultExchangeRepositoryTests {
-    func makeSUT() -> (DefaultExchangeRepository, ExchangeRatesDataSourceSpy) {
-        let dataSource = ExchangeRatesDataSourceSpy()
-        let sut = DefaultExchangeRepository(dataSource: dataSource)
-        return (sut, dataSource)
-    }
-}
-    
-
-private class ExchangeRatesDataSourceSpy {
-    typealias Result = ExchangeRatesDataSource.Result
-    private var message: (pairs: [Pair], completion: (Result) -> Void)?
-    
-    func complete(with error: DatasourceError) {
-        message?.completion(.failure(error))
-    }
-    
-    func complete(with pair: [ExchangePair]) {
-        message?.completion(.success(pair))
-    }
-}
-
-extension ExchangeRatesDataSourceSpy: ExchangeRatesDataSource {
-    func getRates(for pairs: [Pair], completion: @escaping (Result) -> Void) {
-        message = (pairs, completion)
+                it("should receive a repository error from a invalid data issue") {
+                    dataSource.stubResult = .failure(.invalidData)
+                    
+                    waitUntil(timeout: 1.0) { done in
+                        sut.getExchangePairs(for: []) { result in
+                            expect(result.error).to(equal(.remote))
+                            done()
+                        }
+                    }
+                }
+                
+                it("should receive a repository error from a invalid url issue") {
+                    dataSource.stubResult = .failure(.invalidURL)
+                    
+                    waitUntil(timeout: 1.0) { done in
+                        sut.getExchangePairs(for: []) { result in
+                            expect(result.error).to(equal(.remote))
+                            done()
+                        }
+                    }
+                }
+                
+                it("should receive a repository error from a invalid other issue") {
+                    dataSource.stubResult = .failure(.other)
+                    
+                    waitUntil(timeout: 1.0) { done in
+                        sut.getExchangePairs(for: []) { result in
+                            expect(result.error).to(equal(.remote))
+                            done()
+                        }
+                    }
+                }
+            }
+        }
     }
 }

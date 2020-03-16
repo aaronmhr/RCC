@@ -6,7 +6,7 @@
 //  Copyright © 2020 Aaron Huánuco. All rights reserved.
 //
 
-public struct Pair {
+public struct Pair: Equatable {
     public let first: Currency
     public let second: Currency
     

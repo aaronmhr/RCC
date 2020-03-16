@@ -22,3 +22,9 @@ extension Pair {
     static let pound_euro = Pair(with: Currency.pound, and: Currency.euro)
     static let pound_dollar = Pair(with: Currency.pound, and: Currency.dollar)
 }
+
+extension ExchangePair {
+    static let euro_dolarOne = ExchangePair(pair: Pair.euro_dollar, rate: 1.0)
+    static let euro_dolarTwo = ExchangePair(pair: Pair.euro_dollar, rate: 2.0)
+    static let euro_dolarThree = ExchangePair(pair: Pair.euro_dollar, rate: 3.0)
+}
