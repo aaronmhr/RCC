@@ -59,12 +59,12 @@ public enum DatasourceError: Error {
 typealias Rates = [String: Double]
 
 final class RatesMapper {
-    static func map(_ data: Data, from response: HTTPURLResponse) throws -> Rates {
+    static func map(_ data: Data, from response: HTTPURLResponse) throws -> [String: Double] {
         guard response.isOK,
-            let root = try? JSONDecoder().decode(Rates.self, from: data) else {
+            let exchangeRate = try? JSONDecoder().decode([String: Double].self, from: data) else {
                 throw DatasourceError.invalidData
         }
-        return root
+        return exchangeRate
     }
 }
 

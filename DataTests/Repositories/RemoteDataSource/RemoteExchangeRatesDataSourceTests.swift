@@ -69,6 +69,17 @@ class RemoteExchangeRatesDataSourceTests: XCTestCase {
             client.complete(withStatusCode: 200, data: invalidJSON)
         })
     }
+    
+    func test_getRates_deliversExchangePairsOnValid200HTTPResponse() {
+        let (sut, client) = makeSUT()
+        let pair = Pair.dollar_euro
+        let exchange = ExchangePair(pair: pair, rate: 1.2)
+        
+        expect(sut, toCompleteWith: .success([exchange]), for: [pair], when: {
+            let json = try! JSONSerialization.data(withJSONObject: ["USDEUR": 1.2])
+            client.complete(withStatusCode: 200, data: json)
+        })
+    }
 }
 
 extension RemoteExchangeRatesDataSourceTests {
@@ -87,7 +98,7 @@ extension RemoteExchangeRatesDataSourceTests {
         sut.getRates(for: pairs) { receivedResult in
             switch (receivedResult, expectedResult) {
             case let (.success(receivedPairs), .success(expectedPairs)):
-                assertDumpsEqual(receivedPairs, expectedPairs)
+                assertDumpsEqual(receivedPairs, expectedPairs, file: file, line: line)
             case let (.failure(receivedError), .failure(expectedError)):
                 XCTAssertEqual(receivedError, expectedError, file: file, line: line)
             default:
