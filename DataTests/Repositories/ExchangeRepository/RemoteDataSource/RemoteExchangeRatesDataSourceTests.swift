@@ -56,7 +56,7 @@ class RemoteExchangeRatesDataSourceTests: XCTestCase {
             let (index, code) = tuple
             expect(sut, toCompleteWith: .failure(.invalidData), for: [], when: {
                 let json = try! JSONSerialization.data(withJSONObject: ["EURUSD": 1.0])
-                client.complete(withStatusCode: code, data: json, at: index)
+                client.complete(withStatusCode: code, data: json)
             })
         }
     }

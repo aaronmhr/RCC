@@ -8,25 +8,20 @@
 
 import Converter
 
-//final class DefaultExchangeRepository: ExchangeRepository {
-//    private let remoteClient: HTTPClient
-//
-//    public init(remoteClient: HTTPClient) {
-//        self.remoteClient = remoteClient
-//    }
-//
-//    func getExchangeRates(for pairs: [Pair], completion: @escaping (ExchangeRepository.Result) -> Void) {
-//        guard let url = RatesAPI.pairs(["GBPEUR"]).url else {
-//            completion(.failure(.invalidURL))
-//            return
-//        }
-//        remoteClient.get(from: url) { result in
-//            switch result {
-//            case .success(let data, let response):
-//                break
-//            case .failure(let error)
-//                break
-//            }
-//        }
-//    }
-//}
+final class DefaultExchangeRepository: ExchangeRepository {
+    private let dataSource: ExchangeRatesDataSource
+
+    public init(dataSource: ExchangeRatesDataSource) {
+        self.dataSource = dataSource
+    }
+
+    func getExchangePairs(for pairs: [Pair], completion: @escaping (ExchangeRepository.Result) -> Void) {
+        dataSource.getRates(for: pairs) { result in
+            let newResult = result
+                .mapError { _ -> RepositoryError in
+                    return .remote
+            }
+            completion(newResult)
+        }
+    }
+}

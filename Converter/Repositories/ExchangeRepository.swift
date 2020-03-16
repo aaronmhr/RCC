@@ -9,11 +9,9 @@
 public protocol ExchangeRepository {
     typealias Result = Swift.Result<[ExchangePair], RepositoryError>
     
-    func getExchangeRates(for pairs: [Pair], completion: @escaping (Result) -> Void)
+    func getExchangePairs(for pairs: [Pair], completion: @escaping (Result) -> Void)
 }
 
 public enum RepositoryError: Error {
-    case invalidURL
-    case invalidData
-    case connectivity
+    case remote
 }
