@@ -12,6 +12,7 @@ target 'RCC' do
 
   target 'RCCTests' do
     inherit! :search_paths
+    testing_pods
   end
 end
 

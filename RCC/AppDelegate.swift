@@ -13,9 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let viewController = TestViewController()
-        let navigationController = UINavigationController(rootViewController: viewController)
-        setRootViewController(navigationController)
+        let viewController = RatesRouter.assembleModule()
+        setRootViewController(viewController)
         return true
     }
 }

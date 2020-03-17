@@ -7,9 +7,9 @@
 //
 
 public protocol ExchangePairProvider {
-    func getExchangePairs() -> [ExchangePair]
+    func getConfiguredPairs() -> [Pair]
 }
 
 public protocol ExchangePairSaver {
-    func save(_ pair: ExchangePair)
+    func save(_ pair: Pair)
 }
