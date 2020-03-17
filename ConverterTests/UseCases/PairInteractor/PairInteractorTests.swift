@@ -22,7 +22,7 @@ final class PairInteractorTests: QuickSpec {
         
         describe("asking for configured pairs") {
             
-            context("no previous pair has been configured") {
+            context("if no previous pair has been configured") {
                 it("should return no `Pairs`") {
                     expect(sut.getConfiguredPairs()).to(beEmpty())
                 }

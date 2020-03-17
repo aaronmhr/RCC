@@ -28,10 +28,6 @@ extension PairInteractor: PairSaver {
     }
 }
 
-
-
-
-
 public protocol PairRepository {
     func getPairs() -> [Pair]
     func savePair(_ pair: Pair)
