@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		182E484724210C7F00084D5F /* StoryboardInstantiator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E484624210C7F00084D5F /* StoryboardInstantiator.swift */; };
 		182E484B242133BE00084D5F /* PairSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E484A242133BE00084D5F /* PairSaver.swift */; };
+		182E484E2421343D00084D5F /* PairInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E484D2421343D00084D5F /* PairInteractor.swift */; };
+		182E48512421358F00084D5F /* PairInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E48502421358F00084D5F /* PairInteractorTests.swift */; };
 		187792FD241FAAA500CC4862 /* DefaultExchangeRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187792FC241FAAA500CC4862 /* DefaultExchangeRepositoryTests.swift */; };
 		18779300241FB4C500CC4862 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187792FF241FB4C500CC4862 /* Result.swift */; };
 		187793022420424400CC4862 /* TestingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187793012420424400CC4862 /* TestingDataSource.swift */; };
@@ -176,6 +178,8 @@
 		17EF6A03C368D8009605E559 /* Pods-Data.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Data.release.xcconfig"; path = "Target Support Files/Pods-Data/Pods-Data.release.xcconfig"; sourceTree = "<group>"; };
 		182E484624210C7F00084D5F /* StoryboardInstantiator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiator.swift; sourceTree = "<group>"; };
 		182E484A242133BE00084D5F /* PairSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairSaver.swift; sourceTree = "<group>"; };
+		182E484D2421343D00084D5F /* PairInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairInteractor.swift; sourceTree = "<group>"; };
+		182E48502421358F00084D5F /* PairInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairInteractorTests.swift; sourceTree = "<group>"; };
 		187792FC241FAAA500CC4862 /* DefaultExchangeRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultExchangeRepositoryTests.swift; sourceTree = "<group>"; };
 		187792FF241FB4C500CC4862 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		187793012420424400CC4862 /* TestingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingDataSource.swift; sourceTree = "<group>"; };
@@ -338,6 +342,7 @@
 		182E48482421335200084D5F /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				182E484F2421344E00084D5F /* PairInteractor */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -348,6 +353,24 @@
 				182E484A242133BE00084D5F /* PairSaver.swift */,
 			);
 			path = PairSaver;
+			sourceTree = "<group>";
+		};
+		182E484C2421340E00084D5F /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				182E4849242133AE00084D5F /* PairSaver */,
+				187D10E7241E672D0076A9F3 /* PairProvider */,
+				187D10E1241E5F7C0076A9F3 /* CurrencyProvider */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		182E484F2421344E00084D5F /* PairInteractor */ = {
+			isa = PBXGroup;
+			children = (
+				182E48502421358F00084D5F /* PairInteractorTests.swift */,
+			);
+			path = PairInteractor;
 			sourceTree = "<group>";
 		};
 		187792F9241FA7CB00CC4862 /* ExchangeRepository */ = {
@@ -450,9 +473,8 @@
 		187D10DD241E5F450076A9F3 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				182E4849242133AE00084D5F /* PairSaver */,
-				187D10E7241E672D0076A9F3 /* PairProvider */,
-				187D10E1241E5F7C0076A9F3 /* CurrencyProvider */,
+				182E484C2421340E00084D5F /* Interfaces */,
+				182E484D2421343D00084D5F /* PairInteractor.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -849,6 +871,7 @@
 				18B8C6AD241D40EE0057858C /* Sources */,
 				18B8C6AE241D40EE0057858C /* Frameworks */,
 				18B8C6AF241D40EE0057858C /* Resources */,
+				048DE0FF496E432352D7635C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -887,6 +910,7 @@
 				18B8C6CD241D93200057858C /* Sources */,
 				18B8C6CE241D93200057858C /* Frameworks */,
 				18B8C6CF241D93200057858C /* Resources */,
+				42C5F20BBA12D2FACBB88EB2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -968,6 +992,7 @@
 				18E483AE241E8FDD00062135 /* Sources */,
 				18E483AF241E8FDD00062135 /* Frameworks */,
 				18E483B0241E8FDD00062135 /* Resources */,
+				E36D467ED4B9AFEF85635EE3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1110,6 +1135,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		048DE0FF496E432352D7635C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RCCTests/Pods-RCCTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RCCTests/Pods-RCCTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RCCTests/Pods-RCCTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		0744B0E72FC76C45D89DF5E1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1169,6 +1211,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DataTests/Pods-DataTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		42C5F20BBA12D2FACBB88EB2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ConverterTests/Pods-ConverterTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ConverterTests/Pods-ConverterTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ConverterTests/Pods-ConverterTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5444D0E3BE4F1EC039AA9694 /* [CP] Check Pods Manifest.lock */ = {
@@ -1342,6 +1401,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				182E48512421358F00084D5F /* PairInteractorTests.swift in Sources */,
 				18B8C6B6241D40EE0057858C /* RCCTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1358,6 +1418,7 @@
 				187D10E9241E67670076A9F3 /* PairProvider.swift in Sources */,
 				18E483E2241E994200062135 /* Pair.swift in Sources */,
 				18779300241FB4C500CC4862 /* Result.swift in Sources */,
+				182E484E2421343D00084D5F /* PairInteractor.swift in Sources */,
 				18E483D2241E94A300062135 /* CurrencyRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
