@@ -6,23 +6,24 @@
 //  Copyright © 2020 Aaron Huánuco. All rights reserved.
 //
 
+public typealias PairInteractorProtocol = PairProvider & PairSaver
 
-final class PairInteractor {
+public final class PairInteractor {
     private let repository: PairRepository
     
-    init(repository: PairRepository) {
+    public init(repository: PairRepository) {
         self.repository = repository
     }
 }
 
 extension PairInteractor: PairProvider {
-    func getConfiguredPairs() -> [Pair] {
+    public func getConfiguredPairs() -> [Pair] {
         return repository.getPairs()
     }
 }
 
 extension PairInteractor: PairSaver {
-    func save(_ pair: Pair) {
+    public func save(_ pair: Pair) {
         guard !getConfiguredPairs().contains(pair) else { return }
         repository.savePair(pair)
     }

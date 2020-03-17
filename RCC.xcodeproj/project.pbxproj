@@ -34,6 +34,8 @@
 		18B8C6DF241D93200057858C /* Converter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18B8C6C9241D93200057858C /* Converter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		18B8C6EF241D98E10057858C /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8C6EE241D98E10057858C /* Currency.swift */; };
 		18DF6F8824213D24007624E0 /* PairInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E48502421358F00084D5F /* PairInteractorTests.swift */; };
+		18DF6F8B242143DD007624E0 /* RatesVieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF6F8A242143DD007624E0 /* RatesVieModel.swift */; };
+		18DF6F8D24214440007624E0 /* RatesVieModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF6F8C24214440007624E0 /* RatesVieModelTests.swift */; };
 		18E48391241E8FD300062135 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E48388241E8FD300062135 /* Data.framework */; };
 		18E48398241E8FD300062135 /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48397241E8FD300062135 /* DataTests.swift */; };
 		18E4839A241E8FD300062135 /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = 18E4838A241E8FD300062135 /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -208,6 +210,8 @@
 		18B8C6D1241D93200057858C /* ConverterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConverterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B8C6DA241D93200057858C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18B8C6EE241D98E10057858C /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		18DF6F8A242143DD007624E0 /* RatesVieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesVieModel.swift; sourceTree = "<group>"; };
+		18DF6F8C24214440007624E0 /* RatesVieModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesVieModelTests.swift; sourceTree = "<group>"; };
 		18E48388241E8FD300062135 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E4838A241E8FD300062135 /* Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
 		18E4838B241E8FD300062135 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -583,6 +587,14 @@
 			path = ConverterTests;
 			sourceTree = "<group>";
 		};
+		18DF6F89242143C4007624E0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				18DF6F8A242143DD007624E0 /* RatesVieModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		18E48389241E8FD300062135 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -610,6 +622,7 @@
 		18E483AB241E8FDD00062135 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				18DF6F89242143C4007624E0 /* ViewModels */,
 				18E483AC241E8FDD00062135 /* Presentation.h */,
 				18E483AD241E8FDD00062135 /* Info.plist */,
 			);
@@ -621,6 +634,7 @@
 			children = (
 				18E483B9241E8FDD00062135 /* PresentationTests.swift */,
 				18E483BB241E8FDD00062135 /* Info.plist */,
+				18DF6F8C24214440007624E0 /* RatesVieModelTests.swift */,
 			);
 			path = PresentationTests;
 			sourceTree = "<group>";
@@ -1039,6 +1053,7 @@
 					};
 					18E483A9241E8FDD00062135 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 					18E483B1241E8FDD00062135 = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -1463,6 +1478,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18DF6F8B242143DD007624E0 /* RatesVieModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1470,6 +1486,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18DF6F8D24214440007624E0 /* RatesVieModelTests.swift in Sources */,
 				18E483BA241E8FDD00062135 /* PresentationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1964,6 +1981,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 46D5A3C5EB94EC54AB1D8541 /* Pods-Presentation.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1982,6 +2000,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = aaronmhr.Presentation;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1993,6 +2012,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B0463EDEEF8A5E97BC0A5043 /* Pods-Presentation.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
