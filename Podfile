@@ -30,6 +30,7 @@ target 'Presentation' do
 
   target 'PresentationTests' do
     inherit! :search_paths
+    testing_pods
   end
 end
 
@@ -38,5 +39,6 @@ target 'Converter' do
 
   target 'ConverterTests' do
     inherit! :search_paths
+    testing_pods
   end
 end
