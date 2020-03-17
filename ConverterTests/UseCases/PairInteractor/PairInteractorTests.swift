@@ -12,10 +12,11 @@ import Nimble
 
 final class PairInteractorTests: QuickSpec {
     override func spec() {
+        var repository: PairRepository!
         var sut: PairInteractor!
         
         beforeEach {
-            let repository = MockingPairRepository()
+            repository = MockingPairRepository()
             sut = PairInteractor(repository: repository)
         }
         
@@ -24,6 +25,14 @@ final class PairInteractorTests: QuickSpec {
             context("no previous pair has been configured") {
                 it("should return no `Pairs`") {
                     expect(sut.getConfiguredPairs()).to(beEmpty())
+                }
+            }
+            
+            describe("a `Pair` has been saved") {
+                it("should return that `Pair`") {
+                    let somePair = Pair.euro_pound
+                    repository.savePair(somePair)
+                    expect(sut.getConfiguredPairs()).to(equal([somePair]))
                 }
             }
         }

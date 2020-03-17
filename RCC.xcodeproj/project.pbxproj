@@ -10,7 +10,6 @@
 		182E484724210C7F00084D5F /* StoryboardInstantiator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E484624210C7F00084D5F /* StoryboardInstantiator.swift */; };
 		182E484B242133BE00084D5F /* PairSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E484A242133BE00084D5F /* PairSaver.swift */; };
 		182E484E2421343D00084D5F /* PairInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E484D2421343D00084D5F /* PairInteractor.swift */; };
-		182E48512421358F00084D5F /* PairInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E48502421358F00084D5F /* PairInteractorTests.swift */; };
 		187792FD241FAAA500CC4862 /* DefaultExchangeRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187792FC241FAAA500CC4862 /* DefaultExchangeRepositoryTests.swift */; };
 		18779300241FB4C500CC4862 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187792FF241FB4C500CC4862 /* Result.swift */; };
 		187793022420424400CC4862 /* TestingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187793012420424400CC4862 /* TestingDataSource.swift */; };
@@ -34,6 +33,7 @@
 		18B8C6DE241D93200057858C /* Converter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B8C6C9241D93200057858C /* Converter.framework */; };
 		18B8C6DF241D93200057858C /* Converter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18B8C6C9241D93200057858C /* Converter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		18B8C6EF241D98E10057858C /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8C6EE241D98E10057858C /* Currency.swift */; };
+		18DF6F8824213D24007624E0 /* PairInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E48502421358F00084D5F /* PairInteractorTests.swift */; };
 		18E48391241E8FD300062135 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E48388241E8FD300062135 /* Data.framework */; };
 		18E48398241E8FD300062135 /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48397241E8FD300062135 /* DataTests.swift */; };
 		18E4839A241E8FD300062135 /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = 18E4838A241E8FD300062135 /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1401,7 +1401,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				182E48512421358F00084D5F /* PairInteractorTests.swift in Sources */,
 				18B8C6B6241D40EE0057858C /* RCCTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1427,6 +1426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18DF6F8824213D24007624E0 /* PairInteractorTests.swift in Sources */,
 				18E483FB241EE2B200062135 /* Currency+Pair.swift in Sources */,
 				187D10DA241E51400076A9F3 /* CurrencyTests.swift in Sources */,
 			);
