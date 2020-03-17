@@ -36,6 +36,14 @@
 		18DF6F8824213D24007624E0 /* PairInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E48502421358F00084D5F /* PairInteractorTests.swift */; };
 		18DF6F8B242143DD007624E0 /* RatesVieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF6F8A242143DD007624E0 /* RatesVieModel.swift */; };
 		18DF6F8D24214440007624E0 /* RatesVieModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF6F8C24214440007624E0 /* RatesVieModelTests.swift */; };
+		18DF6F9124216856007624E0 /* ExchangeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF6F9024216856007624E0 /* ExchangeInteractor.swift */; };
+		18DF6F9424216D32007624E0 /* TimerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF6F9324216D32007624E0 /* TimerProtocol.swift */; };
+		18DF6F9724216D61007624E0 /* DefaultTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF6F9624216D61007624E0 /* DefaultTimer.swift */; };
+		18DF6F9A24216DB1007624E0 /* ExchangePairProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF6F9924216DB1007624E0 /* ExchangePairProvider.swift */; };
+		18DF6F9D24216E4C007624E0 /* ExchangeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF6F9C24216E4C007624E0 /* ExchangeInteractorTests.swift */; };
+		18DF6FA024217A96007624E0 /* TimerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF6F9F24217A96007624E0 /* TimerMock.swift */; };
+		18DF6FA224217ACA007624E0 /* ExchangeRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF6FA124217ACA007624E0 /* ExchangeRepositoryMock.swift */; };
+		18DF6FA524217B42007624E0 /* DefaultTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF6FA424217B42007624E0 /* DefaultTimerTests.swift */; };
 		18E48391241E8FD300062135 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E48388241E8FD300062135 /* Data.framework */; };
 		18E48398241E8FD300062135 /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E48397241E8FD300062135 /* DataTests.swift */; };
 		18E4839A241E8FD300062135 /* Data.h in Headers */ = {isa = PBXBuildFile; fileRef = 18E4838A241E8FD300062135 /* Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -212,6 +220,14 @@
 		18B8C6EE241D98E10057858C /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		18DF6F8A242143DD007624E0 /* RatesVieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesVieModel.swift; sourceTree = "<group>"; };
 		18DF6F8C24214440007624E0 /* RatesVieModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesVieModelTests.swift; sourceTree = "<group>"; };
+		18DF6F9024216856007624E0 /* ExchangeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeInteractor.swift; sourceTree = "<group>"; };
+		18DF6F9324216D32007624E0 /* TimerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerProtocol.swift; sourceTree = "<group>"; };
+		18DF6F9624216D61007624E0 /* DefaultTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTimer.swift; sourceTree = "<group>"; };
+		18DF6F9924216DB1007624E0 /* ExchangePairProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangePairProvider.swift; sourceTree = "<group>"; };
+		18DF6F9C24216E4C007624E0 /* ExchangeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeInteractorTests.swift; sourceTree = "<group>"; };
+		18DF6F9F24217A96007624E0 /* TimerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerMock.swift; sourceTree = "<group>"; };
+		18DF6FA124217ACA007624E0 /* ExchangeRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRepositoryMock.swift; sourceTree = "<group>"; };
+		18DF6FA424217B42007624E0 /* DefaultTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTimerTests.swift; sourceTree = "<group>"; };
 		18E48388241E8FD300062135 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E4838A241E8FD300062135 /* Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
 		18E4838B241E8FD300062135 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -346,6 +362,8 @@
 		182E48482421335200084D5F /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				18DF6FA324217AF3007624E0 /* Timer */,
+				18DF6F9B24216E36007624E0 /* ExchangeInteractor */,
 				182E484F2421344E00084D5F /* PairInteractor */,
 			);
 			path = UseCases;
@@ -362,6 +380,8 @@
 		182E484C2421340E00084D5F /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
+				18DF6F9824216D9C007624E0 /* ExchangePairProvider */,
+				18DF6F9524216D44007624E0 /* TimerProtocol */,
 				182E4849242133AE00084D5F /* PairSaver */,
 				187D10E7241E672D0076A9F3 /* PairProvider */,
 				187D10E1241E5F7C0076A9F3 /* CurrencyProvider */,
@@ -477,8 +497,10 @@
 		187D10DD241E5F450076A9F3 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				18DF6F9224216D26007624E0 /* Timer */,
+				18DF6F8F24216838007624E0 /* ExchangeInteractor */,
 				182E484C2421340E00084D5F /* Interfaces */,
-				182E484D2421343D00084D5F /* PairInteractor.swift */,
+				18DF6F8E24216829007624E0 /* PairInteractor */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -593,6 +615,72 @@
 				18DF6F8A242143DD007624E0 /* RatesVieModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		18DF6F8E24216829007624E0 /* PairInteractor */ = {
+			isa = PBXGroup;
+			children = (
+				182E484D2421343D00084D5F /* PairInteractor.swift */,
+			);
+			path = PairInteractor;
+			sourceTree = "<group>";
+		};
+		18DF6F8F24216838007624E0 /* ExchangeInteractor */ = {
+			isa = PBXGroup;
+			children = (
+				18DF6F9024216856007624E0 /* ExchangeInteractor.swift */,
+			);
+			path = ExchangeInteractor;
+			sourceTree = "<group>";
+		};
+		18DF6F9224216D26007624E0 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				18DF6F9624216D61007624E0 /* DefaultTimer.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		18DF6F9524216D44007624E0 /* TimerProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				18DF6F9324216D32007624E0 /* TimerProtocol.swift */,
+			);
+			path = TimerProtocol;
+			sourceTree = "<group>";
+		};
+		18DF6F9824216D9C007624E0 /* ExchangePairProvider */ = {
+			isa = PBXGroup;
+			children = (
+				18DF6F9924216DB1007624E0 /* ExchangePairProvider.swift */,
+			);
+			path = ExchangePairProvider;
+			sourceTree = "<group>";
+		};
+		18DF6F9B24216E36007624E0 /* ExchangeInteractor */ = {
+			isa = PBXGroup;
+			children = (
+				18DF6F9E24217A84007624E0 /* Mocks */,
+				18DF6F9C24216E4C007624E0 /* ExchangeInteractorTests.swift */,
+			);
+			path = ExchangeInteractor;
+			sourceTree = "<group>";
+		};
+		18DF6F9E24217A84007624E0 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				18DF6F9F24217A96007624E0 /* TimerMock.swift */,
+				18DF6FA124217ACA007624E0 /* ExchangeRepositoryMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		18DF6FA324217AF3007624E0 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				18DF6FA424217B42007624E0 /* DefaultTimerTests.swift */,
+			);
+			path = Timer;
 			sourceTree = "<group>";
 		};
 		18E48389241E8FD300062135 /* Data */ = {
@@ -1429,11 +1517,15 @@
 				187D10E6241E651F0076A9F3 /* ExchangePair.swift in Sources */,
 				18B8C6EF241D98E10057858C /* Currency.swift in Sources */,
 				187D10E3241E5F7C0076A9F3 /* CurrencyProvider.swift in Sources */,
+				18DF6F9424216D32007624E0 /* TimerProtocol.swift in Sources */,
 				187D10E9241E67670076A9F3 /* PairProvider.swift in Sources */,
 				18E483E2241E994200062135 /* Pair.swift in Sources */,
+				18DF6F9124216856007624E0 /* ExchangeInteractor.swift in Sources */,
 				18779300241FB4C500CC4862 /* Result.swift in Sources */,
 				182E484E2421343D00084D5F /* PairInteractor.swift in Sources */,
+				18DF6F9A24216DB1007624E0 /* ExchangePairProvider.swift in Sources */,
 				18E483D2241E94A300062135 /* CurrencyRepository.swift in Sources */,
+				18DF6F9724216D61007624E0 /* DefaultTimer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1442,7 +1534,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				18DF6F8824213D24007624E0 /* PairInteractorTests.swift in Sources */,
+				18DF6F9D24216E4C007624E0 /* ExchangeInteractorTests.swift in Sources */,
+				18DF6FA024217A96007624E0 /* TimerMock.swift in Sources */,
 				18E483FB241EE2B200062135 /* Currency+Pair.swift in Sources */,
+				18DF6FA224217ACA007624E0 /* ExchangeRepositoryMock.swift in Sources */,
+				18DF6FA524217B42007624E0 /* DefaultTimerTests.swift in Sources */,
 				187D10DA241E51400076A9F3 /* CurrencyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
