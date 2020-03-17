@@ -8,5 +8,36 @@
 
 
 final class PairInteractor {
+    private let repository: PairRepository
     
+    init(repository: PairRepository) {
+        self.repository = repository
+    }
+}
+
+extension PairInteractor: PairProvider {
+    func getConfiguredPairs() -> [Pair] {
+        return repository.getPairs()
+    }
+}
+
+
+
+
+
+public protocol PairRepository {
+    func getPairs() -> [Pair]
+    func savePair(_ pair: Pair)
+}
+
+public class MockingPairRepository: PairRepository {
+    private var pairsStack: [Pair] = []
+    
+    public func getPairs() -> [Pair] {
+        return pairsStack
+    }
+    
+    public func savePair(_ pair: Pair) {
+        pairsStack.append(pair)
+    }
 }

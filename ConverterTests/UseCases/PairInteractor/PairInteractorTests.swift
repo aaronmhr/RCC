@@ -15,7 +15,18 @@ final class PairInteractorTests: QuickSpec {
         var sut: PairInteractor!
         
         beforeEach {
-            sut = PairInteractor()
+            let repository = MockingPairRepository()
+            sut = PairInteractor(repository: repository)
+        }
+        
+        describe("asking for configured pairs") {
+            
+            context("no previous pair has been configured") {
+                it("should return no `Pairs`") {
+                    expect(sut.getConfiguredPairs()).to(beEmpty())
+                }
+            }
         }
     }
 }
+
