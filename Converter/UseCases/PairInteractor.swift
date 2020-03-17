@@ -21,6 +21,12 @@ extension PairInteractor: PairProvider {
     }
 }
 
+extension PairInteractor: PairSaver {
+    func save(_ pair: Pair) {
+        repository.savePair(pair)
+    }
+}
+
 
 
 

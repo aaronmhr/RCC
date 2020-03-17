@@ -31,8 +31,18 @@ final class PairInteractorTests: QuickSpec {
             describe("a `Pair` has been saved") {
                 it("should return that `Pair`") {
                     let somePair = Pair.euro_pound
-                    repository.savePair(somePair)
+                    sut.save(somePair)
+                    
                     expect(sut.getConfiguredPairs()).to(equal([somePair]))
+                }
+            }
+            
+            describe("saving multiple pairs") {
+                it("should return as many pairs as have been saved") {
+                    let pairs = [ Pair.euro_pound, Pair.pound_dollar, Pair.dollar_euro]
+                    pairs.forEach(sut.save(_:))
+                    
+                    expect(sut.getConfiguredPairs()).to(equal(pairs))
                 }
             }
         }
