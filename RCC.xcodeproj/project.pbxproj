@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		182E484724210C7F00084D5F /* StoryboardInstantiator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E484624210C7F00084D5F /* StoryboardInstantiator.swift */; };
+		182E484B242133BE00084D5F /* PairSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E484A242133BE00084D5F /* PairSaver.swift */; };
 		187792FD241FAAA500CC4862 /* DefaultExchangeRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187792FC241FAAA500CC4862 /* DefaultExchangeRepositoryTests.swift */; };
 		18779300241FB4C500CC4862 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187792FF241FB4C500CC4862 /* Result.swift */; };
 		187793022420424400CC4862 /* TestingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187793012420424400CC4862 /* TestingDataSource.swift */; };
@@ -20,7 +21,7 @@
 		187D10DA241E51400076A9F3 /* CurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D10D9241E51400076A9F3 /* CurrencyTests.swift */; };
 		187D10E3241E5F7C0076A9F3 /* CurrencyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D10E2241E5F7C0076A9F3 /* CurrencyProvider.swift */; };
 		187D10E6241E651F0076A9F3 /* ExchangePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D10E5241E651F0076A9F3 /* ExchangePair.swift */; };
-		187D10E9241E67670076A9F3 /* ExchangePairProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D10E8241E67670076A9F3 /* ExchangePairProvider.swift */; };
+		187D10E9241E67670076A9F3 /* PairProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D10E8241E67670076A9F3 /* PairProvider.swift */; };
 		18B8C69F241D40EC0057858C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8C69E241D40EC0057858C /* AppDelegate.swift */; };
 		18B8C6A8241D40EE0057858C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B8C6A7241D40EE0057858C /* Assets.xcassets */; };
 		18B8C6AB241D40EE0057858C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B8C6A9241D40EE0057858C /* LaunchScreen.storyboard */; };
@@ -174,6 +175,7 @@
 		05FA214BCB4E536ACB854A12 /* Pods-DataTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataTests.debug.xcconfig"; path = "Target Support Files/Pods-DataTests/Pods-DataTests.debug.xcconfig"; sourceTree = "<group>"; };
 		17EF6A03C368D8009605E559 /* Pods-Data.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Data.release.xcconfig"; path = "Target Support Files/Pods-Data/Pods-Data.release.xcconfig"; sourceTree = "<group>"; };
 		182E484624210C7F00084D5F /* StoryboardInstantiator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiator.swift; sourceTree = "<group>"; };
+		182E484A242133BE00084D5F /* PairSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairSaver.swift; sourceTree = "<group>"; };
 		187792FC241FAAA500CC4862 /* DefaultExchangeRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultExchangeRepositoryTests.swift; sourceTree = "<group>"; };
 		187792FF241FB4C500CC4862 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		187793012420424400CC4862 /* TestingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingDataSource.swift; sourceTree = "<group>"; };
@@ -186,7 +188,7 @@
 		187D10D9241E51400076A9F3 /* CurrencyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTests.swift; sourceTree = "<group>"; };
 		187D10E2241E5F7C0076A9F3 /* CurrencyProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyProvider.swift; sourceTree = "<group>"; };
 		187D10E5241E651F0076A9F3 /* ExchangePair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangePair.swift; sourceTree = "<group>"; };
-		187D10E8241E67670076A9F3 /* ExchangePairProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangePairProvider.swift; sourceTree = "<group>"; };
+		187D10E8241E67670076A9F3 /* PairProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairProvider.swift; sourceTree = "<group>"; };
 		18B8C69B241D40EC0057858C /* RCC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RCC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B8C69E241D40EC0057858C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18B8C6A7241D40EE0057858C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -333,6 +335,21 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		182E48482421335200084D5F /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		182E4849242133AE00084D5F /* PairSaver */ = {
+			isa = PBXGroup;
+			children = (
+				182E484A242133BE00084D5F /* PairSaver.swift */,
+			);
+			path = PairSaver;
+			sourceTree = "<group>";
+		};
 		187792F9241FA7CB00CC4862 /* ExchangeRepository */ = {
 			isa = PBXGroup;
 			children = (
@@ -433,7 +450,8 @@
 		187D10DD241E5F450076A9F3 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				187D10E7241E672D0076A9F3 /* ExchangePairProvider */,
+				182E4849242133AE00084D5F /* PairSaver */,
+				187D10E7241E672D0076A9F3 /* PairProvider */,
 				187D10E1241E5F7C0076A9F3 /* CurrencyProvider */,
 			);
 			path = UseCases;
@@ -455,12 +473,12 @@
 			path = ExchangePair;
 			sourceTree = "<group>";
 		};
-		187D10E7241E672D0076A9F3 /* ExchangePairProvider */ = {
+		187D10E7241E672D0076A9F3 /* PairProvider */ = {
 			isa = PBXGroup;
 			children = (
-				187D10E8241E67670076A9F3 /* ExchangePairProvider.swift */,
+				187D10E8241E67670076A9F3 /* PairProvider.swift */,
 			);
-			path = ExchangePairProvider;
+			path = PairProvider;
 			sourceTree = "<group>";
 		};
 		18B8C692241D40EC0057858C = {
@@ -535,6 +553,7 @@
 		18B8C6D7241D93200057858C /* ConverterTests */ = {
 			isa = PBXGroup;
 			children = (
+				182E48482421335200084D5F /* UseCases */,
 				18E483F9241EE29B00062135 /* Extensions */,
 				18E483CA241E93A000062135 /* Models */,
 				18B8C6DA241D93200057858C /* Info.plist */,
@@ -1315,10 +1334,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				18E483DF241E98B000062135 /* ExchangeRepository.swift in Sources */,
+				182E484B242133BE00084D5F /* PairSaver.swift in Sources */,
 				187D10E6241E651F0076A9F3 /* ExchangePair.swift in Sources */,
 				18B8C6EF241D98E10057858C /* Currency.swift in Sources */,
 				187D10E3241E5F7C0076A9F3 /* CurrencyProvider.swift in Sources */,
-				187D10E9241E67670076A9F3 /* ExchangePairProvider.swift in Sources */,
+				187D10E9241E67670076A9F3 /* PairProvider.swift in Sources */,
 				18E483E2241E994200062135 /* Pair.swift in Sources */,
 				18779300241FB4C500CC4862 /* Result.swift in Sources */,
 				18E483D2241E94A300062135 /* CurrencyRepository.swift in Sources */,
