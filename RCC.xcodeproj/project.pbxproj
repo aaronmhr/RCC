@@ -34,8 +34,8 @@
 		18B8C6DF241D93200057858C /* Converter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18B8C6C9241D93200057858C /* Converter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		18B8C6EF241D98E10057858C /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8C6EE241D98E10057858C /* Currency.swift */; };
 		18DF6F8824213D24007624E0 /* PairInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E48502421358F00084D5F /* PairInteractorTests.swift */; };
-		18DF6F8B242143DD007624E0 /* RatesVieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF6F8A242143DD007624E0 /* RatesVieModel.swift */; };
-		18DF6F8D24214440007624E0 /* RatesVieModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF6F8C24214440007624E0 /* RatesVieModelTests.swift */; };
+		18DF6F8B242143DD007624E0 /* RatesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF6F8A242143DD007624E0 /* RatesViewModel.swift */; };
+		18DF6F8D24214440007624E0 /* RatesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF6F8C24214440007624E0 /* RatesViewModelTests.swift */; };
 		18DF6F9124216856007624E0 /* ExchangeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF6F9024216856007624E0 /* ExchangeInteractor.swift */; };
 		18DF6F9424216D32007624E0 /* TimerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF6F9324216D32007624E0 /* TimerProtocol.swift */; };
 		18DF6F9724216D61007624E0 /* DefaultTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF6F9624216D61007624E0 /* DefaultTimer.swift */; };
@@ -218,8 +218,8 @@
 		18B8C6D1241D93200057858C /* ConverterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConverterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B8C6DA241D93200057858C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18B8C6EE241D98E10057858C /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
-		18DF6F8A242143DD007624E0 /* RatesVieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesVieModel.swift; sourceTree = "<group>"; };
-		18DF6F8C24214440007624E0 /* RatesVieModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesVieModelTests.swift; sourceTree = "<group>"; };
+		18DF6F8A242143DD007624E0 /* RatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesViewModel.swift; sourceTree = "<group>"; };
+		18DF6F8C24214440007624E0 /* RatesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesViewModelTests.swift; sourceTree = "<group>"; };
 		18DF6F9024216856007624E0 /* ExchangeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeInteractor.swift; sourceTree = "<group>"; };
 		18DF6F9324216D32007624E0 /* TimerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerProtocol.swift; sourceTree = "<group>"; };
 		18DF6F9624216D61007624E0 /* DefaultTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTimer.swift; sourceTree = "<group>"; };
@@ -612,7 +612,7 @@
 		18DF6F89242143C4007624E0 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				18DF6F8A242143DD007624E0 /* RatesVieModel.swift */,
+				18DF6F8A242143DD007624E0 /* RatesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -722,7 +722,7 @@
 			children = (
 				18E483B9241E8FDD00062135 /* PresentationTests.swift */,
 				18E483BB241E8FDD00062135 /* Info.plist */,
-				18DF6F8C24214440007624E0 /* RatesVieModelTests.swift */,
+				18DF6F8C24214440007624E0 /* RatesViewModelTests.swift */,
 			);
 			path = PresentationTests;
 			sourceTree = "<group>";
@@ -1574,7 +1574,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18DF6F8B242143DD007624E0 /* RatesVieModel.swift in Sources */,
+				18DF6F8B242143DD007624E0 /* RatesViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1582,7 +1582,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18DF6F8D24214440007624E0 /* RatesVieModelTests.swift in Sources */,
+				18DF6F8D24214440007624E0 /* RatesViewModelTests.swift in Sources */,
 				18E483BA241E8FDD00062135 /* PresentationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

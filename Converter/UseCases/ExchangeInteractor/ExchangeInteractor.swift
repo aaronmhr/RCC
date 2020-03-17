@@ -15,7 +15,7 @@ public final class ExchangeInteractor: ExchangePairProvider {
         self.timer = timer
     }
     
-    func getExchangePairs(for pairs: [Pair],
+    public func getExchangePairs(for pairs: [Pair],
                           at interval: TimeInterval,
                           completion: @escaping (ExchangePairProvider.Result) -> Void) {
         timer.schedule(timeInterval: interval, repeats: true) { [weak self] in

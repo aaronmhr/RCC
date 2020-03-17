@@ -21,11 +21,3 @@ final class RatesPresenter {
 extension RatesPresenter: RatesPresenterProtocol {
 
 }
-
-enum RatesScreenState {
-    case empty
-    case rates([ExchangeRatesViewModel])
-}
-
-struct ExchangeRatesViewModel {
-}
