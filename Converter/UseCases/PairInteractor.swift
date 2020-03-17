@@ -23,6 +23,7 @@ extension PairInteractor: PairProvider {
 
 extension PairInteractor: PairSaver {
     func save(_ pair: Pair) {
+        guard !getConfiguredPairs().contains(pair) else { return }
         repository.savePair(pair)
     }
 }

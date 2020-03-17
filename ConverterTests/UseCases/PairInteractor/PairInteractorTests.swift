@@ -45,6 +45,16 @@ final class PairInteractorTests: QuickSpec {
                     expect(sut.getConfiguredPairs()).to(equal(pairs))
                 }
             }
+            
+            describe("saving multiple pairs with repeated ones") {
+                it("should return only non repeated pairs") {
+                    let uniquePair = Pair.dollar_euro
+                    let pairs = [uniquePair, uniquePair]
+                    pairs.forEach(sut.save(_:))
+                    
+                    expect(sut.getConfiguredPairs()).to(equal([uniquePair]))
+                }
+            }
         }
     }
 }
