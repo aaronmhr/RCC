@@ -14,12 +14,12 @@ final class ExchangeInteractorTests: QuickSpec {
     override func spec() {
         var repository: ExchangeRepositoryMock!
         var timer: TimerMock!
-        var sut: ExchangeInteractor!
+        var sut: ExchangeUseCase!
         
         beforeEach {
             repository = ExchangeRepositoryMock()
             timer = TimerMock()
-            sut = ExchangeInteractor(repository: repository, timer: timer)
+            sut = ExchangeUseCase(repository: repository, timer: timer)
         }
         
         describe("on getting ExchangePairs") {

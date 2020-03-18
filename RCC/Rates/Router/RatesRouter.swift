@@ -23,7 +23,6 @@ final class RatesRouter: StoryboardInstantiator {
         let router = RatesRouter(withView: viewController)
 
         let interactor = RatesInteractor()
-        let presenter = RatesPresenter(withView: viewController, interactor: interactor, router: router)
 
         viewController.viewModel = ExchangeViewModelAssembler.assemble()
 
@@ -56,6 +55,6 @@ final class ExchangeViewModelAssembler {
         
         let timer = DefaultTimer()
         
-        return ExchangeInteractor(repository: exchangeRepository, timer: timer)
+        return ExchangeUseCase(repository: exchangeRepository, timer: timer)
     }
 }

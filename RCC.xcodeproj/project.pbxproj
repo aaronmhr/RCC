@@ -36,7 +36,7 @@
 		18DF6F8824213D24007624E0 /* PairInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E48502421358F00084D5F /* PairInteractorTests.swift */; };
 		18DF6F8B242143DD007624E0 /* RatesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF6F8A242143DD007624E0 /* RatesViewModel.swift */; };
 		18DF6F8D24214440007624E0 /* RatesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF6F8C24214440007624E0 /* RatesViewModelTests.swift */; };
-		18DF6F9124216856007624E0 /* ExchangeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF6F9024216856007624E0 /* ExchangeInteractor.swift */; };
+		18DF6F9124216856007624E0 /* ExchangeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF6F9024216856007624E0 /* ExchangeUseCase.swift */; };
 		18DF6F9424216D32007624E0 /* TimerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF6F9324216D32007624E0 /* TimerProtocol.swift */; };
 		18DF6F9724216D61007624E0 /* DefaultTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF6F9624216D61007624E0 /* DefaultTimer.swift */; };
 		18DF6F9A24216DB1007624E0 /* ExchangePairProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF6F9924216DB1007624E0 /* ExchangePairProvider.swift */; };
@@ -220,7 +220,7 @@
 		18B8C6EE241D98E10057858C /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		18DF6F8A242143DD007624E0 /* RatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesViewModel.swift; sourceTree = "<group>"; };
 		18DF6F8C24214440007624E0 /* RatesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesViewModelTests.swift; sourceTree = "<group>"; };
-		18DF6F9024216856007624E0 /* ExchangeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeInteractor.swift; sourceTree = "<group>"; };
+		18DF6F9024216856007624E0 /* ExchangeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeUseCase.swift; sourceTree = "<group>"; };
 		18DF6F9324216D32007624E0 /* TimerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerProtocol.swift; sourceTree = "<group>"; };
 		18DF6F9624216D61007624E0 /* DefaultTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTimer.swift; sourceTree = "<group>"; };
 		18DF6F9924216DB1007624E0 /* ExchangePairProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangePairProvider.swift; sourceTree = "<group>"; };
@@ -628,7 +628,7 @@
 		18DF6F8F24216838007624E0 /* ExchangeInteractor */ = {
 			isa = PBXGroup;
 			children = (
-				18DF6F9024216856007624E0 /* ExchangeInteractor.swift */,
+				18DF6F9024216856007624E0 /* ExchangeUseCase.swift */,
 			);
 			path = ExchangeInteractor;
 			sourceTree = "<group>";
@@ -1520,7 +1520,7 @@
 				18DF6F9424216D32007624E0 /* TimerProtocol.swift in Sources */,
 				187D10E9241E67670076A9F3 /* PairProvider.swift in Sources */,
 				18E483E2241E994200062135 /* Pair.swift in Sources */,
-				18DF6F9124216856007624E0 /* ExchangeInteractor.swift in Sources */,
+				18DF6F9124216856007624E0 /* ExchangeUseCase.swift in Sources */,
 				18779300241FB4C500CC4862 /* Result.swift in Sources */,
 				182E484E2421343D00084D5F /* PairInteractor.swift in Sources */,
 				18DF6F9A24216DB1007624E0 /* ExchangePairProvider.swift in Sources */,

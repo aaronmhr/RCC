@@ -1,12 +1,12 @@
 //
-//  ExchangeInteractor.swift
+//  ExchangeUseCase.swift
 //  Converter
 //
 //  Created by Aaron Huánuco on 17/03/2020.
 //  Copyright © 2020 Aaron Huánuco. All rights reserved.
 //
 
-public final class ExchangeInteractor: ExchangePairProvider {
+public final class ExchangeUseCase: ExchangePairProvider {
     private let repository: ExchangeRepository
     private let timer: TimerProtocol
     
