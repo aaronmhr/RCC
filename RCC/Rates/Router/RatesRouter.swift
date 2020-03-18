@@ -24,6 +24,6 @@ final class RatesRouter: StoryboardInstantiator {
     }
 }
 
-extension RatesRouter: RatesRouterProtocol {
-
-}
+//extension RatesRouter: RatesRouterProtocol {
+//
+//}

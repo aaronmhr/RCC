@@ -26,6 +26,12 @@ final class RatesViewController: UIViewController {
         setupTableView()
     }
     
+    @objc private func addTapped() {
+        
+    }
+}
+
+extension RatesViewController {
     private func setupNavigationBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
     }
@@ -44,15 +50,6 @@ final class RatesViewController: UIViewController {
             print(pairs)
         }
     }
-    
-    @objc private func addTapped() {
-        
-    }
-    
-}
-
-extension RatesViewController: RatesViewProtocol {
-
 }
 
 extension RatesViewController: UITableViewDataSource {

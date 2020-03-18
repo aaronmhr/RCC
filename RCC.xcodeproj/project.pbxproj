@@ -14,11 +14,8 @@
 		187792FD241FAAA500CC4862 /* DefaultExchangeRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187792FC241FAAA500CC4862 /* DefaultExchangeRepositoryTests.swift */; };
 		18779300241FB4C500CC4862 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187792FF241FB4C500CC4862 /* Result.swift */; };
 		187793022420424400CC4862 /* TestingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187793012420424400CC4862 /* TestingDataSource.swift */; };
-		18791A0A24210B2900C259C9 /* RatesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791A0024210B2900C259C9 /* RatesPresenter.swift */; };
 		18791A0B24210B2900C259C9 /* RatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791A0224210B2900C259C9 /* RatesViewController.swift */; };
 		18791A0C24210B2900C259C9 /* Rates.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18791A0324210B2900C259C9 /* Rates.storyboard */; };
-		18791A0D24210B2900C259C9 /* RatesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791A0524210B2900C259C9 /* RatesProtocols.swift */; };
-		18791A0E24210B2900C259C9 /* RatesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791A0724210B2900C259C9 /* RatesInteractor.swift */; };
 		18791A0F24210B2900C259C9 /* RatesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791A0924210B2900C259C9 /* RatesRouter.swift */; };
 		187D10DA241E51400076A9F3 /* CurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D10D9241E51400076A9F3 /* CurrencyTests.swift */; };
 		187D10E3241E5F7C0076A9F3 /* CurrencyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D10E2241E5F7C0076A9F3 /* CurrencyProvider.swift */; };
@@ -195,11 +192,8 @@
 		187792FC241FAAA500CC4862 /* DefaultExchangeRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultExchangeRepositoryTests.swift; sourceTree = "<group>"; };
 		187792FF241FB4C500CC4862 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		187793012420424400CC4862 /* TestingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingDataSource.swift; sourceTree = "<group>"; };
-		18791A0024210B2900C259C9 /* RatesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatesPresenter.swift; sourceTree = "<group>"; };
 		18791A0224210B2900C259C9 /* RatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatesViewController.swift; sourceTree = "<group>"; };
 		18791A0324210B2900C259C9 /* Rates.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Rates.storyboard; sourceTree = "<group>"; };
-		18791A0524210B2900C259C9 /* RatesProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatesProtocols.swift; sourceTree = "<group>"; };
-		18791A0724210B2900C259C9 /* RatesInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatesInteractor.swift; sourceTree = "<group>"; };
 		18791A0924210B2900C259C9 /* RatesRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatesRouter.swift; sourceTree = "<group>"; };
 		187D10D9241E51400076A9F3 /* CurrencyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTests.swift; sourceTree = "<group>"; };
 		187D10E2241E5F7C0076A9F3 /* CurrencyProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyProvider.swift; sourceTree = "<group>"; };
@@ -436,21 +430,10 @@
 		187919FE24210B2900C259C9 /* Rates */ = {
 			isa = PBXGroup;
 			children = (
-				187919FF24210B2900C259C9 /* Presenter */,
 				18791A0124210B2900C259C9 /* View */,
-				18791A0424210B2900C259C9 /* Protocols */,
-				18791A0624210B2900C259C9 /* Interactor */,
 				18791A0824210B2900C259C9 /* Router */,
 			);
 			path = Rates;
-			sourceTree = "<group>";
-		};
-		187919FF24210B2900C259C9 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				18791A0024210B2900C259C9 /* RatesPresenter.swift */,
-			);
-			path = Presenter;
 			sourceTree = "<group>";
 		};
 		18791A0124210B2900C259C9 /* View */ = {
@@ -460,22 +443,6 @@
 				18791A0324210B2900C259C9 /* Rates.storyboard */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		18791A0424210B2900C259C9 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				18791A0524210B2900C259C9 /* RatesProtocols.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		18791A0624210B2900C259C9 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				18791A0724210B2900C259C9 /* RatesInteractor.swift */,
-			);
-			path = Interactor;
 			sourceTree = "<group>";
 		};
 		18791A0824210B2900C259C9 /* Router */ = {
@@ -1501,10 +1468,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				182E484724210C7F00084D5F /* StoryboardInstantiator.swift in Sources */,
-				18791A0E24210B2900C259C9 /* RatesInteractor.swift in Sources */,
 				18B8C69F241D40EC0057858C /* AppDelegate.swift in Sources */,
-				18791A0D24210B2900C259C9 /* RatesProtocols.swift in Sources */,
-				18791A0A24210B2900C259C9 /* RatesPresenter.swift in Sources */,
 				187281D32422C46F007CAF68 /* RatesViewModelAssembler.swift in Sources */,
 				18791A0B24210B2900C259C9 /* RatesViewController.swift in Sources */,
 				18791A0F24210B2900C259C9 /* RatesRouter.swift in Sources */,
