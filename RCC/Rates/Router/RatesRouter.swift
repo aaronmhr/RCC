@@ -20,10 +20,6 @@ final class RatesRouter: StoryboardInstantiator {
 
     static func assembleModule() -> UIViewController {
         let viewController = defaultViewController(for: RatesViewController.self)
-        let router = RatesRouter(withView: viewController)
-
-        let interactor = RatesInteractor()
-
         viewController.viewModel = ExchangeViewModelAssembler.assemble()
 
         return viewController
