@@ -8,14 +8,14 @@
 
 import Converter
 
-final class DefaultExchangeRepository: ExchangeRepository {
+public final class DefaultExchangeRepository: ExchangeRepository {
     private let dataSource: ExchangeRatesDataSource
 
     public init(dataSource: ExchangeRatesDataSource) {
         self.dataSource = dataSource
     }
 
-    func getExchangePairs(for pairs: [Pair], completion: @escaping (ExchangeRepository.Result) -> Void) {
+    public func getExchangePairs(for pairs: [Pair], completion: @escaping (ExchangeRepository.Result) -> Void) {
         dataSource.getRates(for: pairs) { result in
             let newResult = result
                 .mapError { _ -> RepositoryError in

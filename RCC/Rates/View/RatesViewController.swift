@@ -7,10 +7,10 @@
 //
 
 import UIKit
-import Converter
+import Presentation
 
 final class RatesViewController: UIViewController {
-    var presenter: RatesPresenterProtocol!
+    var viewModel: RatesViewModel!
 
     @IBOutlet var tableView: UITableView!
     
@@ -74,5 +74,5 @@ extension RatesViewController: UITableViewDelegate {
 
 enum RatesScreenModel {
     case empty
-    case rates([ExchangePair])
+    case rates([String])
 }

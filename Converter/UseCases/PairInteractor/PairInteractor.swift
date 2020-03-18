@@ -35,6 +35,9 @@ public protocol PairRepository {
 }
 
 public class MockingPairRepository: PairRepository {
+    
+    public init() { }
+    
     private var pairsStack: [Pair] = []
     
     public func getPairs() -> [Pair] {
