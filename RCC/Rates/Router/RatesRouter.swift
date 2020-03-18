@@ -45,7 +45,7 @@ final class ExchangeViewModelAssembler {
     
     private static func assemblePairUseCase() -> PairInteractorProtocol {
         let repository = MockingPairRepository()
-        return  PairInteractor(repository: repository)
+        return  PairUseCase(repository: repository)
     }
     
     private static func assembleExchangeUseCase() -> ExchangePairProvider {

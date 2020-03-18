@@ -13,11 +13,11 @@ import Nimble
 final class PairInteractorTests: QuickSpec {
     override func spec() {
         var repository: PairRepository!
-        var sut: PairInteractor!
+        var sut: PairUseCase!
         
         beforeEach {
             repository = MockingPairRepository()
-            sut = PairInteractor(repository: repository)
+            sut = PairUseCase(repository: repository)
         }
         
         describe("asking for configured pairs") {

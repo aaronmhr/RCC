@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		182E484724210C7F00084D5F /* StoryboardInstantiator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E484624210C7F00084D5F /* StoryboardInstantiator.swift */; };
 		182E484B242133BE00084D5F /* PairSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E484A242133BE00084D5F /* PairSaver.swift */; };
-		182E484E2421343D00084D5F /* PairInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E484D2421343D00084D5F /* PairInteractor.swift */; };
+		182E484E2421343D00084D5F /* PairUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E484D2421343D00084D5F /* PairUseCase.swift */; };
 		187792FD241FAAA500CC4862 /* DefaultExchangeRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187792FC241FAAA500CC4862 /* DefaultExchangeRepositoryTests.swift */; };
 		18779300241FB4C500CC4862 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187792FF241FB4C500CC4862 /* Result.swift */; };
 		187793022420424400CC4862 /* TestingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187793012420424400CC4862 /* TestingDataSource.swift */; };
@@ -188,7 +188,7 @@
 		17EF6A03C368D8009605E559 /* Pods-Data.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Data.release.xcconfig"; path = "Target Support Files/Pods-Data/Pods-Data.release.xcconfig"; sourceTree = "<group>"; };
 		182E484624210C7F00084D5F /* StoryboardInstantiator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiator.swift; sourceTree = "<group>"; };
 		182E484A242133BE00084D5F /* PairSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairSaver.swift; sourceTree = "<group>"; };
-		182E484D2421343D00084D5F /* PairInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairInteractor.swift; sourceTree = "<group>"; };
+		182E484D2421343D00084D5F /* PairUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairUseCase.swift; sourceTree = "<group>"; };
 		182E48502421358F00084D5F /* PairInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairInteractorTests.swift; sourceTree = "<group>"; };
 		187792FC241FAAA500CC4862 /* DefaultExchangeRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultExchangeRepositoryTests.swift; sourceTree = "<group>"; };
 		187792FF241FB4C500CC4862 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -620,7 +620,7 @@
 		18DF6F8E24216829007624E0 /* PairInteractor */ = {
 			isa = PBXGroup;
 			children = (
-				182E484D2421343D00084D5F /* PairInteractor.swift */,
+				182E484D2421343D00084D5F /* PairUseCase.swift */,
 			);
 			path = PairInteractor;
 			sourceTree = "<group>";
@@ -1522,7 +1522,7 @@
 				18E483E2241E994200062135 /* Pair.swift in Sources */,
 				18DF6F9124216856007624E0 /* ExchangeUseCase.swift in Sources */,
 				18779300241FB4C500CC4862 /* Result.swift in Sources */,
-				182E484E2421343D00084D5F /* PairInteractor.swift in Sources */,
+				182E484E2421343D00084D5F /* PairUseCase.swift in Sources */,
 				18DF6F9A24216DB1007624E0 /* ExchangePairProvider.swift in Sources */,
 				18E483D2241E94A300062135 /* CurrencyRepository.swift in Sources */,
 				18DF6F9724216D61007624E0 /* DefaultTimer.swift in Sources */,

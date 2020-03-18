@@ -1,5 +1,5 @@
 //
-//  PairInteractor.swift
+//  PairUseCase.swift
 //  Converter
 //
 //  Created by Aaron Huánuco on 17/03/2020.
@@ -8,7 +8,7 @@
 
 public typealias PairInteractorProtocol = PairProvider & PairSaver
 
-public final class PairInteractor {
+public final class PairUseCase {
     private let repository: PairRepository
     
     public init(repository: PairRepository) {
@@ -16,13 +16,13 @@ public final class PairInteractor {
     }
 }
 
-extension PairInteractor: PairProvider {
+extension PairUseCase: PairProvider {
     public func getConfiguredPairs() -> [Pair] {
         return repository.getPairs()
     }
 }
 
-extension PairInteractor: PairSaver {
+extension PairUseCase: PairSaver {
     public func save(_ pair: Pair) {
         guard !getConfiguredPairs().contains(pair) else { return }
         repository.savePair(pair)
