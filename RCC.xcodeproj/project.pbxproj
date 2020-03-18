@@ -10,6 +10,7 @@
 		182E484724210C7F00084D5F /* StoryboardInstantiator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E484624210C7F00084D5F /* StoryboardInstantiator.swift */; };
 		182E484B242133BE00084D5F /* PairSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E484A242133BE00084D5F /* PairSaver.swift */; };
 		182E484E2421343D00084D5F /* PairUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E484D2421343D00084D5F /* PairUseCase.swift */; };
+		187281D32422C46F007CAF68 /* RatesViewModelAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187281D22422C46F007CAF68 /* RatesViewModelAssembler.swift */; };
 		187792FD241FAAA500CC4862 /* DefaultExchangeRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187792FC241FAAA500CC4862 /* DefaultExchangeRepositoryTests.swift */; };
 		18779300241FB4C500CC4862 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187792FF241FB4C500CC4862 /* Result.swift */; };
 		187793022420424400CC4862 /* TestingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187793012420424400CC4862 /* TestingDataSource.swift */; };
@@ -190,6 +191,7 @@
 		182E484A242133BE00084D5F /* PairSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairSaver.swift; sourceTree = "<group>"; };
 		182E484D2421343D00084D5F /* PairUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairUseCase.swift; sourceTree = "<group>"; };
 		182E48502421358F00084D5F /* PairInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairInteractorTests.swift; sourceTree = "<group>"; };
+		187281D22422C46F007CAF68 /* RatesViewModelAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesViewModelAssembler.swift; sourceTree = "<group>"; };
 		187792FC241FAAA500CC4862 /* DefaultExchangeRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultExchangeRepositoryTests.swift; sourceTree = "<group>"; };
 		187792FF241FB4C500CC4862 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		187793012420424400CC4862 /* TestingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingDataSource.swift; sourceTree = "<group>"; };
@@ -397,6 +399,14 @@
 			path = PairInteractor;
 			sourceTree = "<group>";
 		};
+		187281D12422C457007CAF68 /* ViewModelAssembler */ = {
+			isa = PBXGroup;
+			children = (
+				187281D22422C46F007CAF68 /* RatesViewModelAssembler.swift */,
+			);
+			path = ViewModelAssembler;
+			sourceTree = "<group>";
+		};
 		187792F9241FA7CB00CC4862 /* ExchangeRepository */ = {
 			isa = PBXGroup;
 			children = (
@@ -471,6 +481,7 @@
 		18791A0824210B2900C259C9 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				187281D12422C457007CAF68 /* ViewModelAssembler */,
 				18791A0924210B2900C259C9 /* RatesRouter.swift */,
 			);
 			path = Router;
@@ -1494,6 +1505,7 @@
 				18B8C69F241D40EC0057858C /* AppDelegate.swift in Sources */,
 				18791A0D24210B2900C259C9 /* RatesProtocols.swift in Sources */,
 				18791A0A24210B2900C259C9 /* RatesPresenter.swift in Sources */,
+				187281D32422C46F007CAF68 /* RatesViewModelAssembler.swift in Sources */,
 				18791A0B24210B2900C259C9 /* RatesViewController.swift in Sources */,
 				18791A0F24210B2900C259C9 /* RatesRouter.swift in Sources */,
 				18E483DA241E967C00062135 /* TestViewController.swift in Sources */,
