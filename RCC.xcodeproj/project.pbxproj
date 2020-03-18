@@ -11,6 +11,8 @@
 		182E484B242133BE00084D5F /* PairSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E484A242133BE00084D5F /* PairSaver.swift */; };
 		182E484E2421343D00084D5F /* PairUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E484D2421343D00084D5F /* PairUseCase.swift */; };
 		187281D32422C46F007CAF68 /* RatesViewModelAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187281D22422C46F007CAF68 /* RatesViewModelAssembler.swift */; };
+		187281D52422D222007CAF68 /* DoubleToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187281D42422D222007CAF68 /* DoubleToString.swift */; };
+		187281D82422D26E007CAF68 /* DoubleFormattingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187281D72422D26E007CAF68 /* DoubleFormattingTests.swift */; };
 		187792FD241FAAA500CC4862 /* DefaultExchangeRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187792FC241FAAA500CC4862 /* DefaultExchangeRepositoryTests.swift */; };
 		18779300241FB4C500CC4862 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187792FF241FB4C500CC4862 /* Result.swift */; };
 		187793022420424400CC4862 /* TestingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187793012420424400CC4862 /* TestingDataSource.swift */; };
@@ -189,6 +191,8 @@
 		182E484D2421343D00084D5F /* PairUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairUseCase.swift; sourceTree = "<group>"; };
 		182E48502421358F00084D5F /* PairInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairInteractorTests.swift; sourceTree = "<group>"; };
 		187281D22422C46F007CAF68 /* RatesViewModelAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesViewModelAssembler.swift; sourceTree = "<group>"; };
+		187281D42422D222007CAF68 /* DoubleToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleToString.swift; sourceTree = "<group>"; };
+		187281D72422D26E007CAF68 /* DoubleFormattingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleFormattingTests.swift; sourceTree = "<group>"; };
 		187792FC241FAAA500CC4862 /* DefaultExchangeRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultExchangeRepositoryTests.swift; sourceTree = "<group>"; };
 		187792FF241FB4C500CC4862 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		187793012420424400CC4862 /* TestingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingDataSource.swift; sourceTree = "<group>"; };
@@ -415,6 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				187792FF241FB4C500CC4862 /* Result.swift */,
+				187281D42422D222007CAF68 /* DoubleToString.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -841,6 +846,7 @@
 			isa = PBXGroup;
 			children = (
 				18E483FA241EE2B200062135 /* Currency+Pair.swift */,
+				187281D72422D26E007CAF68 /* DoubleFormattingTests.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1497,6 +1503,7 @@
 				187D10E9241E67670076A9F3 /* PairProvider.swift in Sources */,
 				18E483E2241E994200062135 /* Pair.swift in Sources */,
 				18DF6F9124216856007624E0 /* ExchangeUseCase.swift in Sources */,
+				187281D52422D222007CAF68 /* DoubleToString.swift in Sources */,
 				18779300241FB4C500CC4862 /* Result.swift in Sources */,
 				182E484E2421343D00084D5F /* PairUseCase.swift in Sources */,
 				18DF6F9A24216DB1007624E0 /* ExchangePairProvider.swift in Sources */,
@@ -1516,6 +1523,7 @@
 				18DF6FA224217ACA007624E0 /* ExchangeRepositoryMock.swift in Sources */,
 				18DF6FA524217B42007624E0 /* DefaultTimerTests.swift in Sources */,
 				187D10DA241E51400076A9F3 /* CurrencyTests.swift in Sources */,
+				187281D82422D26E007CAF68 /* DoubleFormattingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

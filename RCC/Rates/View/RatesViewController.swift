@@ -26,6 +26,11 @@ final class RatesViewController: UIViewController {
         setupTableView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+//        viewModel.startFetchingExchangeRates()
+    }
+    
     @objc private func addTapped() {
         
     }

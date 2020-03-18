@@ -25,6 +25,40 @@ public final class RatesViewModel {
             self.pairs.value = result.value!
         }
     }
+    
+    func startFetchingExchangeRates() {
+        let currentPairs = pairUseCase.getConfiguredPairs()
+//        exchangePairProvider.getExchangePairs(for: currentPairs, at: 2.0) { [weak self] result in
+//            <#code#>
+//        }
+    }
+    
+    func stopFetchingExchangeRates() {
+        
+    }
+}
+
+final class ExchangePairViewFormatter {
+//    static func make(_ exchange: ExchangePair) -> ExchangePairView {
+//        let origin = OriginCurrencyView(title: "1 \(exchange.pair.first.code)", subtitle: exchange.pair.first.name)
+//        let fourDecimalRate = String(format: "%.4f", exchange.rate)
+//        let destination = DestinationCurrencyView(title: "1 \(exchange.pair.first.code)", subtitle: exchange.pair.first.name)
+//    }
+}
+
+struct ExchangePairView {
+    let origin: OriginCurrencyView
+    let destination: DestinationCurrencyView
+}
+
+struct OriginCurrencyView {
+    let title: String
+    let subtitle: String
+}
+
+struct DestinationCurrencyView {
+    let title: NSAttributedString
+    let subtitle: String
 }
 
 class TestViewController {
