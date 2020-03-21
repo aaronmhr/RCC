@@ -28,6 +28,12 @@ final class DefaultCurrencyProviderTests: QuickSpec {
                 
                 expect(sut.getCurrencies()).to(equal([Currency.euro, Currency.pound, Currency.dollar]))
             }
+            
+            it("should filter invalid codes") {
+                availableRepository.availableCurrencyCodes = ["USD", "GBP", "EUR", "google"]
+                
+                expect(sut.getCurrencies()).to(equal([Currency.euro, Currency.pound, Currency.dollar]))
+            }
         }
         
         describe("getting currencies with favorites") {
@@ -36,6 +42,35 @@ final class DefaultCurrencyProviderTests: QuickSpec {
                 favoriteRepository.favoriteCurrencyCodes = ["USD"]
                 
                 expect(sut.getCurrencies()).to(equal([Currency.dollar, Currency.euro, Currency.pound]))
+            }
+        }
+        
+        describe("getting currencies in invalid cases") {
+            context("suppliying an empty list of available currencies and empty list of favorites") {
+                it("should return empty array of currencies") {
+                    availableRepository.availableCurrencyCodes = []
+                    favoriteRepository.favoriteCurrencyCodes = []
+                    
+                    expect(sut.getCurrencies()).to(equal([]))
+                }
+            }
+            
+            context("suppliying an empty list of available currencies ") {
+                it("should return empty array of currencies") {
+                    availableRepository.availableCurrencyCodes = []
+                    favoriteRepository.favoriteCurrencyCodes = []
+                    
+                    expect(sut.getCurrencies()).to(equal([]))
+                }
+            }
+            
+            context("suppliying an invalid list of available currencies ") {
+                it("should return empty array of currencies") {
+                    availableRepository.availableCurrencyCodes = ["google"]
+                    favoriteRepository.favoriteCurrencyCodes = []
+                    
+                    expect(sut.getCurrencies()).to(equal([]))
+                }
             }
         }
     }

@@ -16,6 +16,9 @@
 		1876B76524266E3900404487 /* RatesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1876B76424266E3900404487 /* RatesCell.xib */; };
 		1876B767242672BD00404487 /* RatesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1876B766242672BD00404487 /* RatesCell.swift */; };
 		1876B7692426731100404487 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1876B7682426731100404487 /* Reusable.swift */; };
+		1876B77924267A7500404487 /* Currencies.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1876B77024267A7400404487 /* Currencies.storyboard */; };
+		1876B77A24267A7500404487 /* CurrenciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1876B77124267A7400404487 /* CurrenciesViewController.swift */; };
+		1876B77D24267A7500404487 /* CurrenciesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1876B77724267A7400404487 /* CurrenciesRouter.swift */; };
 		1876B7802426941500404487 /* DefaultCurrencyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1876B77F2426941500404487 /* DefaultCurrencyProvider.swift */; };
 		1876B7832426984800404487 /* DefaultCurrencyProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1876B7822426984800404487 /* DefaultCurrencyProviderTests.swift */; };
 		1876B78524269C8500404487 /* FavoriteCurrencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1876B78424269C8500404487 /* FavoriteCurrencyRepository.swift */; };
@@ -203,6 +206,9 @@
 		1876B76424266E3900404487 /* RatesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatesCell.xib; sourceTree = "<group>"; };
 		1876B766242672BD00404487 /* RatesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesCell.swift; sourceTree = "<group>"; };
 		1876B7682426731100404487 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		1876B77024267A7400404487 /* Currencies.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Currencies.storyboard; sourceTree = "<group>"; };
+		1876B77124267A7400404487 /* CurrenciesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrenciesViewController.swift; sourceTree = "<group>"; };
+		1876B77724267A7400404487 /* CurrenciesRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrenciesRouter.swift; sourceTree = "<group>"; };
 		1876B77F2426941500404487 /* DefaultCurrencyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCurrencyProvider.swift; sourceTree = "<group>"; };
 		1876B7822426984800404487 /* DefaultCurrencyProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCurrencyProviderTests.swift; sourceTree = "<group>"; };
 		1876B78424269C8500404487 /* FavoriteCurrencyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCurrencyRepository.swift; sourceTree = "<group>"; };
@@ -430,6 +436,32 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		1876B76C24267A7400404487 /* Currencies */ = {
+			isa = PBXGroup;
+			children = (
+				1876B76F24267A7400404487 /* View */,
+				1876B77624267A7400404487 /* Router */,
+			);
+			path = Currencies;
+			sourceTree = "<group>";
+		};
+		1876B76F24267A7400404487 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1876B77024267A7400404487 /* Currencies.storyboard */,
+				1876B77124267A7400404487 /* CurrenciesViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1876B77624267A7400404487 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				1876B77724267A7400404487 /* CurrenciesRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		1876B77E2426940200404487 /* CurrencyProvider */ = {
 			isa = PBXGroup;
 			children = (
@@ -590,6 +622,7 @@
 		18B8C69D241D40EC0057858C /* RCC */ = {
 			isa = PBXGroup;
 			children = (
+				1876B76C24267A7400404487 /* Currencies */,
 				182E484524210C5C00084D5F /* Extensions */,
 				187919FE24210B2900C259C9 /* Rates */,
 				18B8C6C0241D4EB10057858C /* README.md */,
@@ -1211,6 +1244,7 @@
 				18B8C6C1241D4EB10057858C /* README.md in Resources */,
 				18B8C6AB241D40EE0057858C /* LaunchScreen.storyboard in Resources */,
 				18791A0C24210B2900C259C9 /* Rates.storyboard in Resources */,
+				1876B77924267A7500404487 /* Currencies.storyboard in Resources */,
 				18B8C6A8241D40EE0057858C /* Assets.xcassets in Resources */,
 				1876B76524266E3900404487 /* RatesCell.xib in Resources */,
 			);
@@ -1524,8 +1558,10 @@
 				18B8C69F241D40EC0057858C /* AppDelegate.swift in Sources */,
 				187281D32422C46F007CAF68 /* RatesViewModelAssembler.swift in Sources */,
 				1876B7692426731100404487 /* Reusable.swift in Sources */,
+				1876B77A24267A7500404487 /* CurrenciesViewController.swift in Sources */,
 				18791A0B24210B2900C259C9 /* RatesViewController.swift in Sources */,
 				18791A0F24210B2900C259C9 /* RatesRouter.swift in Sources */,
+				1876B77D24267A7500404487 /* CurrenciesRouter.swift in Sources */,
 				18E483DA241E967C00062135 /* TestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
