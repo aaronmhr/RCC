@@ -15,6 +15,7 @@
 		187281D82422D26E007CAF68 /* DoubleFormattingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187281D72422D26E007CAF68 /* DoubleFormattingTests.swift */; };
 		1876B76524266E3900404487 /* RatesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1876B76424266E3900404487 /* RatesCell.xib */; };
 		1876B767242672BD00404487 /* RatesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1876B766242672BD00404487 /* RatesCell.swift */; };
+		1876B7692426731100404487 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1876B7682426731100404487 /* Reusable.swift */; };
 		187792FD241FAAA500CC4862 /* DefaultExchangeRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187792FC241FAAA500CC4862 /* DefaultExchangeRepositoryTests.swift */; };
 		18779300241FB4C500CC4862 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187792FF241FB4C500CC4862 /* Result.swift */; };
 		187793022420424400CC4862 /* TestingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187793012420424400CC4862 /* TestingDataSource.swift */; };
@@ -197,6 +198,7 @@
 		187281D72422D26E007CAF68 /* DoubleFormattingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleFormattingTests.swift; sourceTree = "<group>"; };
 		1876B76424266E3900404487 /* RatesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatesCell.xib; sourceTree = "<group>"; };
 		1876B766242672BD00404487 /* RatesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesCell.swift; sourceTree = "<group>"; };
+		1876B7682426731100404487 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		187792FC241FAAA500CC4862 /* DefaultExchangeRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultExchangeRepositoryTests.swift; sourceTree = "<group>"; };
 		187792FF241FB4C500CC4862 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		187793012420424400CC4862 /* TestingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingDataSource.swift; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 			isa = PBXGroup;
 			children = (
 				182E484624210C7F00084D5F /* StoryboardInstantiator.swift */,
+				1876B7682426731100404487 /* Reusable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1492,6 +1495,7 @@
 				182E484724210C7F00084D5F /* StoryboardInstantiator.swift in Sources */,
 				18B8C69F241D40EC0057858C /* AppDelegate.swift in Sources */,
 				187281D32422C46F007CAF68 /* RatesViewModelAssembler.swift in Sources */,
+				1876B7692426731100404487 /* Reusable.swift in Sources */,
 				18791A0B24210B2900C259C9 /* RatesViewController.swift in Sources */,
 				18791A0F24210B2900C259C9 /* RatesRouter.swift in Sources */,
 				18E483DA241E967C00062135 /* TestViewController.swift in Sources */,
