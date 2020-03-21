@@ -52,9 +52,15 @@ public final class RatesViewModel {
 
 final class ExchangePairViewFormatter {
     static func make(_ exchange: ExchangePair) -> ExchangePairView {
-        let origin = OriginCurrencyView(title: "1 \(exchange.pair.first.code)", subtitle: exchange.pair.first.name)
+        let origin = OriginCurrencyView(
+            title: "1 \(exchange.pair.first.code)",
+            subtitle: exchange.pair.first.name
+        )
         let rate = exchange.rate.toString(decimalDigits: 4) ?? "0.0000"
-        let destination = DestinationCurrencyView(title: "\(rate) \(exchange.pair.second.code)", subtitle: exchange.pair.second.name)
+        let destination = DestinationCurrencyView(
+            title: rate,
+            subtitle: "\(exchange.pair.second.name) · \(exchange.pair.second.code)"
+        )
         return ExchangePairView(origin: origin, destination: destination)
     }
     

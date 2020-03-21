@@ -49,7 +49,7 @@ extension RatesViewController {
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(cellType: RatesCell.self)
     }
     
     private func uploadScreen(state: RatesScreenModel) {
@@ -68,9 +68,8 @@ extension RatesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") ?? UITableViewCell()
-        cell.backgroundColor = .systemPink
-        cell.textLabel?.text = pairs[indexPath.row].destination.title
+        let cell: RatesCell = tableView.dequeueReusableCell(for: indexPath)
+        cell.configureCell(pairs[indexPath.row])
         return cell
     }
 }
