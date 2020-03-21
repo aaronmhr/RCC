@@ -38,7 +38,7 @@ public class MockingPairRepository: PairRepository {
     
     public init() { }
     
-    private var pairsStack: [Pair] = []
+    private var pairsStack: [Pair] = [Pair(with: Currency.Builder.build(from: "USD")!, and: Currency.Builder.build(from: "EUR")!)]
     
     public func getPairs() -> [Pair] {
         return pairsStack

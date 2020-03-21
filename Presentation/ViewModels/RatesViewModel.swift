@@ -17,48 +17,67 @@ public final class RatesViewModel {
         self.exchangePairProvider = exchangePairProvider
     }
     
-    private(set) var pairs: Box<[ExchangePair]> = Box([])
+    public private(set) var pairs: Box<[ExchangePairView]> = Box([])
     
     func retrieve() {
         let pairs = pairUseCase.getConfiguredPairs()
-        exchangePairProvider.getExchangePairs(for: pairs, at: 1) { result in
-            self.pairs.value = result.value!
+        exchangePairProvider.getExchangePairs(for: pairs, at: Constants.defaultInterval) { result in
+            switch result {
+            case .success(let pairs):
+                self.pairs.value = pairs.map(ExchangePairViewFormatter.make)
+            case .failure: break
+            }
         }
     }
     
-    func startFetchingExchangeRates() {
-        let currentPairs = pairUseCase.getConfiguredPairs()
-//        exchangePairProvider.getExchangePairs(for: currentPairs, at: 2.0) { [weak self] result in
-//            <#code#>
-//        }
+    public func startFetchingExchangeRates() {
+        let pairs = pairUseCase.getConfiguredPairs()
+        exchangePairProvider.getExchangePairs(for: pairs, at: Constants.defaultInterval) { result in
+            switch result {
+            case .success(let pairs):
+                self.pairs.value = pairs.map(ExchangePairViewFormatter.make)
+            case .failure: break
+            }
+        }
     }
     
     func stopFetchingExchangeRates() {
         
     }
+    
+    private enum Constants {
+        static let defaultInterval: TimeInterval = 2.0
+    }
 }
 
 final class ExchangePairViewFormatter {
-//    static func make(_ exchange: ExchangePair) -> ExchangePairView {
-//        let origin = OriginCurrencyView(title: "1 \(exchange.pair.first.code)", subtitle: exchange.pair.first.name)
-//        let fourDecimalRate = String(format: "%.4f", exchange.rate)
-//        let destination = DestinationCurrencyView(title: "1 \(exchange.pair.first.code)", subtitle: exchange.pair.first.name)
-//    }
+    static func make(_ exchange: ExchangePair) -> ExchangePairView {
+        let origin = OriginCurrencyView(title: "1 \(exchange.pair.first.code)", subtitle: exchange.pair.first.name)
+        let rate = exchange.rate.toString(decimalDigits: 4) ?? "0.0000"
+        let destination = DestinationCurrencyView(title: "\(rate) \(exchange.pair.second.code)", subtitle: exchange.pair.second.name)
+        return ExchangePairView(origin: origin, destination: destination)
+    }
+    
+    private static func format(_ string: String) -> String {
+        let firstDigits = string.dropLast(2)
+        let lastDigits = string.reversed().dropFirst(2)
+        return String(firstDigits) + lastDigits
+    }
 }
 
-struct ExchangePairView {
-    let origin: OriginCurrencyView
-    let destination: DestinationCurrencyView
+public struct ExchangePairView {
+    public let origin: OriginCurrencyView
+    public let destination: DestinationCurrencyView
 }
 
-struct OriginCurrencyView {
-    let title: String
-    let subtitle: String
+public struct OriginCurrencyView {
+    public let title: String
+    public let subtitle: String
 }
 
-struct DestinationCurrencyView {
-    let title: NSAttributedString
-    let subtitle: String
+public struct DestinationCurrencyView {
+    public let title: String
+    public let subtitle: String
 }
 
 class TestViewController {

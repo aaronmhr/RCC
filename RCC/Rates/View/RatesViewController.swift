@@ -14,7 +14,9 @@ final class RatesViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
     
-    var cells: [String] = ["one", "two"]
+    var pairs: [ExchangePairView] = [] {
+        didSet { tableView.reloadData() }
+    }
     
     var screenModel: RatesScreenModel = .empty {
         didSet{ uploadScreen(state: screenModel) }
@@ -28,7 +30,10 @@ final class RatesViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        viewModel.startFetchingExchangeRates()
+        viewModel.pairs.bind { [unowned self] pairs in
+            self.pairs = pairs
+        }
+        viewModel.startFetchingExchangeRates()
     }
     
     @objc private func addTapped() {
@@ -59,13 +64,13 @@ extension RatesViewController {
 
 extension RatesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cells.count
+        return pairs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") ?? UITableViewCell()
         cell.backgroundColor = .systemPink
-        cell.textLabel?.text = cells[indexPath.row]
+        cell.textLabel?.text = pairs[indexPath.row].destination.title
         return cell
     }
 }
