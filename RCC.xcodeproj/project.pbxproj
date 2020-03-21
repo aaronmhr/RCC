@@ -16,6 +16,10 @@
 		1876B76524266E3900404487 /* RatesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1876B76424266E3900404487 /* RatesCell.xib */; };
 		1876B767242672BD00404487 /* RatesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1876B766242672BD00404487 /* RatesCell.swift */; };
 		1876B7692426731100404487 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1876B7682426731100404487 /* Reusable.swift */; };
+		1876B7802426941500404487 /* DefaultCurrencyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1876B77F2426941500404487 /* DefaultCurrencyProvider.swift */; };
+		1876B7832426984800404487 /* DefaultCurrencyProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1876B7822426984800404487 /* DefaultCurrencyProviderTests.swift */; };
+		1876B78524269C8500404487 /* FavoriteCurrencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1876B78424269C8500404487 /* FavoriteCurrencyRepository.swift */; };
+		1876B78724269CA200404487 /* AvailableCurrencyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1876B78624269CA200404487 /* AvailableCurrencyRepository.swift */; };
 		187792FD241FAAA500CC4862 /* DefaultExchangeRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187792FC241FAAA500CC4862 /* DefaultExchangeRepositoryTests.swift */; };
 		18779300241FB4C500CC4862 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187792FF241FB4C500CC4862 /* Result.swift */; };
 		187793022420424400CC4862 /* TestingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187793012420424400CC4862 /* TestingDataSource.swift */; };
@@ -199,6 +203,10 @@
 		1876B76424266E3900404487 /* RatesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatesCell.xib; sourceTree = "<group>"; };
 		1876B766242672BD00404487 /* RatesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesCell.swift; sourceTree = "<group>"; };
 		1876B7682426731100404487 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		1876B77F2426941500404487 /* DefaultCurrencyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCurrencyProvider.swift; sourceTree = "<group>"; };
+		1876B7822426984800404487 /* DefaultCurrencyProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCurrencyProviderTests.swift; sourceTree = "<group>"; };
+		1876B78424269C8500404487 /* FavoriteCurrencyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCurrencyRepository.swift; sourceTree = "<group>"; };
+		1876B78624269CA200404487 /* AvailableCurrencyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableCurrencyRepository.swift; sourceTree = "<group>"; };
 		187792FC241FAAA500CC4862 /* DefaultExchangeRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultExchangeRepositoryTests.swift; sourceTree = "<group>"; };
 		187792FF241FB4C500CC4862 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		187793012420424400CC4862 /* TestingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingDataSource.swift; sourceTree = "<group>"; };
@@ -369,6 +377,7 @@
 		182E48482421335200084D5F /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				1876B7812426983300404487 /* CurrencyProvider */,
 				18DF6FA324217AF3007624E0 /* Timer */,
 				18DF6F9B24216E36007624E0 /* ExchangeInteractor */,
 				182E484F2421344E00084D5F /* PairInteractor */,
@@ -419,6 +428,22 @@
 				1876B766242672BD00404487 /* RatesCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		1876B77E2426940200404487 /* CurrencyProvider */ = {
+			isa = PBXGroup;
+			children = (
+				1876B77F2426941500404487 /* DefaultCurrencyProvider.swift */,
+			);
+			path = CurrencyProvider;
+			sourceTree = "<group>";
+		};
+		1876B7812426983300404487 /* CurrencyProvider */ = {
+			isa = PBXGroup;
+			children = (
+				1876B7822426984800404487 /* DefaultCurrencyProviderTests.swift */,
+			);
+			path = CurrencyProvider;
 			sourceTree = "<group>";
 		};
 		187792F9241FA7CB00CC4862 /* ExchangeRepository */ = {
@@ -497,6 +522,7 @@
 		187D10DD241E5F450076A9F3 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				1876B77E2426940200404487 /* CurrencyProvider */,
 				18DF6F9224216D26007624E0 /* Timer */,
 				18DF6F8F24216838007624E0 /* ExchangeInteractor */,
 				182E484C2421340E00084D5F /* Interfaces */,
@@ -781,6 +807,8 @@
 			children = (
 				18E483D1241E94A300062135 /* CurrencyRepository.swift */,
 				18E483DE241E98B000062135 /* ExchangeRepository.swift */,
+				1876B78424269C8500404487 /* FavoriteCurrencyRepository.swift */,
+				1876B78624269CA200404487 /* AvailableCurrencyRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -1517,9 +1545,12 @@
 				18E483DF241E98B000062135 /* ExchangeRepository.swift in Sources */,
 				182E484B242133BE00084D5F /* PairSaver.swift in Sources */,
 				187D10E6241E651F0076A9F3 /* ExchangePair.swift in Sources */,
+				1876B7802426941500404487 /* DefaultCurrencyProvider.swift in Sources */,
 				18B8C6EF241D98E10057858C /* Currency.swift in Sources */,
 				187D10E3241E5F7C0076A9F3 /* CurrencyProvider.swift in Sources */,
+				1876B78724269CA200404487 /* AvailableCurrencyRepository.swift in Sources */,
 				18DF6F9424216D32007624E0 /* TimerProtocol.swift in Sources */,
+				1876B78524269C8500404487 /* FavoriteCurrencyRepository.swift in Sources */,
 				187D10E9241E67670076A9F3 /* PairProvider.swift in Sources */,
 				18E483E2241E994200062135 /* Pair.swift in Sources */,
 				18DF6F9124216856007624E0 /* ExchangeUseCase.swift in Sources */,
@@ -1541,6 +1572,7 @@
 				18DF6FA024217A96007624E0 /* TimerMock.swift in Sources */,
 				18E483FB241EE2B200062135 /* Currency+Pair.swift in Sources */,
 				18DF6FA224217ACA007624E0 /* ExchangeRepositoryMock.swift in Sources */,
+				1876B7832426984800404487 /* DefaultCurrencyProviderTests.swift in Sources */,
 				18DF6FA524217B42007624E0 /* DefaultTimerTests.swift in Sources */,
 				187D10DA241E51400076A9F3 /* CurrencyTests.swift in Sources */,
 				187281D82422D26E007CAF68 /* DoubleFormattingTests.swift in Sources */,
