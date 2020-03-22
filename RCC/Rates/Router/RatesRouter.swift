@@ -7,23 +7,31 @@
 //
 
 import UIKit
-
+import Presentation
 
 final class RatesRouter: StoryboardInstantiator {
     weak var view: RatesViewController!
 
-    init(withView view: RatesViewController) {
+    init(with view: RatesViewController) {
         self.view = view
     }
 
     static func assembleModule() -> UIViewController {
         let viewController = defaultViewController(for: RatesViewController.self)
-        viewController.viewModel = ExchangeViewModelAssembler.assemble()
+        let router = RatesRouter(with: viewController)
+        let viewModel = ExchangeViewModelAssembler.assemble()
+        viewModel.router = router
+        viewController.viewModel = viewModel
 
         return viewController
     }
 }
 
-//extension RatesRouter: RatesRouterProtocol {
-//
-//}
+extension RatesRouter: RatesRouterProtocol {
+    func showAddCurrencyScreen() {
+        let viewController = FirstCurrenciesRouter.assembleModule()
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.modalPresentationStyle = .fullScreen
+        view.present(navigationController, animated: true, completion: nil)
+    }
+}

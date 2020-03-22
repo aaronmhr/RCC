@@ -9,9 +9,10 @@
 import Converter
 
 public final class DefaultCurrencyRepository: AvailableCurrencyRepository {
+    public init() { }
     public var availableCurrencyCodes: [String] {
-        let response: CurrencyCodeResponse? = try? CurrencyCodeResponse.readJSONFrom(from: "currencies", bundle: bundle)
-        return response?.codes ?? []
+        let response: [String]? = try? String.readJSONFrom(from: "currencies", bundle: bundle)
+        return response ?? []
     }
     
     private var bundle: Bundle  {

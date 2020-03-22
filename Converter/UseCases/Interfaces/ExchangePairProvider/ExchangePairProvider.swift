@@ -12,6 +12,7 @@ public protocol ExchangePairProvider {
     typealias Result = Swift.Result<[ExchangePair], ExchangeProviderError>
     
     func getExchangePairs(for pairs: [Pair], at interval: TimeInterval, completion: @escaping (ExchangePairProvider.Result) -> Void)
+    func stopRetreavingPairs()
 }
 
 public enum ExchangeProviderError: Error {

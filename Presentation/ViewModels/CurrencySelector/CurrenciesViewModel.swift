@@ -8,5 +8,6 @@
 
 public protocol CurrenciesViewModel {
     var currencies: Box<[CurrencyView]> { get }
+    func loadCurrencies()
     func didSelectCurrencyAtIndex(_ index: Int)
 }

@@ -37,6 +37,10 @@ class MockingPairInteractor: PairInteractorProtocol {
 }
 
 private final class ExchangePairProviderMock: ExchangePairProvider {
+    func stopRetreavingPairs() {
+        
+    }
+    
     func getExchangePairs(for pairs: [Pair], at interval: TimeInterval, completion: @escaping (Result<[ExchangePair], ExchangeProviderError>) -> Void) {
         
     }

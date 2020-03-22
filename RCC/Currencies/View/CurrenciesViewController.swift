@@ -11,7 +11,7 @@ import Presentation
 
 final class CurrenciesViewController: UIViewController {
     
-    var viewModel: CurrenciesViewModel!
+    var viewModel: CurrenciesViewModel?
     @IBOutlet private var tableView: UITableView!
 
     private var currencies: [CurrencyView] = [] {
@@ -21,9 +21,11 @@ final class CurrenciesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDataSource()
-        viewModel.currencies.bind { currencies in
-            
+        setupNavigationController()
+        viewModel?.currencies.bind { [unowned self] currencies in
+            self.currencies = currencies
         }
+        viewModel?.loadCurrencies()
     }
 }
 
@@ -31,6 +33,12 @@ extension CurrenciesViewController {
     private func setupDataSource() {
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.separatorStyle = .none
+        tableView.register(cellType: CurrencyCell.self)
+    }
+    
+    private func setupNavigationController() {
+        navigationController?.isNavigationBarHidden = true
     }
 }
 
@@ -48,6 +56,6 @@ extension CurrenciesViewController: UITableViewDataSource {
 
 extension CurrenciesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.didSelectCurrencyAtIndex(indexPath.row)
+        viewModel?.didSelectCurrencyAtIndex(indexPath.row)
     }
 }

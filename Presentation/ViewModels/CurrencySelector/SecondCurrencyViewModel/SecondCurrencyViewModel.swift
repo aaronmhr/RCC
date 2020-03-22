@@ -9,18 +9,19 @@
 import Converter
 
 public final class SecondCurrencyViewModel {
+    public var router: SecondCurrencyRouterProtocol?
     private let currencyProvider: CurrencyProvider
-    private let currencyAvailabilityChecker: CurrencyAvailabilityChecker
+    private let currencyAvailabilityChecker: PairConfigurator
     public private(set) var currencies: Box<[CurrencyView]> = Box([])
     
-    init(currencyProvider: CurrencyProvider, currencyAvailabilityChecker: CurrencyAvailabilityChecker) {
+    public init(currencyProvider: CurrencyProvider, currencyAvailabilityChecker: PairConfigurator) {
         self.currencyProvider = currencyProvider
         self.currencyAvailabilityChecker = currencyAvailabilityChecker
     }
 }
 
 extension SecondCurrencyViewModel: CurrenciesViewModel{
-    public func startLoaddingCurrencies() {
+    public func loadCurrencies() {
         let all = currencyProvider.getCurrencies()
         let currencyAvailable = currencyAvailabilityChecker.nonPairingAvailable(within: all)
         let models = currencyAvailable.map(CurrencyView.make(from:isActive:))
@@ -28,6 +29,8 @@ extension SecondCurrencyViewModel: CurrenciesViewModel{
     }
     
     public func didSelectCurrencyAtIndex(_ index: Int) {
-        
+        let currency = currencyProvider.getCurrencies()[index]
+        currencyAvailabilityChecker.savePairWith(currency)
+        router?.dismiss()
     }
 }

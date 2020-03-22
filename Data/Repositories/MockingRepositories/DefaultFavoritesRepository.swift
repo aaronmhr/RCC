@@ -9,9 +9,11 @@
 import Converter
 
 public final class DefaultFavoritesRepository: FavoriteCurrencyRepository {
+    public init() { }
+    
     public var favoriteCurrencyCodes: [String] {
-        let response: CurrencyCodeResponse? = try? CurrencyCodeResponse.readJSONFrom(from: "favorites", bundle: bundle)
-        return response?.codes ?? []
+        let response: [String]? = try? String.readJSONFrom(from: "favorites", bundle: bundle)
+        return response ?? []
     }
     
     private var bundle: Bundle  {

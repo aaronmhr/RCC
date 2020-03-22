@@ -16,7 +16,7 @@ public final class DefaultCurrencyProvider: CurrencyProvider {
     }
     
     public func getCurrencies() -> [Currency] {
-        return sortedCurrencies.compactMap { Currency.Builder.build(from: $0) }
+         return sortedCurrencies.compactMap { Currency.Builder.build(from: $0) }
     }
     
     private var sortedCurrencies: [String] {

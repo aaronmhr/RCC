@@ -14,11 +14,17 @@ final class CurrencyCell: UITableViewCell, NibReusable {
     @IBOutlet private var codeLabel: UILabel!
     @IBOutlet private var currencyName: UILabel!
     
+    override class func awakeFromNib() {
+        super.awakeFromNib()
+        
+    }
+    
     func configure(with currency: CurrencyView) {
         flag.image = UIImage(imageLiteralResourceName: currency.code)
         codeLabel.text = currency.code
         currencyName.text = currency.name
-        alpha = currency.isActive ? Constants.activeAlpha : Constants.disabledAlpha
+        contentView.alpha = currency.isActive ? Constants.activeAlpha : Constants.disabledAlpha
+        isUserInteractionEnabled = currency.isActive
     }
     
     override func prepareForReuse() {
@@ -31,6 +37,6 @@ final class CurrencyCell: UITableViewCell, NibReusable {
     
     private enum Constants {
         static let activeAlpha: CGFloat = 1.0
-        static let disabledAlpha: CGFloat = 0.7
+        static let disabledAlpha: CGFloat = 0.2
     }
 }

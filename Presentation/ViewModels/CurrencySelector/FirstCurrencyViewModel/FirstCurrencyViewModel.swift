@@ -9,24 +9,26 @@
 import Converter
 
 public final class FirstCurrencyViewModel {
+    public var router: FirstCurrencyRouterProtocol?
     private let currencyProvider: CurrencyProvider
-    private let currencyAvailabilityChecker: CurrencyAvailabilityChecker
+    
+    private var currencyEntities: [Currency] = [] {
+        didSet { currencies.value = currencyEntities.map { CurrencyView.make(from: $0, isActive: true) } }
+    }
     public private(set) var currencies: Box<[CurrencyView]> = Box([])
     
-    init(currencyProvider: CurrencyProvider, currencyAvailabilityChecker: CurrencyAvailabilityChecker) {
+    public init(currencyProvider: CurrencyProvider) {
         self.currencyProvider = currencyProvider
-        self.currencyAvailabilityChecker = currencyAvailabilityChecker
     }
 }
 
 extension FirstCurrencyViewModel: CurrenciesViewModel {
-    public func startLoaddingCurrencies() {
-        let all = currencyProvider.getCurrencies()
-        let models = all.map { CurrencyView.make(from: $0, isActive: true) }
-        currencies.value = models
+    public func loadCurrencies() {
+        currencyEntities = currencyProvider.getCurrencies()
     }
     
     public func didSelectCurrencyAtIndex(_ index: Int) {
-        
+        let selected = currencyEntities[index]
+        router?.showSecondCurrencySelector(for: selected)
     }
 }

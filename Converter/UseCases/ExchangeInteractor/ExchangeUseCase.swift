@@ -29,7 +29,7 @@ public final class ExchangeUseCase: ExchangePairProvider {
         timer.fire()
     }
     
-    func stopRetreavingPairs() {
+    public func stopRetreavingPairs() {
         timer.invalidate()
     }
 }

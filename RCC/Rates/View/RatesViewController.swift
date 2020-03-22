@@ -36,8 +36,13 @@ final class RatesViewController: UIViewController {
         viewModel.startFetchingExchangeRates()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        viewModel.stopFetchingExchangeRates()
+    }
+    
     @objc private func addTapped() {
-        
+        viewModel.addPairDidTapp()
     }
 }
 
