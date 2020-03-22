@@ -22,7 +22,3 @@ final class CurrenciesRouter: StoryboardInstantiator {
         return viewController
     }
 }
-
-extension CurrenciesRouter {
-
-}

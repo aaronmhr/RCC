@@ -7,41 +7,47 @@
 //
 
 import UIKit
+import Presentation
 
 final class CurrenciesViewController: UIViewController {
-    var viewModel: CurrenciesViewModelProtocol!
     
+    var viewModel: CurrenciesViewModel!
     @IBOutlet private var tableView: UITableView!
 
+    private var currencies: [CurrencyView] = [] {
+        didSet { tableView.reloadData() }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupDataSource()
+        viewModel.currencies.bind { currencies in
+            
+        }
     }
 }
 
 extension CurrenciesViewController {
-
+    private func setupDataSource() {
+        tableView.dataSource = self
+        tableView.delegate = self
+    }
 }
 
-import Presentation
-import Converter
-
-public protocol CurrenciesViewModelProtocol {
-    var currencies: Box<[String]> { get }
-    func didSelctCurrencyAtIndex(_ index: Int)
-}
-
-public final class FirstCurrencyViewModel {
-    private let currencyProvider: CurrencyProvider
-    public private(set) var currencies: Box<[String]> = Box([])
+extension CurrenciesViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return currencies.count
+    }
     
-    init(currencyProvider: CurrencyProvider) {
-        self.currencyProvider = currencyProvider
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: CurrencyCell = tableView.dequeueReusableCell(for: indexPath)
+        cell.configure(with: currencies[indexPath.row])
+        return cell
     }
 }
 
-extension FirstCurrencyViewModel: CurrenciesViewModelProtocol {
-    public func didSelctCurrencyAtIndex(_ index: Int) {
-        
+extension CurrenciesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.didSelectCurrencyAtIndex(indexPath.row)
     }
 }
-
