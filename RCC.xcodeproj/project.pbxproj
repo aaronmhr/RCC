@@ -44,6 +44,7 @@
 		1876B7C0242798F300404487 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1876B7BF242798F300404487 /* Observer.swift */; };
 		1876B7C32427A26C00404487 /* FirstCurrencyRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1876B7C22427A26C00404487 /* FirstCurrencyRouterProtocol.swift */; };
 		1876B7C62427AE1A00404487 /* SecondCurrencyRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1876B7C52427AE1A00404487 /* SecondCurrencyRouterProtocol.swift */; };
+		1876B7CD2427D6A600404487 /* LocalStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1876B7CB2427D6A600404487 /* LocalStore.xcdatamodeld */; };
 		187792FD241FAAA500CC4862 /* DefaultExchangeRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187792FC241FAAA500CC4862 /* DefaultExchangeRepositoryTests.swift */; };
 		18779300241FB4C500CC4862 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187792FF241FB4C500CC4862 /* Result.swift */; };
 		187793022420424400CC4862 /* TestingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187793012420424400CC4862 /* TestingDataSource.swift */; };
@@ -255,6 +256,7 @@
 		1876B7BF242798F300404487 /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
 		1876B7C22427A26C00404487 /* FirstCurrencyRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCurrencyRouterProtocol.swift; sourceTree = "<group>"; };
 		1876B7C52427AE1A00404487 /* SecondCurrencyRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCurrencyRouterProtocol.swift; sourceTree = "<group>"; };
+		1876B7CC2427D6A600404487 /* LocalStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocalStore.xcdatamodel; sourceTree = "<group>"; };
 		187792FC241FAAA500CC4862 /* DefaultExchangeRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultExchangeRepositoryTests.swift; sourceTree = "<group>"; };
 		187792FF241FB4C500CC4862 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		187793012420424400CC4862 /* TestingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingDataSource.swift; sourceTree = "<group>"; };
@@ -687,6 +689,14 @@
 			path = RouterProtocol;
 			sourceTree = "<group>";
 		};
+		1876B7C72427D61200404487 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1876B7CB2427D6A600404487 /* LocalStore.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		187792F9241FA7CB00CC4862 /* ExchangeRepository */ = {
 			isa = PBXGroup;
 			children = (
@@ -1011,6 +1021,7 @@
 		18E483C8241E90E800062135 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				1876B7C72427D61200404487 /* Models */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -1851,6 +1862,7 @@
 				18E483EF241EA37400062135 /* URLSessionHTTPClient.swift in Sources */,
 				18E483CF241E946500062135 /* DefaultCurrencyRepository.swift in Sources */,
 				18E483ED241EA28200062135 /* HTTPClient.swift in Sources */,
+				1876B7CD2427D6A600404487 /* LocalStore.xcdatamodeld in Sources */,
 				1876B7942426A70F00404487 /* DefaultFavoritesRepository.swift in Sources */,
 				18E483E5241E9D4800062135 /* RatesAPI.swift in Sources */,
 			);
@@ -2571,6 +2583,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1876B7CB2427D6A600404487 /* LocalStore.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1876B7CC2427D6A600404487 /* LocalStore.xcdatamodel */,
+			);
+			currentVersion = 1876B7CC2427D6A600404487 /* LocalStore.xcdatamodel */;
+			path = LocalStore.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 18B8C693241D40EC0057858C /* Project object */;
 }
