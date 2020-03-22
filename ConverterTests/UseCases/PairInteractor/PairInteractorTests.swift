@@ -42,7 +42,7 @@ final class PairInteractorTests: QuickSpec {
                     let pairs = [ Pair.euro_pound, Pair.pound_dollar, Pair.dollar_euro]
                     pairs.forEach(sut.save(_:))
                     
-                    expect(sut.getConfiguredPairs()).to(equal(pairs))
+                    expect(sut.getConfiguredPairs()).to(equal(pairs.reversed()))
                 }
             }
             
