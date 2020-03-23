@@ -24,15 +24,7 @@ public final class RatesViewModel {
         pairUseCase.getConfiguredPairs { [weak self] result in
             switch result {
             case .success(let pairs):
-//                self?.fetchRates(for: pairs, at: Constants.defaultInterval)
-                self?.exchangePairProvider.getExchangePairs(for: pairs, at: 2.0) { [weak self] result in
-                    switch result {
-                    case .success(let exchangePairs):
-                        self?.pairs.value = exchangePairs.map(ExchangePairViewFormatter.make)
-                    case .failure:
-                        break
-                    }
-                }
+                self?.fetchRates(for: pairs, at: Constants.defaultInterval)
             case .failure(let error): break
             }
         }
