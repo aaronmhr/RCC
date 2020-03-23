@@ -25,6 +25,7 @@ extension CoreDataPair {
     
     static func get(in context: NSManagedObjectContext) throws -> [CoreDataPair] {
         let request = NSFetchRequest<CoreDataPair>(entityName: String(describing: CoreDataPair.self))
+        request.sortDescriptors = [NSSortDescriptor.init(key: "date", ascending: false)]
         request.returnsObjectsAsFaults = false
         return try context.fetch(request)
     }
