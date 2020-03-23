@@ -714,7 +714,6 @@
 				187CDAB024293E7D009CD659 /* CoreDataPair+CoreDataProperties.swift */,
 				187CDAB62429621E009CD659 /* CoreDataPair+CoreDataClass.swift */,
 				1876B7CB2427D6A600404487 /* LocalStore.xcdatamodeld */,
-				1876B7D42428283B00404487 /* PairDataSource.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -722,8 +721,9 @@
 		1876B7CE2427D8AF00404487 /* CoreDataClient */ = {
 			isa = PBXGroup;
 			children = (
-				1876B7C72427D61200404487 /* Models */,
+				1876B7D42428283B00404487 /* PairDataSource.swift */,
 				1876B7CF2427D8D600404487 /* CoreDataLocalStore.swift */,
+				1876B7C72427D61200404487 /* Models */,
 				1876B7D624282CD500404487 /* Extensions */,
 			);
 			path = CoreDataClient;
