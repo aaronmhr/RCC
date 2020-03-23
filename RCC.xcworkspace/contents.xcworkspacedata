@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/aaronhuanuco/Developer/RCC/Data/Database/CoreDataClient/Models/CoreDataPair+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/aaronhuanuco/Developer/RCC/Data/Database/CoreDataClient/Models/CoreDataPair+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
       location = "group:RCC.xcodeproj">
    </FileRef>
    <FileRef

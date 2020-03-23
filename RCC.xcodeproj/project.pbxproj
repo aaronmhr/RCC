@@ -57,9 +57,9 @@
 		18791A0B24210B2900C259C9 /* RatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791A0224210B2900C259C9 /* RatesViewController.swift */; };
 		18791A0C24210B2900C259C9 /* Rates.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18791A0324210B2900C259C9 /* Rates.storyboard */; };
 		18791A0F24210B2900C259C9 /* RatesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791A0924210B2900C259C9 /* RatesRouter.swift */; };
-		187CDAB124293E7D009CD659 /* CoreDataPair+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187CDAAF24293E7D009CD659 /* CoreDataPair+CoreDataClass.swift */; };
 		187CDAB224293E7D009CD659 /* CoreDataPair+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187CDAB024293E7D009CD659 /* CoreDataPair+CoreDataProperties.swift */; };
 		187CDAB524295EE9009CD659 /* MockingPairRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187CDAB424295EE9009CD659 /* MockingPairRepository.swift */; };
+		187CDAB82429621E009CD659 /* CoreDataPair+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187CDAB62429621E009CD659 /* CoreDataPair+CoreDataClass.swift */; };
 		187D10DA241E51400076A9F3 /* CurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D10D9241E51400076A9F3 /* CurrencyTests.swift */; };
 		187D10E3241E5F7C0076A9F3 /* CurrencyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D10E2241E5F7C0076A9F3 /* CurrencyProvider.swift */; };
 		187D10E6241E651F0076A9F3 /* ExchangePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D10E5241E651F0076A9F3 /* ExchangePair.swift */; };
@@ -278,9 +278,9 @@
 		18791A0224210B2900C259C9 /* RatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatesViewController.swift; sourceTree = "<group>"; };
 		18791A0324210B2900C259C9 /* Rates.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Rates.storyboard; sourceTree = "<group>"; };
 		18791A0924210B2900C259C9 /* RatesRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatesRouter.swift; sourceTree = "<group>"; };
-		187CDAAF24293E7D009CD659 /* CoreDataPair+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CoreDataPair+CoreDataClass.swift"; path = "/Users/aaronhuanuco/Developer/RCC/Data/Database/CoreDataClient/Models/CoreDataPair+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		187CDAB024293E7D009CD659 /* CoreDataPair+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CoreDataPair+CoreDataProperties.swift"; path = "/Users/aaronhuanuco/Developer/RCC/Data/Database/CoreDataClient/Models/CoreDataPair+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		187CDAB424295EE9009CD659 /* MockingPairRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockingPairRepository.swift; sourceTree = "<group>"; };
+		187CDAB62429621E009CD659 /* CoreDataPair+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreDataPair+CoreDataClass.swift"; sourceTree = "<group>"; };
 		187D10D9241E51400076A9F3 /* CurrencyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTests.swift; sourceTree = "<group>"; };
 		187D10E2241E5F7C0076A9F3 /* CurrencyProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyProvider.swift; sourceTree = "<group>"; };
 		187D10E5241E651F0076A9F3 /* ExchangePair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangePair.swift; sourceTree = "<group>"; };
@@ -711,8 +711,8 @@
 		1876B7C72427D61200404487 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				187CDAAF24293E7D009CD659 /* CoreDataPair+CoreDataClass.swift */,
 				187CDAB024293E7D009CD659 /* CoreDataPair+CoreDataProperties.swift */,
+				187CDAB62429621E009CD659 /* CoreDataPair+CoreDataClass.swift */,
 				1876B7CB2427D6A600404487 /* LocalStore.xcdatamodeld */,
 				1876B7D42428283B00404487 /* PairDataSource.swift */,
 			);
@@ -1919,7 +1919,6 @@
 				1876B7DA24282D0300404487 /* NSPersistentContainer.swift in Sources */,
 				1876B7E0242832F900404487 /* DefaultPairRepository.swift in Sources */,
 				18E483F2241ECF8400062135 /* RemoteExchangeRatesDataSource.swift in Sources */,
-				187CDAB124293E7D009CD659 /* CoreDataPair+CoreDataClass.swift in Sources */,
 				1876B78A2426A23700404487 /* Documents.swift in Sources */,
 				1876B7D52428283B00404487 /* PairDataSource.swift in Sources */,
 				18E483DD241E988400062135 /* DefaultExchangeRepository.swift in Sources */,
@@ -1931,6 +1930,7 @@
 				1876B7DD24282D2E00404487 /* Converter + CoreData.swift in Sources */,
 				1876B7CD2427D6A600404487 /* LocalStore.xcdatamodeld in Sources */,
 				1876B7942426A70F00404487 /* DefaultFavoritesRepository.swift in Sources */,
+				187CDAB82429621E009CD659 /* CoreDataPair+CoreDataClass.swift in Sources */,
 				187CDAB224293E7D009CD659 /* CoreDataPair+CoreDataProperties.swift in Sources */,
 				18E483E5241E9D4800062135 /* RatesAPI.swift in Sources */,
 			);
