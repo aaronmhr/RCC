@@ -7,12 +7,19 @@
 //
 
 import Converter
+import CoreData
 import Data
 
-let repository = MockingPairRepository()
-
 final class PairUseCaseAssembler {
+    private static let datasource: PairDataSource = {
+        try! CoreDataLocalStore(storeURL: NSPersistentContainer.defaultDirectoryURL().appendingPathComponent("local-store.sqlite"))
+    }()
+
+    private static let repository: DefaultPairRepository = {
+        DefaultPairRepository(datasource: PairUseCaseAssembler.datasource, currentDate: Date.init)
+    }()
+    
     static func assemble() -> PairInteractorProtocol {
-        return  PairUseCase(repository: repository)
+        return  PairUseCase(repository: PairUseCaseAssembler.repository)
     }
 }

@@ -24,38 +24,43 @@ final class PairInteractorTests: QuickSpec {
             
             context("if no previous pair has been configured") {
                 it("should return no `Pairs`") {
-                    expect(sut.getConfiguredPairs()).to(beEmpty())
+                    
+                   var obtainedResult: Result<[Pair], Error>?
+                    sut.getConfiguredPairs { obtained in
+                        obtainedResult = obtained
+                    }
+                    
+                    expect(obtainedResult?.value).toEventually(beEmpty())
                 }
             }
             
             describe("a `Pair` has been saved") {
                 it("should return that `Pair`") {
                     let somePair = Pair.euro_pound
-                    sut.save(somePair)
+                    sut.save(somePair, completion: { _ in })
                     
-                    expect(sut.getConfiguredPairs()).to(equal([somePair]))
+                    var obtainedResult: Result<[Pair], Error>?
+                    sut.getConfiguredPairs { obtained in
+                        obtainedResult = obtained
+                    }
+                    
+                    expect(obtainedResult?.value).to(equal([somePair]))
                 }
             }
             
             describe("saving multiple pairs") {
                 it("should return as many pairs as have been saved") {
                     let pairs = [ Pair.euro_pound, Pair.pound_dollar, Pair.dollar_euro]
-                    pairs.forEach(sut.save(_:))
+                    pairs.forEach { sut.save($0, completion: { _ in })}
                     
-                    expect(sut.getConfiguredPairs()).to(equal(pairs.reversed()))
-                }
-            }
-            
-            describe("saving multiple pairs with repeated ones") {
-                it("should return only non repeated pairs") {
-                    let uniquePair = Pair.dollar_euro
-                    let pairs = [uniquePair, uniquePair]
-                    pairs.forEach(sut.save(_:))
+                    var obtainedResult: Result<[Pair], Error>?
+                     sut.getConfiguredPairs { obtained in
+                         obtainedResult = obtained
+                     }
                     
-                    expect(sut.getConfiguredPairs()).to(equal([uniquePair]))
+                    expect(obtainedResult?.value).to(equal(pairs.reversed()))
                 }
             }
         }
     }
 }
-

@@ -26,13 +26,15 @@ final class RatesViewModelTests: QuickSpec {
 }
 
 class MockingPairInteractor: PairInteractorProtocol {
-    var pairStub: [Pair] = []
-    func getConfiguredPairs() -> [Pair] {
-        return pairStub
+    var fetchingStub: Result<[Pair], Error>!
+    var savingStub: Result<Void, Error>!
+    
+    func getConfiguredPairs(completion: @escaping (Result<[Pair], Error>) -> Void) {
+        completion(fetchingStub)
     }
     
-    func save(_ pair: Pair) {
-        pairStub.append(pair)
+    func save(_ pair: Pair, completion: @escaping (Result<Void, Error>) -> Void) {
+        completion(savingStub)
     }
 }
 

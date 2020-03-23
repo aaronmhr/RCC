@@ -12,6 +12,7 @@ public final class SecondCurrencyViewModel {
     public var router: SecondCurrencyRouterProtocol?
     private let currencyProvider: CurrencyProvider
     private let currencyAvailabilityChecker: PairConfigurator
+    private var currencyModels: [Currency] = []
     public private(set) var currencies: Box<[CurrencyView]> = Box([])
     
     public init(currencyProvider: CurrencyProvider, currencyAvailabilityChecker: PairConfigurator) {
@@ -20,17 +21,28 @@ public final class SecondCurrencyViewModel {
     }
 }
 
-extension SecondCurrencyViewModel: CurrenciesViewModel{
+extension SecondCurrencyViewModel: CurrenciesViewModel {
     public func loadCurrencies() {
-        let all = currencyProvider.getCurrencies()
-        let currencyAvailable = currencyAvailabilityChecker.nonPairingAvailable(within: all)
-        let models = currencyAvailable.map(CurrencyView.make(from:isActive:))
-        currencies.value = models
+        currencyModels = currencyProvider.getCurrencies()
+        currencyAvailabilityChecker.pairingAvailable(within: currencyModels) { [weak self] result in
+            switch result {
+            case .success(let availableCurrencies):
+                let models = availableCurrencies.map(CurrencyView.make(from:isActive:))
+                self?.currencies.value = models
+            case .failure(let error):
+                break
+            }
+        }
     }
     
     public func didSelectCurrencyAtIndex(_ index: Int) {
-        let currency = currencyProvider.getCurrencies()[index]
-        currencyAvailabilityChecker.savePairWith(currency)
-        router?.dismiss()
+        currencyAvailabilityChecker.savePair(with: currencyModels[index]) { [weak self] result in
+            switch result {
+            case .success:
+                self?.router?.dismiss()
+            case .failure(let error):
+                break
+            }
+        }
     }
 }

@@ -20,24 +20,31 @@ public final class RatesViewModel {
     
     public private(set) var pairs: Box<[ExchangePairView]> = Box([])
     
-    func retrieve() {
-        let pairs = pairUseCase.getConfiguredPairs()
-        exchangePairProvider.getExchangePairs(for: pairs, at: Constants.defaultInterval) { result in
+    public func startFetchingExchangeRates() {
+        pairUseCase.getConfiguredPairs { [weak self] result in
             switch result {
             case .success(let pairs):
-                self.pairs.value = pairs.map(ExchangePairViewFormatter.make)
-            case .failure: break
+//                self?.fetchRates(for: pairs, at: Constants.defaultInterval)
+                self?.exchangePairProvider.getExchangePairs(for: pairs, at: 2.0) { [weak self] result in
+                    switch result {
+                    case .success(let exchangePairs):
+                        self?.pairs.value = exchangePairs.map(ExchangePairViewFormatter.make)
+                    case .failure:
+                        break
+                    }
+                }
+            case .failure(let error): break
             }
         }
     }
     
-    public func startFetchingExchangeRates() {
-        let pairs = pairUseCase.getConfiguredPairs()
-        exchangePairProvider.getExchangePairs(for: pairs, at: Constants.defaultInterval) { result in
+    private func fetchRates(for pairs: [Pair], at interval: TimeInterval) {
+        exchangePairProvider.getExchangePairs(for: pairs, at: interval) { [weak self] result in
             switch result {
-            case .success(let pairs):
-                self.pairs.value = pairs.map(ExchangePairViewFormatter.make)
-            case .failure: break
+            case .success(let exchangePairs):
+                self?.pairs.value = exchangePairs.map(ExchangePairViewFormatter.make)
+            case .failure:
+                break
             }
         }
     }

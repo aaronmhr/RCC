@@ -15,18 +15,18 @@ public final class ExchangeUseCase: ExchangePairProvider {
         self.timer = timer
     }
     
-    public func getExchangePairs(for pairs: [Pair],
-                          at interval: TimeInterval,
-                          completion: @escaping (ExchangePairProvider.Result) -> Void) {
-        timer.schedule(timeInterval: interval, repeats: true) { [weak self] in
-            self?.repository.getExchangePairs(for: pairs, completion: { result in
-                let newResult = result.mapError { _ -> ExchangeProviderError in
-                    return .remote
-                }
-                completion(newResult)
-            })
+    public func getExchangePairs(for pairs: [Pair], at interval: TimeInterval, completion: @escaping (ExchangePairProvider.Result) -> Void) {
+        DispatchQueue.main.async { [weak self] in
+            self?.timer.schedule(timeInterval: interval, repeats: true) {
+                self?.repository.getExchangePairs(for: pairs, completion: { result in
+                    let newResult = result.mapError { _ -> ExchangeProviderError in
+                        return .remote
+                    }
+                    completion(newResult)
+                })
+            }
+            self?.timer.fire()
         }
-        timer.fire()
     }
     
     public func stopRetreavingPairs() {

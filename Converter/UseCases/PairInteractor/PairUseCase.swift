@@ -17,37 +17,21 @@ public final class PairUseCase {
 }
 
 extension PairUseCase: PairProvider {
-    public func getConfiguredPairs() -> [Pair] {
-        return repository.getPairs()
+    public func getConfiguredPairs(completion: @escaping (Result<[Pair], Error>) -> Void) {
+        repository.fetch(completion: completion)
     }
 }
 
 extension PairUseCase: PairSaver {
-    public func save(_ pair: Pair) {
-        guard !getConfiguredPairs().contains(pair) else { return }
-        repository.savePair(pair)
+    public func save(_ pair: Pair, completion: @escaping (Result<Void, Error>) -> Void) {
+        repository.save(pair, completion: completion)
     }
 }
 
 public protocol PairRepository {
-    func getPairs() -> [Pair]
-    func savePair(_ pair: Pair)
-}
+    typealias SaveResult = Swift.Result<Void, Error>
+    typealias FetchResult = Swift.Result<[Pair], Error>
 
-public class MockingPairRepository: PairRepository {
-    
-    public init() { }
-    
-    private var reversedPair: [Pair] = []
-    private var pairsStack: [Pair] {
-        return reversedPair.reversed()
-    }
-    
-    public func getPairs() -> [Pair] {
-        return pairsStack
-    }
-    
-    public func savePair(_ pair: Pair) {
-        reversedPair.append(pair)
-    }
+    func save(_ pair: Pair, completion: @escaping (SaveResult) -> Void)
+    func fetch(completion: @escaping (FetchResult) -> Void)
 }

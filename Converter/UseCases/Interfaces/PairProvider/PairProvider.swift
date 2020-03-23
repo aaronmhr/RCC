@@ -7,5 +7,5 @@
 //
 
 public protocol PairProvider {
-    func getConfiguredPairs() -> [Pair]
+    func getConfiguredPairs(completion: @escaping (Result<[Pair], Error>) -> Void)
 }

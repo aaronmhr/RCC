@@ -30,6 +30,8 @@ final class SecondCurrenciesRouter: StoryboardInstantiator {
 
 extension SecondCurrenciesRouter: SecondCurrencyRouterProtocol {
     func dismiss() {
-        view.navigationController?.dismiss(animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.view.navigationController?.dismiss(animated: true, completion: nil)
+        }
     }
 }
