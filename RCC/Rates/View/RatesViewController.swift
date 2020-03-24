@@ -12,11 +12,12 @@ import Presentation
 final class RatesViewController: UIViewController {
     var viewModel: RatesViewModel!
 
-    @IBOutlet var tableView: UITableView!
     
-    var pairs: [ExchangePairView] = [] {
-        didSet { tableView.reloadData() }
-    }
+    @IBOutlet private var tableView: UITableView!
+    @IBOutlet private var addPairView: AddRatesView!
+    @IBOutlet private var addPairViewHeight: NSLayoutConstraint!
+    
+    var pairs: [ExchangePairView] = []
     
     var screenModel: RatesScreenModel = .empty {
         didSet{ uploadScreen(state: screenModel) }
@@ -26,13 +27,33 @@ final class RatesViewController: UIViewController {
         super.viewDidLoad()
         setupNavigationBar()
         setupTableView()
+        addPairView.addAction { [weak self] in
+            self?.viewModel.addPairDidTapp()
+        }
+        viewModel.pairs.bind { [unowned self] pairs in
+            self.pairs = pairs
+            self.tableView.reloadData()
+        }
+        viewModel.newPair.bind { [unowned self] newPair in
+            guard let pair = newPair else { return }
+            self.pairs.insert(pair, at: 0)
+            self.tableView.beginUpdates()
+            self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+            self.tableView.endUpdates()
+        }
+        viewModel.isEmptyScreen.bind { [unowned self] isEmpty in
+            let newHeight = isEmpty ? UIScreen.main.bounds.height : 70
+            guard self.addPairViewHeight.constant != newHeight else { return }
+            UIView.animate(withDuration: 0.4) {
+                self.addPairViewHeight.constant = newHeight
+                self.addPairView.state = AddRatesView.State.configured
+                self.addPairView.state = isEmpty ? AddRatesView.State.empty : AddRatesView.State.configured
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.pairs.bind { [unowned self] pairs in
-            self.pairs = pairs
-        }
         viewModel.startFetchingExchangeRates()
     }
     
@@ -48,7 +69,8 @@ final class RatesViewController: UIViewController {
 
 extension RatesViewController {
     private func setupNavigationBar() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+        navigationController?.navigationBar.isHidden = true
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
     }
     
     private func setupTableView() {

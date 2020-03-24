@@ -12,6 +12,7 @@ public final class RatesViewModel {
     private let pairUseCase: PairInteractorProtocol
     private let exchangePairProvider: ExchangePairProvider
     public var router: RatesRouterProtocol?
+    private var previouslyRetrievedPairs = 0
     
     public init(pairUseCase: PairInteractorProtocol, exchangePairProvider: ExchangePairProvider) {
         self.pairUseCase = pairUseCase
@@ -19,6 +20,13 @@ public final class RatesViewModel {
     }
     
     public private(set) var pairs: Box<[ExchangePairView]> = Box([])
+    public private(set) var newPair: Box<ExchangePairView?> = Box(nil)
+    public private(set) var isEmptyScreen: Box<Bool> = Box(true) {
+        willSet {
+            guard isEmptyScreen.value else { return }
+            stopFetchingExchangeRates()
+        }
+    }
     
     public func startFetchingExchangeRates() {
         pairUseCase.getConfiguredPairs { [weak self] result in
@@ -34,13 +42,34 @@ public final class RatesViewModel {
         exchangePairProvider.getExchangePairs(for: pairs, at: interval) { [weak self] result in
             switch result {
             case .success(let exchangePairs):
-                self?.pairs.value = exchangePairs.map(ExchangePairViewFormatter.make)
+                exchangePairs.isEmpty ? self?.setEmpty() : self?.setCongiguredPairs()
+                self?.configure(with: exchangePairs.map(ExchangePairViewFormatter.make))
             case .failure:
                 break
             }
         }
     }
     
+    private func configure(with viewPairs: [ExchangePairView]) {
+        if viewPairs.count == (previouslyRetrievedPairs + 1) {
+            pairs.value = Array(viewPairs.dropFirst())
+            newPair.value = viewPairs.first
+        } else {
+            pairs.value = viewPairs
+        }
+        previouslyRetrievedPairs = viewPairs.count
+    }
+    
+    private func setEmpty() {
+        stopFetchingExchangeRates()
+        isEmptyScreen.value = true
+    }
+    
+    private func setCongiguredPairs() {
+        guard isEmptyScreen.value else { return }
+        isEmptyScreen.value = false
+    }
+
     public func stopFetchingExchangeRates() {
         exchangePairProvider.stopRetreavingPairs()
     }

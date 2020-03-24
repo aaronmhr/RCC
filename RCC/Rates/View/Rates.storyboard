@@ -8,30 +8,44 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Exchange Rates-->
+        <!--Rates View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="RatesViewController" title="Exchange Rates" id="BYZ-38-t0r" customClass="RatesViewController" customModule="RCC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RatesViewController" id="BYZ-38-t0r" customClass="RatesViewController" customModule="RCC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zbU-pd-lK2" customClass="AddRatesView" customModule="RCC" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="9MJ-W0-vvv"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5NW-IJ-WVi">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="5NW-IJ-WVi" firstAttribute="top" secondItem="RB8-te-vSr" secondAttribute="top" id="Fsp-Xe-wTU"/>
+                            <constraint firstItem="RB8-te-vSr" firstAttribute="trailing" secondItem="zbU-pd-lK2" secondAttribute="trailing" id="3la-P9-yef"/>
+                            <constraint firstItem="zbU-pd-lK2" firstAttribute="top" secondItem="RB8-te-vSr" secondAttribute="top" constant="20" symbolic="YES" id="47q-J0-ODm"/>
+                            <constraint firstItem="5NW-IJ-WVi" firstAttribute="top" secondItem="zbU-pd-lK2" secondAttribute="bottom" id="GK5-y3-s4l"/>
+                            <constraint firstItem="zbU-pd-lK2" firstAttribute="leading" secondItem="RB8-te-vSr" secondAttribute="leading" id="M8p-wH-6Gw"/>
                             <constraint firstItem="RB8-te-vSr" firstAttribute="trailing" secondItem="5NW-IJ-WVi" secondAttribute="trailing" id="hJ2-0p-IMc"/>
                             <constraint firstItem="5NW-IJ-WVi" firstAttribute="leading" secondItem="RB8-te-vSr" secondAttribute="leading" id="odX-tV-K9u"/>
+                            <constraint firstItem="RB8-te-vSr" firstAttribute="bottom" secondItem="zbU-pd-lK2" secondAttribute="bottom" priority="750" id="oqr-ab-fnl"/>
                             <constraint firstItem="RB8-te-vSr" firstAttribute="bottom" secondItem="5NW-IJ-WVi" secondAttribute="bottom" id="sU4-PS-9im"/>
+                            <constraint firstItem="5NW-IJ-WVi" firstAttribute="top" secondItem="zbU-pd-lK2" secondAttribute="bottom" id="svr-6z-PGC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RB8-te-vSr"/>
                     </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="addPairView" destination="zbU-pd-lK2" id="wzH-sM-F2N"/>
+                        <outlet property="addPairViewHeight" destination="9MJ-W0-vvv" id="sAG-u2-1KT"/>
                         <outlet property="tableView" destination="5NW-IJ-WVi" id="doY-UH-GqB"/>
                     </connections>
                 </viewController>
