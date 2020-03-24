@@ -41,7 +41,7 @@ final class DefaultTimerTests: QuickSpec {
                 sut.schedule(timeInterval: 0.01, repeats: true) {
                     counter += 1
                 }
-                expect(counter).toEventually(be(3))
+                expect(counter).toEventually(equal(3))
             }
         }
     }
