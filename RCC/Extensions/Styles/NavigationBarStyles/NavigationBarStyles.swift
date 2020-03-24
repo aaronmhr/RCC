@@ -12,10 +12,16 @@ struct NavigationBarStyles {
     static let `default` = Style<UINavigationBar> { _ in }
     
     static let main = Style<UINavigationBar> {
-        $0.titleTextAttributes = [.foregroundColor: UIColor.rccBlack, .font: UIFont.regular16]
+        $0.isTranslucent = false
+        $0.shadowImage = UIImage()
+        $0.backgroundColor = .rccWhite
+        $0.titleTextAttributes = [.foregroundColor: UIColor.rccBlack, .font: UIFont.medium16]
     }
     
     static let white = Style<UINavigationBar> {
+        $0.isTranslucent = false
+        $0.shadowImage = UIImage()
+        $0.backgroundColor = .rccWhite
         $0.titleTextAttributes = [.foregroundColor: UIColor.rccWhite, .font: UIFont.regular16]
     }
 }

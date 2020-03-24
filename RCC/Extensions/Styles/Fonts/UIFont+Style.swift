@@ -27,10 +27,7 @@ extension UIFont {
     
     private enum Fonts {
         static func robotoRegular(ofSize size: CGFloat) -> UIFont {
-            guard let font = UIFont(name: "Roboto-Regular", size: size) else {
-                return systemFont(ofSize: size)
-            }
-            return font
+            return UIFont(name: "Roboto-Regular", size: size) ?? systemFont(ofSize: size)
         }
         
         static func robotoMedium(ofSize size: CGFloat) -> UIFont {

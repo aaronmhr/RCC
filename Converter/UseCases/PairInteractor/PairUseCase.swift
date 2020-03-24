@@ -26,12 +26,18 @@ extension PairUseCase: PairSaver {
     public func save(_ pair: Pair, completion: @escaping (Result<Void, Error>) -> Void) {
         repository.save(pair, completion: completion)
     }
+    
+    public func delete(_ pair: Pair, completion: @escaping (Result<Void, Error>) -> Void) {
+        repository.delete(pair, completion: completion)
+    }
 }
 
 public protocol PairRepository {
     typealias SaveResult = Swift.Result<Void, Error>
+    typealias DeleteResult = Swift.Result<Void, Error>
     typealias FetchResult = Swift.Result<[Pair], Error>
 
     func save(_ pair: Pair, completion: @escaping (SaveResult) -> Void)
+    func delete(_ pair: Pair, completion: @escaping (DeleteResult) -> Void)
     func fetch(completion: @escaping (FetchResult) -> Void)
 }

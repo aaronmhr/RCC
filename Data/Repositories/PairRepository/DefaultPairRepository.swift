@@ -21,6 +21,7 @@ public class DefaultPairRepository {
 extension DefaultPairRepository: PairRepository {
     public typealias FetchResult = PairRepository.FetchResult
     public typealias SaveResult = PairRepository.SaveResult
+    public typealias DeleteResult = PairRepository.DeleteResult
     
     public func fetch(completion: @escaping (FetchResult) -> Void) {
         datasource.retrieve(completion: completion)
@@ -28,5 +29,9 @@ extension DefaultPairRepository: PairRepository {
     
     public func save(_ pair: Pair, completion: @escaping (SaveResult) -> Void) {
         datasource.insert(pair, timestamp: currentDate(), completion: completion)
+    }
+    
+    public func delete(_ pair: Pair, completion: @escaping (DeleteResult) -> Void) {
+        datasource.delete(pair, completion: completion)
     }
 }

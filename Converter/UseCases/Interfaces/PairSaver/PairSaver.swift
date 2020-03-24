@@ -8,4 +8,5 @@
 
 public protocol PairSaver {
     func save(_ pair: Pair, completion: @escaping (Result<Void, Error>) -> Void)
+    func delete(_ pair: Pair, completion: @escaping (Result<Void, Error>) -> Void)
 }

@@ -19,6 +19,7 @@ public final class RatesViewModel {
         self.exchangePairProvider = exchangePairProvider
     }
     
+    private var pairsModel: [Pair] = []
     public private(set) var pairs: Box<[ExchangePairView]> = Box([])
     public private(set) var newPair: Box<ExchangePairView?> = Box(nil)
     public private(set) var isEmptyScreen: Box<Bool> = Box(true) {
@@ -27,13 +28,30 @@ public final class RatesViewModel {
             stopFetchingExchangeRates()
         }
     }
+    public var title: String {
+        return Localizables.title
+    }
     
     public func startFetchingExchangeRates() {
         pairUseCase.getConfiguredPairs { [weak self] result in
             switch result {
             case .success(let pairs):
+                self?.pairsModel = pairs
                 self?.fetchRates(for: pairs, at: Constants.defaultInterval)
-            case .failure(let error): break
+            case .failure(let error):
+                break
+            }
+        }
+    }
+    
+    public func deletePairAtIndex(_ index: Int) {
+        guard pairsModel.indices.contains(index) else { return }
+        pairUseCase.delete(pairsModel[index]) { [weak self] result in
+            switch result {
+            case .success:
+                break
+            case .failure(let error):
+                break
             }
         }
     }
@@ -79,42 +97,10 @@ public final class RatesViewModel {
     }
     
     private enum Constants {
-        static let defaultInterval: TimeInterval = 2.0
-    }
-}
-
-final class ExchangePairViewFormatter {
-    static func make(_ exchange: ExchangePair) -> ExchangePairView {
-        let origin = OriginCurrencyView(
-            title: "1 \(exchange.pair.first.code)",
-            subtitle: exchange.pair.first.name
-        )
-        let rate = exchange.rate.toString(decimalDigits: 4) ?? "0.0000"
-        let destination = DestinationCurrencyView(
-            title: rate,
-            subtitle: "\(exchange.pair.second.name) · \(exchange.pair.second.code)"
-        )
-        return ExchangePairView(origin: origin, destination: destination)
+        static let defaultInterval: TimeInterval = 1.0
     }
     
-    private static func format(_ string: String) -> String {
-        let firstDigits = string.dropLast(2)
-        let lastDigits = string.reversed().dropFirst(2)
-        return String(firstDigits) + lastDigits
+    private enum Localizables {
+        static let title = "Rates and Currencies"
     }
-}
-
-public struct ExchangePairView {
-    public let origin: OriginCurrencyView
-    public let destination: DestinationCurrencyView
-}
-
-public struct OriginCurrencyView {
-    public let title: String
-    public let subtitle: String
-}
-
-public struct DestinationCurrencyView {
-    public let title: String
-    public let subtitle: String
 }

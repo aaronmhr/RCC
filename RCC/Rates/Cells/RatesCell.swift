@@ -30,7 +30,7 @@ final class RatesCell: UITableViewCell, NibReusable {
     public func configureCell(_ cell: ExchangePairView) {
         originTitle.text = cell.origin.title
         originSubtitle.text = cell.origin.subtitle
-        destinationTitle.text = cell.destination.title
+        destinationTitle.attributedText = cell.destination.title.ratesCellAttributed
         destinationSubtitle.text = cell.destination.subtitle
     }
     
@@ -40,5 +40,24 @@ final class RatesCell: UITableViewCell, NibReusable {
         originSubtitle.text = nil
         destinationTitle.text = nil
         destinationSubtitle.text = nil
+    }
+}
+
+extension String {
+    var ratesCellAttributed: NSAttributedString {
+        guard count > 2,
+            let startIndexSecond = index(endIndex, offsetBy: -2, limitedBy: startIndex) else {
+                return NSAttributedString(string: self)
+        }
+        let result = NSMutableAttributedString()
+        let start = NSAttributedString(
+            string: String(self[..<startIndexSecond]),
+            attributes: [.font : UIFont.medium20, .foregroundColor : UIColor.rccBlack])
+        let end = NSAttributedString(
+            string: String(self[startIndexSecond...]),
+            attributes: [.font : UIFont.medium16, .foregroundColor : UIColor.rccBlack])
+        result.append(start)
+        result.append(end)
+        return result
     }
 }

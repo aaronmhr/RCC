@@ -11,17 +11,11 @@ import Presentation
 
 final class RatesViewController: UIViewController {
     var viewModel: RatesViewModel!
-
-    
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var addPairView: AddPairView!
     @IBOutlet private var addPairViewHeight: NSLayoutConstraint!
     
     var pairs: [ExchangePairView] = []
-    
-    var screenModel: RatesScreenModel = .empty {
-        didSet{ uploadScreen(state: screenModel) }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,27 +63,19 @@ final class RatesViewController: UIViewController {
 
 extension RatesViewController {
     private func setupNavigationBar() {
-        navigationController?.navigationBar.isHidden = true
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+        navigationController?.navigationBar.style = NavigationBarStyles.main
+        title = viewModel.title
     }
     
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
         tableView.register(cellType: RatesCell.self)
-    }
-    
-    private func uploadScreen(state: RatesScreenModel) {
-        switch state {
-        case .empty:
-            print("Empty")
-        case .rates(let pairs):
-            print(pairs)
-        }
     }
 }
 
-extension RatesViewController: UITableViewDataSource {
+extension RatesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return pairs.count
     }
@@ -99,13 +85,20 @@ extension RatesViewController: UITableViewDataSource {
         cell.configureCell(pairs[indexPath.row])
         return cell
     }
-}
-
-extension RatesViewController: UITableViewDelegate {
-
-}
-
-enum RatesScreenModel {
-    case empty
-    case rates([String])
+    
+    func tableView(_ tableView: UITableView, didEndEditingRowAt indexPath: IndexPath?) {
+        viewModel.startFetchingExchangeRates()
+    }
+    
+    func tableView(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath) {
+        viewModel.stopFetchingExchangeRates()
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            pairs.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            viewModel.deletePairAtIndex(indexPath.row)
+        }
+    }
 }

@@ -65,6 +65,8 @@
 		18791A0B24210B2900C259C9 /* RatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791A0224210B2900C259C9 /* RatesViewController.swift */; };
 		18791A0C24210B2900C259C9 /* Rates.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18791A0324210B2900C259C9 /* Rates.storyboard */; };
 		18791A0F24210B2900C259C9 /* RatesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18791A0924210B2900C259C9 /* RatesRouter.swift */; };
+		1879406E242ABD7D00C1832C /* ExchangePairViewFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879406D242ABD7D00C1832C /* ExchangePairViewFormatter.swift */; };
+		18794071242ABDBC00C1832C /* ExchangePairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18794070242ABDBC00C1832C /* ExchangePairView.swift */; };
 		187CDAB224293E7D009CD659 /* CoreDataPair+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187CDAB024293E7D009CD659 /* CoreDataPair+CoreDataProperties.swift */; };
 		187CDAB524295EE9009CD659 /* MockingPairRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187CDAB424295EE9009CD659 /* MockingPairRepository.swift */; };
 		187CDAB82429621E009CD659 /* CoreDataPair+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187CDAB62429621E009CD659 /* CoreDataPair+CoreDataClass.swift */; };
@@ -294,6 +296,8 @@
 		18791A0224210B2900C259C9 /* RatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatesViewController.swift; sourceTree = "<group>"; };
 		18791A0324210B2900C259C9 /* Rates.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Rates.storyboard; sourceTree = "<group>"; };
 		18791A0924210B2900C259C9 /* RatesRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatesRouter.swift; sourceTree = "<group>"; };
+		1879406D242ABD7D00C1832C /* ExchangePairViewFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangePairViewFormatter.swift; sourceTree = "<group>"; };
+		18794070242ABDBC00C1832C /* ExchangePairView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangePairView.swift; sourceTree = "<group>"; };
 		187CDAB024293E7D009CD659 /* CoreDataPair+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CoreDataPair+CoreDataProperties.swift"; path = "/Users/aaronhuanuco/Developer/RCC/Data/Database/CoreDataClient/Models/CoreDataPair+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		187CDAB424295EE9009CD659 /* MockingPairRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockingPairRepository.swift; sourceTree = "<group>"; };
 		187CDAB62429621E009CD659 /* CoreDataPair+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreDataPair+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -665,6 +669,8 @@
 		1876B79C24277BBF00404487 /* Rates */ = {
 			isa = PBXGroup;
 			children = (
+				1879406F242ABDA300C1832C /* View */,
+				1879406C242ABD6700C1832C /* ExchangePairViewFormatter */,
 				1876B7BB242795B200404487 /* RatesRouterProtocol */,
 				18DF6F8A242143DD007624E0 /* RatesViewModel.swift */,
 			);
@@ -876,6 +882,22 @@
 				18791A0924210B2900C259C9 /* RatesRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		1879406C242ABD6700C1832C /* ExchangePairViewFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				1879406D242ABD7D00C1832C /* ExchangePairViewFormatter.swift */,
+			);
+			path = ExchangePairViewFormatter;
+			sourceTree = "<group>";
+		};
+		1879406F242ABDA300C1832C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18794070242ABDBC00C1832C /* ExchangePairView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		187CDAB324295EDC009CD659 /* Mocks */ = {
@@ -2061,9 +2083,11 @@
 				1876B7C62427AE1A00404487 /* SecondCurrencyRouterProtocol.swift in Sources */,
 				1876B7A824277C8000404487 /* SecondCurrencyViewModel.swift in Sources */,
 				18DF6F8B242143DD007624E0 /* RatesViewModel.swift in Sources */,
+				18794071242ABDBC00C1832C /* ExchangePairView.swift in Sources */,
 				1876B7A424277C2600404487 /* CurrencyView.swift in Sources */,
 				1876B7A624277C5600404487 /* FirstCurrencyViewModel.swift in Sources */,
 				1876B7BD2427963F00404487 /* RatesRouterProtocol.swift in Sources */,
+				1879406E242ABD7D00C1832C /* ExchangePairViewFormatter.swift in Sources */,
 				1876B7C0242798F300404487 /* Observer.swift in Sources */,
 				1876B7C32427A26C00404487 /* FirstCurrencyRouterProtocol.swift in Sources */,
 				1876B79F24277BEA00404487 /* CurrenciesViewModel.swift in Sources */,
