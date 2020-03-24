@@ -781,6 +781,7 @@
 			isa = PBXGroup;
 			children = (
 				187EA010242A0AE900AE0819 /* AddPairView */,
+				1876B76324266E2900404487 /* Cells */,
 				18791A0124210B2900C259C9 /* View */,
 				18791A0824210B2900C259C9 /* Router */,
 			);
@@ -790,7 +791,6 @@
 		18791A0124210B2900C259C9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1876B76324266E2900404487 /* Cells */,
 				18791A0224210B2900C259C9 /* RatesViewController.swift */,
 				18791A0324210B2900C259C9 /* Rates.storyboard */,
 			);
