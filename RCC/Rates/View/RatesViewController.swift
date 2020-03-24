@@ -14,7 +14,7 @@ final class RatesViewController: UIViewController {
 
     
     @IBOutlet private var tableView: UITableView!
-    @IBOutlet private var addPairView: AddRatesView!
+    @IBOutlet private var addPairView: AddPairView!
     @IBOutlet private var addPairViewHeight: NSLayoutConstraint!
     
     var pairs: [ExchangePairView] = []
@@ -46,8 +46,8 @@ final class RatesViewController: UIViewController {
             guard self.addPairViewHeight.constant != newHeight else { return }
             UIView.animate(withDuration: 0.4) {
                 self.addPairViewHeight.constant = newHeight
-                self.addPairView.state = AddRatesView.State.configured
-                self.addPairView.state = isEmpty ? AddRatesView.State.empty : AddRatesView.State.configured
+                self.addPairView.state = AddPairView.State.configured
+                self.addPairView.state = isEmpty ? AddPairView.State.empty : AddPairView.State.configured
             }
         }
     }

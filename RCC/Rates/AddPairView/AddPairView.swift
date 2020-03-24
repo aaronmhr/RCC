@@ -1,5 +1,5 @@
 //
-//  AddRatesView.swift
+//  AddPairView.swift
 //  RCC
 //
 //  Created by Aaron Huánuco on 24/03/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class AddRatesView: UIView {
+final class AddPairView: UIView {
     private var action: (() -> Void)?
     private var leadingConstraint: NSLayoutConstraint?
     var state: State = .empty {
@@ -116,7 +116,7 @@ final class AddRatesView: UIView {
     }
 }
 
-extension AddRatesView {
+extension AddPairView {
     enum State {
         case empty
         case configured
