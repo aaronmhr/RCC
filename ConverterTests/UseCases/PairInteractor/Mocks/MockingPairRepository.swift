@@ -22,4 +22,6 @@ class MockingPairRepository: PairRepository {
     func fetch(completion: @escaping (FetchResult) -> Void) {
         completion(.success(pairsStack))
     }
+    
+    func delete(_ pair: Pair, completion: @escaping (DeleteResult) -> Void) { }
 }

@@ -36,6 +36,8 @@ class MockingPairInteractor: PairInteractorProtocol {
     func save(_ pair: Pair, completion: @escaping (Result<Void, Error>) -> Void) {
         completion(savingStub)
     }
+    
+    func delete(_ pair: Pair, completion: @escaping (Result<Void, Error>) -> Void) { }
 }
 
 private final class ExchangePairProviderMock: ExchangePairProvider {
