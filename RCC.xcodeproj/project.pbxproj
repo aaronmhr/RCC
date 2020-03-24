@@ -10,6 +10,8 @@
 		182E484724210C7F00084D5F /* StoryboardInstantiator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E484624210C7F00084D5F /* StoryboardInstantiator.swift */; };
 		182E484B242133BE00084D5F /* PairSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E484A242133BE00084D5F /* PairSaver.swift */; };
 		182E484E2421343D00084D5F /* PairUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E484D2421343D00084D5F /* PairUseCase.swift */; };
+		18724A27242A8BAC005AFF1D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18724A26242A8BAC005AFF1D /* Roboto-Regular.ttf */; };
+		18724A2B242A8C98005AFF1D /* UIFont+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18724A2A242A8C98005AFF1D /* UIFont+Style.swift */; };
 		187281D32422C46F007CAF68 /* RatesViewModelAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187281D22422C46F007CAF68 /* RatesViewModelAssembler.swift */; };
 		187281D52422D222007CAF68 /* DoubleToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187281D42422D222007CAF68 /* DoubleToString.swift */; };
 		187281D82422D26E007CAF68 /* DoubleFormattingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187281D72422D26E007CAF68 /* DoubleFormattingTests.swift */; };
@@ -232,6 +234,8 @@
 		182E484A242133BE00084D5F /* PairSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairSaver.swift; sourceTree = "<group>"; };
 		182E484D2421343D00084D5F /* PairUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairUseCase.swift; sourceTree = "<group>"; };
 		182E48502421358F00084D5F /* PairInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairInteractorTests.swift; sourceTree = "<group>"; };
+		18724A26242A8BAC005AFF1D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		18724A2A242A8C98005AFF1D /* UIFont+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Style.swift"; sourceTree = "<group>"; };
 		187281D22422C46F007CAF68 /* RatesViewModelAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesViewModelAssembler.swift; sourceTree = "<group>"; };
 		187281D42422D222007CAF68 /* DoubleToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleToString.swift; sourceTree = "<group>"; };
 		187281D72422D26E007CAF68 /* DoubleFormattingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleFormattingTests.swift; sourceTree = "<group>"; };
@@ -438,6 +442,7 @@
 		182E484524210C5C00084D5F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				18724A28242A8BAF005AFF1D /* Fonts */,
 				187EA00D2429EF3D00AE0819 /* Styles */,
 				182E484624210C7F00084D5F /* StoryboardInstantiator.swift */,
 				1876B7682426731100404487 /* Reusable.swift */,
@@ -484,6 +489,22 @@
 				182E48502421358F00084D5F /* PairInteractorTests.swift */,
 			);
 			path = PairInteractor;
+			sourceTree = "<group>";
+		};
+		18724A28242A8BAF005AFF1D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				18724A26242A8BAC005AFF1D /* Roboto-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		18724A29242A8C83005AFF1D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				18724A2A242A8C98005AFF1D /* UIFont+Style.swift */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		187281D12422C457007CAF68 /* ViewModelAssembler */ = {
@@ -872,6 +893,7 @@
 		187EA00D2429EF3D00AE0819 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
+				18724A29242A8C83005AFF1D /* Fonts */,
 				187EA00E2429EF5100AE0819 /* NavigationBarStyles.swift */,
 			);
 			path = Styles;
@@ -1547,6 +1569,7 @@
 			files = (
 				18B8C6C1241D4EB10057858C /* README.md in Resources */,
 				18B8C6AB241D40EE0057858C /* LaunchScreen.storyboard in Resources */,
+				18724A27242A8BAC005AFF1D /* Roboto-Regular.ttf in Resources */,
 				18791A0C24210B2900C259C9 /* Rates.storyboard in Resources */,
 				1876B77924267A7500404487 /* Currencies.storyboard in Resources */,
 				18B8C6A8241D40EE0057858C /* Assets.xcassets in Resources */,
@@ -1872,6 +1895,7 @@
 				1876B7BA24278EDE00404487 /* SecondCurrencyViewModelAssembler.swift in Sources */,
 				1876B7B524278CC800404487 /* PairUseCaseAssembler.swift in Sources */,
 				18791A0B24210B2900C259C9 /* RatesViewController.swift in Sources */,
+				18724A2B242A8C98005AFF1D /* UIFont+Style.swift in Sources */,
 				18791A0F24210B2900C259C9 /* RatesRouter.swift in Sources */,
 				187EA00F2429EF5100AE0819 /* NavigationBarStyles.swift in Sources */,
 				1876B77D24267A7500404487 /* FirstCurrenciesRouter.swift in Sources */,

@@ -16,7 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let viewController = RatesRouter.assembleModule()
         let navigationController = UINavigationController(rootViewController: viewController)
         setRootViewController(navigationController)
+        for family in UIFont.familyNames.sorted() {
+            let names = UIFont.fontNames(forFamilyName: family)
+            print("Family: \(family) Font names: \(names)")
+        }
+        
         return true
+        
+
     }
 }
 
