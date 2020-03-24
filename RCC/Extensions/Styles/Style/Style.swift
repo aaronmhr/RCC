@@ -1,5 +1,5 @@
 //
-//  NavigationBarStyles.swift
+//  Style.swift
 //  RCC
 //
 //  Created by Aaron Huánuco on 24/03/2020.
@@ -7,14 +7,6 @@
 //
 
 import UIKit
-
-struct NavigationBarStyles {
-    static let `default` = Style<UINavigationBar> { _ in }
-    
-    static let main = Style<UINavigationBar> {
-        $0.titleTextAttributes = [.foregroundColor: UIColor.black, .font: UIFont.systemFontSize]
-    }
-}
 
 final class Style<V> where V: UIView {
     let style: (V) -> Void

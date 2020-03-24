@@ -15,6 +15,18 @@ final class RatesCell: UITableViewCell, NibReusable {
     @IBOutlet private var destinationTitle: UILabel!
     @IBOutlet private var destinationSubtitle: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupStyles()
+    }
+    
+    private func setupStyles() {
+        originTitle.style = LabelStyles.medium20Black
+        originSubtitle.style = LabelStyles.regular14Gray
+        destinationTitle.style = LabelStyles.medium20Black
+        destinationSubtitle.style = LabelStyles.regular14Gray
+    }
+    
     public func configureCell(_ cell: ExchangePairView) {
         originTitle.text = cell.origin.title
         originSubtitle.text = cell.origin.subtitle

@@ -14,9 +14,14 @@ final class CurrencyCell: UITableViewCell, NibReusable {
     @IBOutlet private var codeLabel: UILabel!
     @IBOutlet private var currencyName: UILabel!
     
-    override class func awakeFromNib() {
+    override func awakeFromNib() {
         super.awakeFromNib()
-        
+        setupStyles()
+    }
+    
+    private func setupStyles() {
+        codeLabel.style = LabelStyles.regular16Gray
+        currencyName.style = LabelStyles.regular16Black
     }
     
     func configure(with currency: CurrencyView) {

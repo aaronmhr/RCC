@@ -36,8 +36,8 @@ final class AddPairView: UIView {
     lazy var button: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.style = ButtonStyles.main
         button.setTitle(Localizables.button, for: .normal)
-        button.setTitleColor(.black, for: .normal)
         button.contentHorizontalAlignment = .leading
         button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         return button
@@ -46,7 +46,10 @@ final class AddPairView: UIView {
     lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.style = LabelStyles.regular16Gray
         label.text = Localizables.description
+        label.textAlignment = .center
+        label.numberOfLines = 2
         return label
     }()
     

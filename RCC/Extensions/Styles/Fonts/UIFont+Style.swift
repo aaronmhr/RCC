@@ -17,13 +17,24 @@ extension UIFont {
         return Fonts.robotoRegular(ofSize: 16)
     }
     
-    static var regular20: UIFont {
-        return Fonts.robotoRegular(ofSize: 20)
+    static var medium16: UIFont {
+        return Fonts.robotoMedium(ofSize: 16)
+    }
+    
+    static var medium20: UIFont {
+        return Fonts.robotoMedium(ofSize: 20)
     }
     
     private enum Fonts {
         static func robotoRegular(ofSize size: CGFloat) -> UIFont {
-            return UIFont(name: "Roboto-Regular", size: size) ?? systemFont(ofSize: size)
+            guard let font = UIFont(name: "Roboto-Regular", size: size) else {
+                return systemFont(ofSize: size)
+            }
+            return font
+        }
+        
+        static func robotoMedium(ofSize size: CGFloat) -> UIFont {
+            return UIFont(name: "Roboto-Medium", size: size) ?? systemFont(ofSize: size)
         }
     }
 }
