@@ -2,7 +2,7 @@ platform :ios, '12.0'
 
 def testing_pods
     pod 'Quick', '2.2.0'
-    pod 'Nimble', '8.0.4'
+    pod 'Nimble', '8.0.5'
 end
 
 target 'Converter' do
