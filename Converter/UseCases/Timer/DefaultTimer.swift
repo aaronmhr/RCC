@@ -18,7 +18,6 @@ public final class DefaultTimer: TimerProtocol {
         let timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: repeats) {
             (timer) -> Void in
             DispatchQueue.global(qos: .background).async {
-                print("LLALALAL")
                 completionBlock()
             }
         }
