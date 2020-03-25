@@ -5,10 +5,11 @@
 [![Swift Version][swift-image]][swift-url] [![Build Status](https://travis-ci.com/aaronmhr/RCC.svg?branch=master)](https://travis-ci.com/aaronmhr/RCC)
 
 ## Screenshots
+<img src="Assets/rcc.gif" width="100%" />
 
 ## Requirements
 
-<img src="Assets/sketch.png" width="100%">
+<img src="Assets/sketch.png" width="100%"/>
 
 ### Initial screen
 - [] On first launch should show empty screen
