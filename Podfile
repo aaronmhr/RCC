@@ -1,5 +1,4 @@
 platform :ios, '12.0'
-use_frameworks!
 
 def testing_pods
     pod 'Quick', '2.2.0'
