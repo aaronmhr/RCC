@@ -57,6 +57,7 @@ target 'RCC' do
     inherit! :search_paths
     # Pods for testing
 	testing_pods
+  pod 'SnapshotTesting', '1.7.0'
   end
 
 end
