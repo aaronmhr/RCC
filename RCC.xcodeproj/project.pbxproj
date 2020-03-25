@@ -227,8 +227,6 @@
 
 /* Begin PBXFileReference section */
 		090EBE9244D047C7BD716E84 /* Pods-RCCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCCTests.debug.xcconfig"; path = "Target Support Files/Pods-RCCTests/Pods-RCCTests.debug.xcconfig"; sourceTree = "<group>"; };
-		1809E9FD242B3F22006D5C4A /* RCCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCCTests.swift; sourceTree = "<group>"; };
-		1809E9FF242B3F22006D5C4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		182E484624210C7F00084D5F /* StoryboardInstantiator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiator.swift; sourceTree = "<group>"; };
 		182E484A242133BE00084D5F /* PairSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairSaver.swift; sourceTree = "<group>"; };
 		182E484D2421343D00084D5F /* PairUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairUseCase.swift; sourceTree = "<group>"; };
@@ -299,14 +297,11 @@
 		187D10E8241E67670076A9F3 /* PairProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairProvider.swift; sourceTree = "<group>"; };
 		187EA011242A0B1D00AE0819 /* AddPairView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPairView.swift; sourceTree = "<group>"; };
 		1880BD24242B21AC00B6B948 /* ErrorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPresenter.swift; sourceTree = "<group>"; };
-		1880BD2C242B329400B6B948 /* CurrenciesViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrenciesViewControllerTests.swift; sourceTree = "<group>"; };
 		18B8C69B241D40EC0057858C /* RCC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RCC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B8C69E241D40EC0057858C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18B8C6A7241D40EE0057858C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18B8C6AA241D40EE0057858C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18B8C6AC241D40EE0057858C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18B8C6B5241D40EE0057858C /* AddPairViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPairViewTests.swift; sourceTree = "<group>"; };
-		18B8C6B7241D40EE0057858C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18B8C6C0241D4EB10057858C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		18B8C6C9241D93200057858C /* Converter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Converter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B8C6CB241D93200057858C /* Converter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Converter.h; sourceTree = "<group>"; };
@@ -440,15 +435,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1809E9FC242B3F22006D5C4A /* RCCTests */ = {
-			isa = PBXGroup;
-			children = (
-				1809E9FD242B3F22006D5C4A /* RCCTests.swift */,
-				1809E9FF242B3F22006D5C4A /* Info.plist */,
-			);
-			path = RCCTests;
-			sourceTree = "<group>";
-		};
 		182E484524210C5C00084D5F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -980,42 +966,16 @@
 			path = AddPairView;
 			sourceTree = "<group>";
 		};
-		1880BD26242B2F5800B6B948 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				1880BD27242B304700B6B948 /* CurrenciesViewControllerTests */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		1880BD27242B304700B6B948 /* CurrenciesViewControllerTests */ = {
-			isa = PBXGroup;
-			children = (
-				1880BD2C242B329400B6B948 /* CurrenciesViewControllerTests.swift */,
-			);
-			path = CurrenciesViewControllerTests;
-			sourceTree = "<group>";
-		};
-		1880BD2F242B36B100B6B948 /* AddPairViewTests */ = {
-			isa = PBXGroup;
-			children = (
-				18B8C6B5241D40EE0057858C /* AddPairViewTests.swift */,
-			);
-			path = AddPairViewTests;
-			sourceTree = "<group>";
-		};
 		18B8C692241D40EC0057858C = {
 			isa = PBXGroup;
 			children = (
 				18B8C69D241D40EC0057858C /* RCC */,
-				18B8C6B4241D40EE0057858C /* RCCTests */,
 				18B8C6CA241D93200057858C /* Converter */,
 				18B8C6D7241D93200057858C /* ConverterTests */,
 				18E48389241E8FD300062135 /* Data */,
 				18E48396241E8FD300062135 /* DataTests */,
 				18E483AB241E8FDD00062135 /* Presentation */,
 				18E483B8241E8FDD00062135 /* PresentationTests */,
-				1809E9FC242B3F22006D5C4A /* RCCTests */,
 				18B8C69C241D40EC0057858C /* Products */,
 				D6F40C8A54EFB499AC419E67 /* Pods */,
 				CBBC5AB45C14DF64AA59D59F /* Frameworks */,
@@ -1050,16 +1010,6 @@
 				18B8C6AC241D40EE0057858C /* Info.plist */,
 			);
 			path = RCC;
-			sourceTree = "<group>";
-		};
-		18B8C6B4241D40EE0057858C /* RCCTests */ = {
-			isa = PBXGroup;
-			children = (
-				1880BD2F242B36B100B6B948 /* AddPairViewTests */,
-				1880BD26242B2F5800B6B948 /* ViewControllers */,
-				18B8C6B7241D40EE0057858C /* Info.plist */,
-			);
-			path = RCCTests;
 			sourceTree = "<group>";
 		};
 		18B8C6CA241D93200057858C /* Converter */ = {
