@@ -12,7 +12,7 @@ import Presentation
 import Converter
 @testable import RCC
 
-final class RatesViewControllerTests: XCTestCase {
+final class CurrenciesViewControllerTests: XCTestCase {
     func testThereNoDataFromViewModel_itSHouldNotDisplayAnyCurrency() {
         let (sut, viewModel) = makeSUT()
         
@@ -46,7 +46,7 @@ final class RatesViewControllerTests: XCTestCase {
     }
 }
 
-private extension RatesViewControllerTests {
+private extension CurrenciesViewControllerTests {
     func makeSUT() -> (CurrenciesViewController, CurrenciesViewModelMock) {
         let sut = CurrenciesViewController.viewController
         let viewModel = CurrenciesViewModelMock()
@@ -81,3 +81,4 @@ extension CurrencyView {
     static let pound = CurrencyView.make(from: Currency.pound, isActive: true)
     static let poundInactive = CurrencyView.make(from: Currency.pound, isActive: false)
 }
+
