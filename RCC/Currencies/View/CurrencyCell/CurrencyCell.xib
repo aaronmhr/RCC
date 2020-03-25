@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="56" id="tvK-cG-0Zq" customClass="CurrencyCell" customModule="RCC" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tvK-cG-0Zq" id="k5b-li-k1V">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qJ9-D8-iu3">
+                        <rect key="frame" x="16" y="16" width="382" height="24"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cGB-1e-T9B">
+                                <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="P78-Rw-xXU"/>
+                                    <constraint firstAttribute="height" constant="24" id="mXK-Hk-Nln"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="TlV-CK-5ve">
+                                <rect key="frame" x="40" y="0.0" width="342" height="24"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stJ-RZ-TPe">
+                                        <rect key="frame" x="0.0" y="0.0" width="39.5" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="P6X-Zb-Cuc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="0.5450980392" green="0.58431372550000005" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2A-IS-4mk">
+                                        <rect key="frame" x="59.5" y="0.0" width="282.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="qJ9-D8-iu3" firstAttribute="leading" secondItem="k5b-li-k1V" secondAttribute="leading" constant="16" id="Ex7-T9-Egm"/>
+                    <constraint firstAttribute="bottom" secondItem="qJ9-D8-iu3" secondAttribute="bottom" constant="16" id="LDo-t0-SyP"/>
+                    <constraint firstItem="qJ9-D8-iu3" firstAttribute="top" secondItem="k5b-li-k1V" secondAttribute="top" constant="16" id="NLh-rv-NOA"/>
+                    <constraint firstAttribute="trailing" secondItem="qJ9-D8-iu3" secondAttribute="trailing" constant="16" id="coN-Oi-kbe"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="codeLabel" destination="stJ-RZ-TPe" id="M7q-m5-DgZ"/>
+                <outlet property="currencyName" destination="v2A-IS-4mk" id="YnT-k8-tBa"/>
+                <outlet property="flag" destination="cGB-1e-T9B" id="TGv-6k-wv4"/>
+            </connections>
+            <point key="canvasLocation" x="-91.304347826086968" y="6.6964285714285712"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -6,8 +6,16 @@
 //  Copyright © 2020 Aaron Huánuco. All rights reserved.
 //
 
-import XCTest
+import Quick
+import Nimble
 @testable import Data
+
+
+final class UserRepositoryMapperTests: QuickSpec {
+
+    override func spec() {
+    }
+}
 
 class DataTests: XCTestCase {
 
