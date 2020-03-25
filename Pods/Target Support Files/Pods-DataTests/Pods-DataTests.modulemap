@@ -1,4 +1,4 @@
-module Pods_DataTests {
+framework module Pods_DataTests {
   umbrella header "Pods-DataTests-umbrella.h"
 
   export *

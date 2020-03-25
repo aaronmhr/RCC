@@ -1,4 +1,4 @@
-module Pods_RCCTests {
+framework module Pods_RCCTests {
   umbrella header "Pods-RCCTests-umbrella.h"
 
   export *
