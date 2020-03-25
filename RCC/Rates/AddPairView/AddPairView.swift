@@ -55,11 +55,16 @@ final class AddPairView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupView()
+        commonInit()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        commonInit()
+    }
+    
+    private func commonInit() {
+        backgroundColor = .rccWhite
         setupView()
     }
     
