@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -292,7 +292,7 @@
 		18791A0924210B2900C259C9 /* RatesRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatesRouter.swift; sourceTree = "<group>"; };
 		1879406D242ABD7D00C1832C /* ExchangePairViewFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangePairViewFormatter.swift; sourceTree = "<group>"; };
 		18794070242ABDBC00C1832C /* ExchangePairView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangePairView.swift; sourceTree = "<group>"; };
-		187CDAB024293E7D009CD659 /* CoreDataPair+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CoreDataPair+CoreDataProperties.swift"; path = "/Users/aaronhuanuco/Developer/RCC/Data/Database/CoreDataClient/Models/CoreDataPair+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		187CDAB024293E7D009CD659 /* CoreDataPair+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataPair+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		187CDAB424295EE9009CD659 /* MockingPairRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockingPairRepository.swift; sourceTree = "<group>"; };
 		187CDAB62429621E009CD659 /* CoreDataPair+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreDataPair+CoreDataClass.swift"; sourceTree = "<group>"; };
 		187D10D9241E51400076A9F3 /* CurrencyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTests.swift; sourceTree = "<group>"; };
@@ -436,7 +436,6 @@
 		182E484524210C5C00084D5F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				18724A28242A8BAF005AFF1D /* Fonts */,
 				187EA00D2429EF3D00AE0819 /* Styles */,
 				182E484624210C7F00084D5F /* StoryboardInstantiator.swift */,
 				1876B7682426731100404487 /* Reusable.swift */,
@@ -999,11 +998,12 @@
 		18B8C69D241D40EC0057858C /* RCC */ = {
 			isa = PBXGroup;
 			children = (
+				18B8C6C0241D4EB10057858C /* README.md */,
+				18B8C69E241D40EC0057858C /* AppDelegate.swift */,
 				182E484524210C5C00084D5F /* Extensions */,
 				187919FE24210B2900C259C9 /* Rates */,
 				1876B76C24267A7400404487 /* Currencies */,
-				18B8C6C0241D4EB10057858C /* README.md */,
-				18B8C69E241D40EC0057858C /* AppDelegate.swift */,
+				18724A28242A8BAF005AFF1D /* Fonts */,
 				18B8C6A7241D40EE0057858C /* Assets.xcassets */,
 				18B8C6A9241D40EE0057858C /* LaunchScreen.storyboard */,
 				18B8C6AC241D40EE0057858C /* Info.plist */,
