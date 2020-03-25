@@ -51,12 +51,10 @@ public class NMBObjCBeCloseToMatcher: NSObject, NMBMatcher {
             return actualExpression() as? NMBDoubleConvertible
         })
         let expr = Expression(expression: actualBlock, location: location)
-        let predicate = beCloseTo(self._expected, within: self._delta)
+        let matcher = beCloseTo(self._expected, within: self._delta)
 
         do {
-            let result = try predicate.satisfies(expr)
-            result.message.update(failureMessage: failureMessage)
-            return result.toBoolean(expectation: .toMatch)
+            return try matcher.matches(expr, failureMessage: failureMessage)
         } catch let error {
             failureMessage.stringValue = "unexpected error thrown: <\(error)>"
             return false
@@ -68,12 +66,10 @@ public class NMBObjCBeCloseToMatcher: NSObject, NMBMatcher {
             return actualExpression() as? NMBDoubleConvertible
         })
         let expr = Expression(expression: actualBlock, location: location)
-        let predicate = beCloseTo(self._expected, within: self._delta)
+        let matcher = beCloseTo(self._expected, within: self._delta)
 
         do {
-            let result = try predicate.satisfies(expr)
-            result.message.update(failureMessage: failureMessage)
-            return result.toBoolean(expectation: .toNotMatch)
+            return try matcher.doesNotMatch(expr, failureMessage: failureMessage)
         } catch let error {
             failureMessage.stringValue = "unexpected error thrown: <\(error)>"
             return false
@@ -81,9 +77,9 @@ public class NMBObjCBeCloseToMatcher: NSObject, NMBMatcher {
     }
 
     @objc public var within: (CDouble) -> NMBObjCBeCloseToMatcher {
-        return { delta in
+        return ({ delta in
             return NMBObjCBeCloseToMatcher(expected: self._expected, within: delta)
-        }
+        })
     }
 }
 

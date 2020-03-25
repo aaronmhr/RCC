@@ -18,13 +18,13 @@ extension Matcher {
     }
 
     var toClosure: (Expression<ValueType>, FailureMessage, Bool) throws -> Bool {
-        return { expr, msg, expectedResult in
+        return ({ expr, msg, expectedResult in
             if expectedResult {
                 return try self.matches(expr, failureMessage: msg)
             } else {
                 return try self.doesNotMatch(expr, failureMessage: msg)
             }
-        }
+        })
     }
 }
 
@@ -136,14 +136,13 @@ extension NSDate: TestOutputStringConvertible {
 @objc public protocol NMBComparable {
     func NMB_compare(_ otherObject: NMBComparable!) -> ComparisonResult
 }
-#elseif !compiler(>=5.1)
+#else
 // This should become obsolete once Corelibs Foundation adds Comparable conformance to NSNumber
 public protocol NMBComparable {
     func NMB_compare(_ otherObject: NMBComparable!) -> ComparisonResult
 }
 #endif
 
-#if canImport(Darwin) || !compiler(>=5.1)
 extension NSNumber: NMBComparable {
     public func NMB_compare(_ otherObject: NMBComparable!) -> ComparisonResult {
         // swiftlint:disable:next force_cast
@@ -156,4 +155,3 @@ extension NSString: NMBComparable {
         return compare(otherObject as! String)
     }
 }
-#endif

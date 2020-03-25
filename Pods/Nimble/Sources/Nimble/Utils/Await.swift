@@ -32,7 +32,11 @@ internal class AssertionWaitLock: WaitLock {
 
     func acquireWaitingLock(_ fnName: String, file: FileString, line: UInt) {
         let info = WaitingInfo(name: fnName, file: file, lineNumber: line)
-        let isMainThread = Thread.isMainThread
+        #if canImport(Darwin)
+            let isMainThread = Thread.isMainThread
+        #else
+            let isMainThread = _CFIsMainThread()
+        #endif
         nimblePrecondition(
             isMainThread,
             "InvalidNimbleAPIUsage",
@@ -98,7 +102,7 @@ internal enum AwaitResult<T> {
 
 /// Holds the resulting value from an asynchronous expectation.
 /// This class is thread-safe at receiving an "response" to this promise.
-internal final class AwaitPromise<T> {
+internal class AwaitPromise<T> {
     private(set) internal var asyncResult: AwaitResult<T> = .incomplete
     private var signal: DispatchSemaphore
 
