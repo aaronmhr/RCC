@@ -6,7 +6,7 @@
 //  Copyright © 2020 Aaron Huánuco. All rights reserved.
 //
 
-public struct Currency {
+public struct Currency: Equatable {
     public let code: String
     public let name: String
     
