@@ -24,7 +24,10 @@ final class ExchangeViewModelAssembler {
     }
     
     private static func assembleExchangeUseCase() -> ExchangePairProvider {
-        let httpClient = URLSessionHTTPClient()
+        let urlSessionConfiguration = URLSession.shared.configuration
+        urlSessionConfiguration.timeoutIntervalForResource = 5.0
+        let urlSession = URLSession(configuration: urlSessionConfiguration)
+        let httpClient = URLSessionHTTPClient(session: urlSession)
         let dataSource = RemoteExchangeRatesDataSource(remoteClient: httpClient)
         let exchangeRepository = DefaultExchangeRepository(dataSource: dataSource)
         
