@@ -34,4 +34,10 @@ extension RatesRouter: RatesRouterProtocol {
         navigationController.modalPresentationStyle = .fullScreen
         view.present(navigationController, animated: true, completion: nil)
     }
+    
+    func showAlert(message: String, action: @escaping () -> Void) {
+        view.alert(message: message, action: action)
+    }
 }
+
+extension RatesViewController: ErrorPresenter { }

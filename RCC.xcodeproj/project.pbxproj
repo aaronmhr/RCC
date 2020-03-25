@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -76,6 +76,7 @@
 		187D10E6241E651F0076A9F3 /* ExchangePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D10E5241E651F0076A9F3 /* ExchangePair.swift */; };
 		187D10E9241E67670076A9F3 /* PairProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D10E8241E67670076A9F3 /* PairProvider.swift */; };
 		187EA012242A0B1D00AE0819 /* AddPairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187EA011242A0B1D00AE0819 /* AddPairView.swift */; };
+		1880BD25242B21AC00B6B948 /* ErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1880BD24242B21AC00B6B948 /* ErrorPresenter.swift */; };
 		18B8C69F241D40EC0057858C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8C69E241D40EC0057858C /* AppDelegate.swift */; };
 		18B8C6A8241D40EE0057858C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B8C6A7241D40EE0057858C /* Assets.xcassets */; };
 		18B8C6AB241D40EE0057858C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B8C6A9241D40EE0057858C /* LaunchScreen.storyboard */; };
@@ -304,6 +305,7 @@
 		187D10E5241E651F0076A9F3 /* ExchangePair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangePair.swift; sourceTree = "<group>"; };
 		187D10E8241E67670076A9F3 /* PairProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairProvider.swift; sourceTree = "<group>"; };
 		187EA011242A0B1D00AE0819 /* AddPairView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPairView.swift; sourceTree = "<group>"; };
+		1880BD24242B21AC00B6B948 /* ErrorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPresenter.swift; sourceTree = "<group>"; };
 		18B8C69B241D40EC0057858C /* RCC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RCC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B8C69E241D40EC0057858C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18B8C6A7241D40EE0057858C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -459,6 +461,7 @@
 				187EA00D2429EF3D00AE0819 /* Styles */,
 				182E484624210C7F00084D5F /* StoryboardInstantiator.swift */,
 				1876B7682426731100404487 /* Reusable.swift */,
+				1880BD24242B21AC00B6B948 /* ErrorPresenter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1978,6 +1981,7 @@
 				1876B7B524278CC800404487 /* PairUseCaseAssembler.swift in Sources */,
 				18791A0B24210B2900C259C9 /* RatesViewController.swift in Sources */,
 				18724A3C242A9AFE005AFF1D /* UIColor+Stule.swift in Sources */,
+				1880BD25242B21AC00B6B948 /* ErrorPresenter.swift in Sources */,
 				18724A2B242A8C98005AFF1D /* UIFont+Style.swift in Sources */,
 				18791A0F24210B2900C259C9 /* RatesRouter.swift in Sources */,
 				1876B77D24267A7500404487 /* FirstCurrenciesRouter.swift in Sources */,

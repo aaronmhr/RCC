@@ -8,4 +8,5 @@
 
 public protocol RatesRouterProtocol {
     func showAddCurrencyScreen()
+    func showAlert(message: String, action: @escaping () -> Void)
 }

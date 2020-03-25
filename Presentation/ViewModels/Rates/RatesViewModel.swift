@@ -39,7 +39,10 @@ public final class RatesViewModel {
                 self?.pairsModel = pairs
                 self?.fetchRates(for: pairs, at: Constants.defaultInterval)
             case .failure(let error):
-                break
+                self?.stopFetchingExchangeRates()
+                self?.router?.showAlert(message: error.localizedDescription) {
+                    self?.startFetchingExchangeRates()
+                }
             }
         }
     }
@@ -48,10 +51,12 @@ public final class RatesViewModel {
         guard pairsModel.indices.contains(index) else { return }
         pairUseCase.delete(pairsModel[index]) { [weak self] result in
             switch result {
-            case .success:
-                break
+            case .success: break
             case .failure(let error):
-                break
+                self?.stopFetchingExchangeRates()
+                self?.router?.showAlert(message: error.localizedDescription) {
+                    self?.startFetchingExchangeRates()
+                }
             }
         }
     }
@@ -62,8 +67,11 @@ public final class RatesViewModel {
             case .success(let exchangePairs):
                 exchangePairs.isEmpty ? self?.setEmpty() : self?.setCongiguredPairs()
                 self?.configure(with: exchangePairs.map(ExchangePairViewFormatter.make))
-            case .failure:
-                break
+            case .failure(let error):
+                self?.stopFetchingExchangeRates()
+                self?.router?.showAlert(message: error.localizedDescription) {
+                    self?.startFetchingExchangeRates()
+                }
             }
         }
     }
